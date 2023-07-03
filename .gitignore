@@ -1,0 +1,39 @@
+# Ignore build and output directories
+**/bin/
+**/obj/
+
+# Ignore user-specific files
+*.user
+
+# Ignore Visual Studio files
+.vs/
+*.suo
+*.sln.ide
+*.csproj.user
+
+# Ignore NuGet packages
+*.nuget.props
+*.nuget.targets
+packages/
+
+# Ignore Resharper files
+_ReSharper.*
+
+# Ignore Visual Studio Code files
+.vscode/
+
+# Ignore logs and temporary files
+*.log
+*.swp
+*.tmp
+
+# Ignore build artifacts
+*.dll
+*.exe
+*.pdb
+
+# Ignore NuGet configuration file
+nuget.config
+
+# Ignore user secrets file
+*.secrets.json
