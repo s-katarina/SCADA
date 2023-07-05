@@ -7,43 +7,18 @@ using System.Web;
 namespace CORE.Models
 {
 	[DataContract]
-	public class CompositeType
-	{
-		bool boolValue = true;
-		string stringValue = "Hello ";
-
-		[DataMember]
-		public bool BoolValue
-		{
-			get { return boolValue; }
-			set { boolValue = value; }
-		}
-
-		[DataMember]
-		public string StringValue
-		{
-			get { return stringValue; }
-			set { stringValue = value; }
-		}
-	}
-	[DataContract]
 	public class User
 	{
-		int id;
-		string name;
-		string surname;
-		string username;
-		string password;
 
 		[DataMember]
-		public int Id { get => id; set => id = value; }
+		public int Id { get; set; }
 		[DataMember]
-		public string Name { get => name; set => name = value; }
+		public string Name { get; set; }
 		[DataMember]
-		public string Surname { get => surname; set => surname = value; }
+		public string Surname { get; set; }
 		[DataMember]
-		public string Username { get => username; set => username = value; }
+		public string Username { get; set; }
 		[DataMember]
-		public string Password { get => password; set => password = value; }
+		public string Password { get; set; }
 	}
 }
