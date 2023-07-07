@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\IODatabase.cs" />
+    <Compile Include="Database\RecordDatabase.cs" />
     <Compile Include="Database\UserDatabase.cs" />
     <Compile Include="Impl\AnalogInputService.svc.cs">
       <DependentUpon>AnalogInputService.svc</DependentUpon>
@@ -122,6 +123,7 @@
     <Compile Include="Models\DigitalInput.cs" />
     <Compile Include="Models\DigitalOutput.cs" />
     <Compile Include="Models\DriverType.cs" />
+    <Compile Include="Models\Record.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

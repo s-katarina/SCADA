@@ -39,6 +39,12 @@ namespace CORE.Impl
         void IAnalogInputService.SendFromRTU(string IOAdress, double value)
         {
             System.Diagnostics.Debug.WriteLine($"Adress {IOAdress}, Value {value}");
+
+            using (RecordDatabase db = new RecordDatabase())
+            {
+                db.Records.Add(new Record() { IOAdress = IOAdress, Timestamp = DateTime.Now, Value = value });
+                db.SaveChanges();
+            }
         }
     }
 }

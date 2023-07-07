@@ -34,6 +34,12 @@ namespace CORE.Impl
         public void SendFromRTU(string IOAdress, bool value)
         {
             System.Diagnostics.Debug.WriteLine($"Adress {IOAdress}, Value {value}");
+
+            using (RecordDatabase db = new RecordDatabase())
+            {
+                db.Records.Add(new Record() { IOAdress = IOAdress, Timestamp = DateTime.Now, Value = value ? 1 : 0 });
+                db.SaveChanges();
+            }
         }
     }
 }
