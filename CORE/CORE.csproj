@@ -122,6 +122,26 @@
     <Compile Include="Migrations\202307071415480_mg6.designer.cs">
       <DependentUpon>202307071415480_mg6.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202307071709060_mg10.cs" />
+    <Compile Include="Migrations\202307071709060_mg10.designer.cs">
+      <DependentUpon>202307071709060_mg10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307071713478_mg11.cs" />
+    <Compile Include="Migrations\202307071713478_mg11.designer.cs">
+      <DependentUpon>202307071713478_mg11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307071717481_mg1.cs" />
+    <Compile Include="Migrations\202307071717481_mg1.designer.cs">
+      <DependentUpon>202307071717481_mg1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307071722507_mg13.cs" />
+    <Compile Include="Migrations\202307071722507_mg13.designer.cs">
+      <DependentUpon>202307071722507_mg13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307071724445_mg14.cs" />
+    <Compile Include="Migrations\202307071724445_mg14.designer.cs">
+      <DependentUpon>202307071724445_mg14.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Alarm.cs" />
     <Compile Include="Models\AnalogInput.cs" />
@@ -163,6 +183,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202307071415480_mg6.resx">
       <DependentUpon>202307071415480_mg6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307071709060_mg10.resx">
+      <DependentUpon>202307071709060_mg10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307071713478_mg11.resx">
+      <DependentUpon>202307071713478_mg11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307071717481_mg1.resx">
+      <DependentUpon>202307071717481_mg1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307071722507_mg13.resx">
+      <DependentUpon>202307071722507_mg13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307071724445_mg14.resx">
+      <DependentUpon>202307071724445_mg14.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

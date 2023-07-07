@@ -16,8 +16,8 @@ namespace CORE.Impl
         {
             using (UserDatabase db = new UserDatabase())
             {
-                //User u1 = new User() { Id = 1, Name = "Pera", Surname = "Peric", Username = "pera", Password = "222" };
-                //User u2 = new User() { Id = 2, Name = "Mika", Surname = "Mikic", Username = "mika", Password = "222" };
+                //User u1 = new User() { Name = "Pera", Surname = "Peric", Username = "pera", Password = "222" };
+                //User u2 = new User() { Name = "Mika", Surname = "Mikic", Username = "mika", Password = "222" };
 
                 //db.Users.Add(u1);
                 //db.Users.Add(u2);

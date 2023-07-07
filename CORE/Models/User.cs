@@ -22,4 +22,10 @@ namespace CORE.Models
 		[DataMember]
 		public string Password { get; set; }
 	}
+
+	public enum Role
+    {
+		WORKER,
+		ADMIN
+    }
 }
