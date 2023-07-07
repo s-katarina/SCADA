@@ -20,6 +20,8 @@ namespace CORE.Models
 		public AlarmType Type { get; set; }
 		[DataMember]
 		public double Limit { get; set; }
+		[DataMember]
+		public DateTime Timestamp { get; set; }
 
 		[ForeignKey("AnalogInput")]
 		public string InputTagName { get; set; }

@@ -143,6 +143,10 @@
     <Compile Include="Migrations\202307071724445_mg14.designer.cs">
       <DependentUpon>202307071724445_mg14.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202307072021325_alarmchang.cs" />
+    <Compile Include="Migrations\202307072021325_alarmchang.designer.cs">
+      <DependentUpon>202307072021325_alarmchang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Alarm.cs" />
     <Compile Include="Models\AnalogInput.cs" />
@@ -199,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202307071724445_mg14.resx">
       <DependentUpon>202307071724445_mg14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307072021325_alarmchang.resx">
+      <DependentUpon>202307072021325_alarmchang.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
