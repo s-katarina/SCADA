@@ -50,6 +50,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\DigitalInputServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -68,12 +73,26 @@
     <None Include="Connected Services\AnalogInputServiceRef\RTU.AnalogInputServiceRef.AnalogInput.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\DigitalInputServiceRef\DigitalInputService.wsdl" />
+    <None Include="Connected Services\DigitalInputServiceRef\DigitalInputService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DigitalInputServiceRef\DigitalInputService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DigitalInputServiceRef\DigitalInputService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DigitalInputServiceRef\RTU.DigitalInputServiceRef.DigitalInput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\AnalogInputServiceRef\" />
+    <WCFMetadataStorage Include="Connected Services\DigitalInputServiceRef\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\AnalogInputServiceRef\AnalogInputService.disco" />
@@ -86,6 +105,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\AnalogInputServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DigitalInputServiceRef\DigitalInputService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DigitalInputServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DigitalInputServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DigitalInputServiceRef\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
