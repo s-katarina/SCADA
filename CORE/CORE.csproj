@@ -73,18 +73,24 @@
   <ItemGroup>
     <Content Include="Impl\AnalogInputService.svc" />
     <Content Include="Impl\DigitalInputService.svc" />
+    <Content Include="Impl\UserService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\IODatabase.cs" />
+    <Compile Include="Database\UserDatabase.cs" />
     <Compile Include="Impl\AnalogInputService.svc.cs">
       <DependentUpon>AnalogInputService.svc</DependentUpon>
     </Compile>
     <Compile Include="Impl\DigitalInputService.svc.cs">
       <DependentUpon>DigitalInputService.svc</DependentUpon>
     </Compile>
+    <Compile Include="Impl\UserService.svc.cs">
+      <DependentUpon>UserService.svc</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\IAnalogInputService.cs" />
     <Compile Include="Interfaces\IDigitalInputService.cs" />
+    <Compile Include="Interfaces\IUserService.cs" />
     <Compile Include="Migrations\202307070650516_InitialCreate.cs" />
     <Compile Include="Migrations\202307070650516_InitialCreate.designer.cs">
       <DependentUpon>202307070650516_InitialCreate.cs</DependentUpon>
