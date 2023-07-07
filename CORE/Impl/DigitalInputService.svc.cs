@@ -23,7 +23,7 @@ namespace CORE.Impl
                 //    IOAddress = "5",
                 //    Description = "opis",
                 //    ScanTime = 5000,
-                //    IsScaning = true
+                //    IsScanning = true
                 //};
                 //db.DigitalInputs.Add(digitalInput);
                 //db.SaveChanges();

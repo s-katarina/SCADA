@@ -111,6 +111,10 @@
     <Compile Include="Migrations\202307070815523_mg5.designer.cs">
       <DependentUpon>202307070815523_mg5.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202307071415480_mg6.cs" />
+    <Compile Include="Migrations\202307071415480_mg6.designer.cs">
+      <DependentUpon>202307071415480_mg6.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Alarm.cs" />
     <Compile Include="Models\AnalogInput.cs" />
@@ -148,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202307070815523_mg5.resx">
       <DependentUpon>202307070815523_mg5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307071415480_mg6.resx">
+      <DependentUpon>202307071415480_mg6.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

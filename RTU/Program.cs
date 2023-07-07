@@ -14,44 +14,81 @@ namespace RTU
         static AnalogInputServiceClient aisClient = new AnalogInputServiceClient();
         static DigitalInputServiceClient disClient = new DigitalInputServiceClient();
 
+        static Dictionary<string, Thread> inputs = new Dictionary<string, Thread>();
+        static Dictionary<string, ManualResetEvent> waits = new Dictionary<string, ManualResetEvent>();
+
         static void Main(string[] args)
         {
             Console.WriteLine("RTU is sending data...");
 
             IEnumerable<AnalogInput> analogInputs = aisClient.GetAll();
             IEnumerable<DigitalInput> digitalInputs = disClient.GetAll();
+            FillDicts(analogInputs, digitalInputs);
 
+            while (true)
+            {
+                IEnumerable<AnalogInput> aInputs = aisClient.GetAll();
+                IEnumerable<DigitalInput> dInputs = disClient.GetAll();
+
+                foreach (AnalogInput analogInput in aInputs)
+                {
+                    if (!inputs.ContainsKey(analogInput.TagName) && analogInput.Driver == AnalogInputServiceRef.DriverType.REAL)
+                    {
+                        inputs.Add(analogInput.TagName, new Thread(() => SendAnalog(analogInput)));
+                        waits.Add(analogInput.TagName, new ManualResetEvent(false));
+                        inputs[analogInput.TagName].Start();
+                    }
+
+                    if (analogInput.IsScanning)
+                        waits[analogInput.TagName].Set();
+                    else
+                        waits[analogInput.TagName].Reset();
+                }
+
+                foreach (DigitalInput digitalInput in dInputs)
+                {
+                    if (!inputs.ContainsKey(digitalInput.TagName) && digitalInput.Driver == DigitalInputServiceRef.DriverType.REAL)
+                    {
+                        inputs.Add(digitalInput.TagName, new Thread(() => SendDigital(digitalInput)));
+                        waits.Add(digitalInput.TagName, new ManualResetEvent(false));
+                        inputs[digitalInput.TagName].Start();
+                    }
+
+                    if (digitalInput.IsScanning)
+                        waits[digitalInput.TagName].Set();
+                    else
+                        waits[digitalInput.TagName].Reset();
+                }
+            }
+        }
+
+        static void FillDicts(IEnumerable<AnalogInput> analogInputs, IEnumerable<DigitalInput> digitalInputs)
+        {
             foreach (AnalogInput analogInput in analogInputs)
             {
                 if (analogInput.Driver != AnalogInputServiceRef.DriverType.REAL)
                     continue;
-
-                Thread t = new Thread(() =>
-                {
-                    SendAnalog(analogInput);
-                });
-                t.Start();
+                inputs.Add(analogInput.TagName, new Thread(() => SendAnalog(analogInput)));
+                waits.Add(analogInput.TagName, new ManualResetEvent(false));
+                inputs[analogInput.TagName].Start();
             }
 
             foreach (DigitalInput digitalInput in digitalInputs)
             {
                 if (digitalInput.Driver != DigitalInputServiceRef.DriverType.REAL)
                     continue;
-
-                Thread t = new Thread(() =>
-                {
-                    SendDigital(digitalInput);
-                });
-                t.Start();
+                inputs.Add(digitalInput.TagName, new Thread(() => SendDigital(digitalInput)));
+                waits.Add(digitalInput.TagName, new ManualResetEvent(false));
+                inputs[digitalInput.TagName].Start();
             }
-
-            Console.ReadKey();
         }
 
         static void SendAnalog(AnalogInput analogInput)
         {
             while (true)
             {
+                waits[analogInput.TagName].WaitOne();
+
                 double value = GenerateDouble();
                 aisClient.SendFromRTU(analogInput.IOAddress, value);
                 Console.WriteLine($"Tag {analogInput.TagName}, Adress {analogInput.IOAddress}, Value {value}");
@@ -64,6 +101,8 @@ namespace RTU
         {
             while (true)
             {
+                waits[digitalInput.TagName].WaitOne();
+
                 bool value = GenerateBool();
                 disClient.SendFromRTU(digitalInput.IOAddress, value);
                 Console.WriteLine($"Tag {digitalInput.TagName}, Adress {digitalInput.IOAddress}, Value {value}");

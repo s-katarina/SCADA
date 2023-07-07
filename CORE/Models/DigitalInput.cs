@@ -22,6 +22,6 @@ namespace CORE.Models
 		[DataMember]
 		public int ScanTime { get; set; }
 		[DataMember]
-		public bool IsScaning { get; set; }
+		public bool IsScanning { get; set; }
 	}
 }

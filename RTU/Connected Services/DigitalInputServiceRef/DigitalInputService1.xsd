@@ -11,7 +11,7 @@
       <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Driver" type="tns:DriverType" />
       <xs:element minOccurs="0" name="IOAddress" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="IsScaning" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsScanning" type="xs:boolean" />
       <xs:element minOccurs="0" name="ScanTime" type="xs:int" />
       <xs:element minOccurs="0" name="TagName" nillable="true" type="xs:string" />
     </xs:sequence>

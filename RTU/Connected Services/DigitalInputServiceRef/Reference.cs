@@ -32,7 +32,7 @@ namespace RTU.DigitalInputServiceRef {
         private string IOAddressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool IsScaningField;
+        private bool IsScanningField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ScanTimeField;
@@ -90,14 +90,14 @@ namespace RTU.DigitalInputServiceRef {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool IsScaning {
+        public bool IsScanning {
             get {
-                return this.IsScaningField;
+                return this.IsScanningField;
             }
             set {
-                if ((this.IsScaningField.Equals(value) != true)) {
-                    this.IsScaningField = value;
-                    this.RaisePropertyChanged("IsScaning");
+                if ((this.IsScanningField.Equals(value) != true)) {
+                    this.IsScanningField = value;
+                    this.RaisePropertyChanged("IsScanning");
                 }
             }
         }
