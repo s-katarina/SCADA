@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Web;
@@ -9,6 +11,7 @@ namespace CORE.Models
 	[DataContract]
 	public class Alarm
 	{
+		[Key]
 		[DataMember]
 		public int Id{ get; set; }
 		[DataMember]
@@ -17,6 +20,9 @@ namespace CORE.Models
 		public AlarmType Type { get; set; }
 		[DataMember]
 		public double Limit { get; set; }
+
+		[ForeignKey("AnalogInput")]
+		public string InputTagName { get; set; }
 		[DataMember]
 		public AnalogInput AnalogInput { get; set; }
 

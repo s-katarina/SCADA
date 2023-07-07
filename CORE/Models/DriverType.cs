@@ -7,6 +7,7 @@ namespace CORE.Models
 {
 	public enum DriverType
 	{
-
+		SIM,
+		REAL
 	}
 }

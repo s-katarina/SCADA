@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Web;
@@ -9,7 +10,7 @@ namespace CORE.Models
 	[DataContract]
 	public class User
 	{
-
+		[Key]
 		[DataMember]
 		public int Id { get; set; }
 		[DataMember]

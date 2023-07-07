@@ -1,6 +1,7 @@
 # Ignore build and output directories
 **/bin/
 **/obj/
+**/App_Data
 
 # Ignore user-specific files
 *.user

@@ -80,6 +80,27 @@
       <DependentUpon>AnalogInputService.svc</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IAnalogInputService.cs" />
+    <Compile Include="Migrations\202307070650516_InitialCreate.cs" />
+    <Compile Include="Migrations\202307070650516_InitialCreate.designer.cs">
+      <DependentUpon>202307070650516_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307070800129_mig1.cs" />
+    <Compile Include="Migrations\202307070800129_mig1.designer.cs">
+      <DependentUpon>202307070800129_mig1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307070804485_mg2.cs" />
+    <Compile Include="Migrations\202307070804485_mg2.designer.cs">
+      <DependentUpon>202307070804485_mg2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307070808041_mg3.cs" />
+    <Compile Include="Migrations\202307070808041_mg3.designer.cs">
+      <DependentUpon>202307070808041_mg3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307070815523_mg5.cs" />
+    <Compile Include="Migrations\202307070815523_mg5.designer.cs">
+      <DependentUpon>202307070815523_mg5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Alarm.cs" />
     <Compile Include="Models\AnalogInput.cs" />
     <Compile Include="Models\AnalogOutput.cs" />
@@ -89,7 +110,9 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
@@ -98,6 +121,23 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202307070650516_InitialCreate.resx">
+      <DependentUpon>202307070650516_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307070800129_mig1.resx">
+      <DependentUpon>202307070800129_mig1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307070804485_mg2.resx">
+      <DependentUpon>202307070804485_mg2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307070808041_mg3.resx">
+      <DependentUpon>202307070808041_mg3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307070815523_mg5.resx">
+      <DependentUpon>202307070815523_mg5.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

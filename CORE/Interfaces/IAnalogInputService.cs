@@ -12,6 +12,9 @@ namespace CORE.Interfaces
     public interface IAnalogInputService
     {
         [OperationContract]
-        List<AnalogInput> GetAll();
+        IEnumerable<AnalogInput> GetAll();
+
+        [OperationContract]
+        void SendFromRTU(string IOAdress, double value);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Web;
@@ -9,6 +10,7 @@ namespace CORE.Models
 	[DataContract]
 	public class DigitalInput
 	{
+		[Key]
 		[DataMember]
 		public string TagName { get; set; }
 		[DataMember]
