@@ -6,7 +6,6 @@
         xmlns:local="clr-namespace:Trending"
         mc:Ignorable="d"
         Title="Login" Height="450" Width="800">
-
     <Grid>
         <StackPanel MaxWidth="300">
             <TextBlock Text="Username" Margin="0 100 0 5" />

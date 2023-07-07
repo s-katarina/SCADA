@@ -11,7 +11,7 @@ using CORE.Database;
 
 namespace CORE.Impl
 {
-    public class AnalogInputService : IAnalogInputService
+    public class AnalogInputService : IAnalogInputService, IScanService
     {
         public IEnumerable<AnalogInput> GetAll()
         {
@@ -36,7 +36,7 @@ namespace CORE.Impl
             }
         }
 
-        void IAnalogInputService.SendFromRTU(string IOAdress, double value)
+        public void SendFromRTU(string IOAdress, double value)
         {
             System.Diagnostics.Debug.WriteLine($"Adress {IOAdress}, Value {value}");
 
@@ -61,6 +61,9 @@ namespace CORE.Impl
                 db.Records.Add(new Record() { IOAdress = IOAdress, Timestamp = DateTime.Now, Value = value });
                 db.SaveChanges();
             }
+
+            //IScanCallback proxy = OperationContext.Current.GetCallbackChannel<IScanCallback>();
+            //proxy.ScanDone(CurrentValues.current);
         }
     }
 }

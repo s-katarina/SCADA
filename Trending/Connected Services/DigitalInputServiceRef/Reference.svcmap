@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="be574aa2-d5b5-411a-a8f3-0fa1bb59f555" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:4062/Impl/DigitalInputService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DigitalInputService.wsdl" MetadataType="Wsdl" ID="caf9fe38-e9ef-41e9-bb4e-ea14f5fc020e" SourceId="1" SourceUrl="http://localhost:4062/Impl/DigitalInputService.svc?wsdl" />
+    <MetadataFile FileName="DigitalInputService.xsd" MetadataType="Schema" ID="b84d22b1-2d6b-452b-a69a-216d66f4fd01" SourceId="1" SourceUrl="http://localhost:4062/Impl/DigitalInputService.svc?xsd=xsd1" />
+    <MetadataFile FileName="DigitalInputService1.xsd" MetadataType="Schema" ID="be18ce1f-b8a9-461f-9b1f-f286aee12388" SourceId="1" SourceUrl="http://localhost:4062/Impl/DigitalInputService.svc?xsd=xsd2" />
+    <MetadataFile FileName="DigitalInputService.disco" MetadataType="Disco" ID="2af52746-ef40-41f5-b0d0-b544717e2162" SourceId="1" SourceUrl="http://localhost:4062/Impl/DigitalInputService.svc?disco" />
+    <MetadataFile FileName="DigitalInputService2.xsd" MetadataType="Schema" ID="e2e76afb-30be-4865-b8b2-e1afcb4ae7c5" SourceId="1" SourceUrl="http://localhost:4062/Impl/DigitalInputService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

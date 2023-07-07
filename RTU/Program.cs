@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using RTU.AnalogInputServiceRef;
 using RTU.DigitalInputServiceRef;
 using System.Threading;
+using System.ServiceModel;
 
 namespace RTU
 {

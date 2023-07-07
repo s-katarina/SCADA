@@ -11,9 +11,13 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using RecordServiceRef;
-using AnalogInputServiceRef;
-using DigitalInputServiceRef;
+using Trending.AnalogInputServiceRef;
+using Trending.DigitalInputServiceRef;
+using Trending.RecordServiceRef;
+using Trending.Models;
+using System.ServiceModel;
+using System.Threading;
+using System.Collections.ObjectModel;
 
 namespace Trending
 {
@@ -22,15 +26,16 @@ namespace Trending
     /// </summary>
     public partial class TrendingWindow : Window
     {
-        public AnalogInputServiceClient analogClient = new AnalogInputServiceClient();
-        public DigitalInputServiceClient digitalClient = new DigitalInputServiceClient();
-        public RecordServiceClient recordClient = new RecordServiceClient();
+        public static AnalogInputServiceClient analogClient = new AnalogInputServiceClient();
+        public static DigitalInputServiceClient digitalClient = new DigitalInputServiceClient();
+        public static RecordServiceClient recordClient = new RecordServiceClient();
+        public static ScanServiceClient scanClient = new ScanServiceClient(new InstanceContext(new AnalogScanArrivedCallback()));
 
         public static IEnumerable<AnalogInput> analogInputs;
         public static IEnumerable<DigitalInput> digitalInputs;
         public static Dictionary<string, double> current;
 
-        public static List<InputTableRecord> InputTableRecords { get; set; }
+        public static ObservableCollection<InputTableRecord> InputTableRecords { get; set; }
 
         public TrendingWindow()
         {
@@ -39,15 +44,24 @@ namespace Trending
             analogInputs = analogClient.GetAll();
             digitalInputs = digitalClient.GetAll();
             current = recordClient.GetCurrent();
+            InputTableRecords = new ObservableCollection<InputTableRecord>();
 
-            InputTableRecords = MakeInputTableRecords(analogInputs, digitalInputs, current);
+            MakeInputTableRecords(analogInputs, digitalInputs, current);
 
             DataContext = this;
+
+            RefreshTable();
         }
 
-        public static List<InputTableRecord> MakeInputTableRecords(IEnumerable<AnalogInput> analogInputs, IEnumerable<DigitalInput> digitalInputs, Dictionary<string, double> current)
+        public static void RefreshTable()
         {
-            List<InputTableRecord> ret = new List<InputTableRecord>();
+                current = recordClient.GetCurrent();
+                MakeInputTableRecords(analogInputs, digitalInputs, current);
+        }
+
+        public static void MakeInputTableRecords(IEnumerable<AnalogInput> analogInputs, IEnumerable<DigitalInput> digitalInputs, Dictionary<string, double> current)
+        {
+            InputTableRecords.Clear();
 
             foreach (AnalogInput analogInput in analogInputs)
             {
@@ -56,7 +70,7 @@ namespace Trending
                 if (current.ContainsKey(analogInput.IOAddress))
                     value = current[analogInput.IOAddress];
 
-                ret.Add(new InputTableRecord() { TagName = analogInput.TagName, IOAddress = analogInput.IOAddress, IsScanning = analogInput.IsScanning, Value = value, Type = "Analog" });
+                InputTableRecords.Add(new InputTableRecord() { TagName = analogInput.TagName, IOAddress = analogInput.IOAddress, IsScanning = analogInput.IsScanning, Value = value, Type = "Analog" });
             }
 
 
@@ -67,10 +81,18 @@ namespace Trending
                 if (current.ContainsKey(digitalInput.IOAddress))
                     value = current[digitalInput.IOAddress];
 
-                ret.Add(new InputTableRecord() { TagName = digitalInput.TagName, IOAddress = digitalInput.IOAddress, IsScanning = digitalInput.IsScanning, Value = value, Type = "Digital" });
+                InputTableRecords.Add(new InputTableRecord() { TagName = digitalInput.TagName, IOAddress = digitalInput.IOAddress, IsScanning = digitalInput.IsScanning, Value = value, Type = "Digital" });
             }
 
-            return ret;
+        }
+    }
+
+    public class AnalogScanArrivedCallback : IScanServiceCallback
+    {
+        public void ScanDone(Dictionary<string, double> current)
+        {
+            System.Diagnostics.Debug.WriteLine("nesto");
+            System.Diagnostics.Debug.WriteLine(current);
         }
     }
 }

@@ -97,6 +97,7 @@
     <Compile Include="Interfaces\IAnalogInputService.cs" />
     <Compile Include="Interfaces\IDigitalInputService.cs" />
     <Compile Include="Interfaces\IRecordService.cs" />
+    <Compile Include="Interfaces\IScanService.cs" />
     <Compile Include="Interfaces\IUserService.cs" />
     <Compile Include="Migrations\202307070650516_InitialCreate.cs" />
     <Compile Include="Migrations\202307070650516_InitialCreate.designer.cs">

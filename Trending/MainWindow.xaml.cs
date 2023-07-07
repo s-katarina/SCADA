@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using UserServiceRef;
+using Trending.UserServiceRef;
 
 namespace Trending
 {
@@ -37,7 +37,6 @@ namespace Trending
             {
                 TrendingWindow trending = new TrendingWindow();
                 trending.Show();
-                Close();
             }
             else
             {
