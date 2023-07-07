@@ -52,7 +52,7 @@
   </wsdl:binding>
   <wsdl:service name="DigitalInputService">
     <wsdl:port name="BasicHttpBinding_IDigitalInputService" binding="tns:BasicHttpBinding_IDigitalInputService">
-      <soap:address location="http://localhost:4062/Impl/DigitalInputService.svc" />
+      <soap:address location="http://localhost:4062/Impl/DigitalInputService.svc/DigitalInput" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

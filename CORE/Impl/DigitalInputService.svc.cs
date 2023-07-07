@@ -35,6 +35,11 @@ namespace CORE.Impl
         {
             System.Diagnostics.Debug.WriteLine($"Adress {IOAdress}, Value {value}");
 
+            if (CurrentValues.current.ContainsKey(IOAdress))
+                CurrentValues.current[IOAdress] = value ? 1 : 0;
+            else
+                CurrentValues.current.Add(IOAdress, value ? 1 : 0);
+
             using (RecordDatabase db = new RecordDatabase())
             {
                 db.Records.Add(new Record() { IOAdress = IOAdress, Timestamp = DateTime.Now, Value = value ? 1 : 0 });

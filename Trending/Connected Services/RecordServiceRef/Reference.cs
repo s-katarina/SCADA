@@ -7,30 +7,30 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UserServiceRef
+namespace RecordServiceRef
 {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="UserServiceRef.IUserService")]
-    public interface IUserService
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="RecordServiceRef.IRecordService")]
+    public interface IRecordService
     {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/Login", ReplyAction="http://tempuri.org/IUserService/LoginResponse")]
-        bool Login(string username, string password);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordService/GetCurrent", ReplyAction="http://tempuri.org/IRecordService/GetCurrentResponse")]
+        System.Collections.Generic.Dictionary<string, double> GetCurrent();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/Login", ReplyAction="http://tempuri.org/IUserService/LoginResponse")]
-        System.Threading.Tasks.Task<bool> LoginAsync(string username, string password);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordService/GetCurrent", ReplyAction="http://tempuri.org/IRecordService/GetCurrentResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<string, double>> GetCurrentAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    public interface IUserServiceChannel : UserServiceRef.IUserService, System.ServiceModel.IClientChannel
+    public interface IRecordServiceChannel : RecordServiceRef.IRecordService, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    public partial class UserServiceClient : System.ServiceModel.ClientBase<UserServiceRef.IUserService>, UserServiceRef.IUserService
+    public partial class RecordServiceClient : System.ServiceModel.ClientBase<RecordServiceRef.IRecordService>, RecordServiceRef.IRecordService
     {
         
         /// <summary>
@@ -40,47 +40,47 @@ namespace UserServiceRef
         /// <param name="clientCredentials">The client credentials</param>
         static partial void ConfigureEndpoint(System.ServiceModel.Description.ServiceEndpoint serviceEndpoint, System.ServiceModel.Description.ClientCredentials clientCredentials);
         
-        public UserServiceClient() : 
-                base(UserServiceClient.GetDefaultBinding(), UserServiceClient.GetDefaultEndpointAddress())
+        public RecordServiceClient() : 
+                base(RecordServiceClient.GetDefaultBinding(), RecordServiceClient.GetDefaultEndpointAddress())
         {
-            this.Endpoint.Name = EndpointConfiguration.BasicHttpBinding_IUserService.ToString();
+            this.Endpoint.Name = EndpointConfiguration.BasicHttpBinding_IRecordService.ToString();
             ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
         }
         
-        public UserServiceClient(EndpointConfiguration endpointConfiguration) : 
-                base(UserServiceClient.GetBindingForEndpoint(endpointConfiguration), UserServiceClient.GetEndpointAddress(endpointConfiguration))
-        {
-            this.Endpoint.Name = endpointConfiguration.ToString();
-            ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
-        }
-        
-        public UserServiceClient(EndpointConfiguration endpointConfiguration, string remoteAddress) : 
-                base(UserServiceClient.GetBindingForEndpoint(endpointConfiguration), new System.ServiceModel.EndpointAddress(remoteAddress))
+        public RecordServiceClient(EndpointConfiguration endpointConfiguration) : 
+                base(RecordServiceClient.GetBindingForEndpoint(endpointConfiguration), RecordServiceClient.GetEndpointAddress(endpointConfiguration))
         {
             this.Endpoint.Name = endpointConfiguration.ToString();
             ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
         }
         
-        public UserServiceClient(EndpointConfiguration endpointConfiguration, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(UserServiceClient.GetBindingForEndpoint(endpointConfiguration), remoteAddress)
+        public RecordServiceClient(EndpointConfiguration endpointConfiguration, string remoteAddress) : 
+                base(RecordServiceClient.GetBindingForEndpoint(endpointConfiguration), new System.ServiceModel.EndpointAddress(remoteAddress))
         {
             this.Endpoint.Name = endpointConfiguration.ToString();
             ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
         }
         
-        public UserServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public RecordServiceClient(EndpointConfiguration endpointConfiguration, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(RecordServiceClient.GetBindingForEndpoint(endpointConfiguration), remoteAddress)
+        {
+            this.Endpoint.Name = endpointConfiguration.ToString();
+            ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
+        }
+        
+        public RecordServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress)
         {
         }
         
-        public bool Login(string username, string password)
+        public System.Collections.Generic.Dictionary<string, double> GetCurrent()
         {
-            return base.Channel.Login(username, password);
+            return base.Channel.GetCurrent();
         }
         
-        public System.Threading.Tasks.Task<bool> LoginAsync(string username, string password)
+        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<string, double>> GetCurrentAsync()
         {
-            return base.Channel.LoginAsync(username, password);
+            return base.Channel.GetCurrentAsync();
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()
@@ -95,7 +95,7 @@ namespace UserServiceRef
         
         private static System.ServiceModel.Channels.Binding GetBindingForEndpoint(EndpointConfiguration endpointConfiguration)
         {
-            if ((endpointConfiguration == EndpointConfiguration.BasicHttpBinding_IUserService))
+            if ((endpointConfiguration == EndpointConfiguration.BasicHttpBinding_IRecordService))
             {
                 System.ServiceModel.BasicHttpBinding result = new System.ServiceModel.BasicHttpBinding();
                 result.MaxBufferSize = int.MaxValue;
@@ -109,27 +109,27 @@ namespace UserServiceRef
         
         private static System.ServiceModel.EndpointAddress GetEndpointAddress(EndpointConfiguration endpointConfiguration)
         {
-            if ((endpointConfiguration == EndpointConfiguration.BasicHttpBinding_IUserService))
+            if ((endpointConfiguration == EndpointConfiguration.BasicHttpBinding_IRecordService))
             {
-                return new System.ServiceModel.EndpointAddress("http://localhost:4062/Impl/UserService.svc/User");
+                return new System.ServiceModel.EndpointAddress("http://localhost:4062/Impl/RecordService.svc/Record");
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }
         
         private static System.ServiceModel.Channels.Binding GetDefaultBinding()
         {
-            return UserServiceClient.GetBindingForEndpoint(EndpointConfiguration.BasicHttpBinding_IUserService);
+            return RecordServiceClient.GetBindingForEndpoint(EndpointConfiguration.BasicHttpBinding_IRecordService);
         }
         
         private static System.ServiceModel.EndpointAddress GetDefaultEndpointAddress()
         {
-            return UserServiceClient.GetEndpointAddress(EndpointConfiguration.BasicHttpBinding_IUserService);
+            return RecordServiceClient.GetEndpointAddress(EndpointConfiguration.BasicHttpBinding_IRecordService);
         }
         
         public enum EndpointConfiguration
         {
             
-            BasicHttpBinding_IUserService,
+            BasicHttpBinding_IRecordService,
         }
     }
 }

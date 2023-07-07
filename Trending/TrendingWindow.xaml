@@ -7,6 +7,14 @@
         mc:Ignorable="d"
         Title="TrendingWindow" Height="450" Width="800">
     <Grid>
-        
+        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" ItemsSource="{Binding InputTableRecords}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Tag Name" Binding="{Binding TagName}" />
+                <DataGridTextColumn Header="IO Address" Binding="{Binding IOAddress}" />
+                <DataGridCheckBoxColumn Header="Is Scanning" Binding="{Binding IsScanning}" />
+                <DataGridTextColumn Header="Value" Binding="{Binding Value}" />
+                <DataGridTextColumn Header="Type" Binding="{Binding Type}" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
