@@ -80,7 +80,6 @@
     <Compile Include="Models\DigitalInput.cs" />
     <Compile Include="Models\DigitalOutput.cs" />
     <Compile Include="Models\DriverType.cs" />
-    <Compile Include="Models\Input.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
