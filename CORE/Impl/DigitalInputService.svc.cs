@@ -16,17 +16,17 @@ namespace CORE.Impl
         {
             using (IODatabase db = new IODatabase())
             {
-                DigitalInput digitalInput = new DigitalInput()
-                {
-                    TagName = "tag20",
-                    Driver = DriverType.REAL,
-                    IOAddress = "5",
-                    Description = "opis",
-                    ScanTime = 5000,
-                    IsScaning = true
-                };
-                db.DigitalInputs.Add(digitalInput);
-                db.SaveChanges();
+                //DigitalInput digitalInput = new DigitalInput()
+                //{
+                //    TagName = "tag20",
+                //    Driver = DriverType.REAL,
+                //    IOAddress = "5",
+                //    Description = "opis",
+                //    ScanTime = 5000,
+                //    IsScaning = true
+                //};
+                //db.DigitalInputs.Add(digitalInput);
+                //db.SaveChanges();
                 return db.DigitalInputs.ToList();
             }
         }
