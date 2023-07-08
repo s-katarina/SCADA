@@ -440,11 +440,11 @@ namespace ReportManager.AnalogInputServiceRef {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/SendFromRTU", ReplyAction="http://tempuri.org/IAnalogInputService/SendFromRTUResponse")]
         System.Threading.Tasks.Task SendFromRTUAsync(string IOAdress, double value);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/GetRecordAlarmsInPeriod", ReplyAction="http://tempuri.org/IAnalogInputService/GetRecordAlarmsInPeriodResponse")]
-        ReportManager.AnalogInputServiceRef.RecordAlarm[] GetRecordAlarmsInPeriod(System.DateTime low, System.DateTime high);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/GetAlarmsByTime", ReplyAction="http://tempuri.org/IAnalogInputService/GetAlarmsByTimeResponse")]
+        ReportManager.AnalogInputServiceRef.RecordAlarm[] GetAlarmsByTime(System.DateTime low, System.DateTime high);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/GetRecordAlarmsInPeriod", ReplyAction="http://tempuri.org/IAnalogInputService/GetRecordAlarmsInPeriodResponse")]
-        System.Threading.Tasks.Task<ReportManager.AnalogInputServiceRef.RecordAlarm[]> GetRecordAlarmsInPeriodAsync(System.DateTime low, System.DateTime high);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/GetAlarmsByTime", ReplyAction="http://tempuri.org/IAnalogInputService/GetAlarmsByTimeResponse")]
+        System.Threading.Tasks.Task<ReportManager.AnalogInputServiceRef.RecordAlarm[]> GetAlarmsByTimeAsync(System.DateTime low, System.DateTime high);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/GetRecordAlarmsByPriority", ReplyAction="http://tempuri.org/IAnalogInputService/GetRecordAlarmsByPriorityResponse")]
         ReportManager.AnalogInputServiceRef.RecordAlarm[] GetRecordAlarmsByPriority(ReportManager.AnalogInputServiceRef.Priority priority);
@@ -496,12 +496,12 @@ namespace ReportManager.AnalogInputServiceRef {
             return base.Channel.SendFromRTUAsync(IOAdress, value);
         }
         
-        public ReportManager.AnalogInputServiceRef.RecordAlarm[] GetRecordAlarmsInPeriod(System.DateTime low, System.DateTime high) {
-            return base.Channel.GetRecordAlarmsInPeriod(low, high);
+        public ReportManager.AnalogInputServiceRef.RecordAlarm[] GetAlarmsByTime(System.DateTime low, System.DateTime high) {
+            return base.Channel.GetAlarmsByTime(low, high);
         }
         
-        public System.Threading.Tasks.Task<ReportManager.AnalogInputServiceRef.RecordAlarm[]> GetRecordAlarmsInPeriodAsync(System.DateTime low, System.DateTime high) {
-            return base.Channel.GetRecordAlarmsInPeriodAsync(low, high);
+        public System.Threading.Tasks.Task<ReportManager.AnalogInputServiceRef.RecordAlarm[]> GetAlarmsByTimeAsync(System.DateTime low, System.DateTime high) {
+            return base.Channel.GetAlarmsByTimeAsync(low, high);
         }
         
         public ReportManager.AnalogInputServiceRef.RecordAlarm[] GetRecordAlarmsByPriority(ReportManager.AnalogInputServiceRef.Priority priority) {

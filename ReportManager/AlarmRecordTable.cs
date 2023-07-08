@@ -9,7 +9,6 @@ namespace ReportManager
 {
     public class AlarmRecordTable
     {
-        public string TagName { get; set; }
         public DateTime Timestamp { get; set; }
         public Priority Priority { get; set; }
         public AlarmType Type { get; set; }

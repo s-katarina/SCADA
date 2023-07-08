@@ -10,7 +10,6 @@
         <StackPanel>
             <DataGrid x:Name="recordAlarmDataGrid" AutoGenerateColumns="False" ItemsSource="{Binding RecordsAlarm}" Height="200">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Tag name" Binding="{Binding TagName}" />
                     <DataGridTextColumn Header="Timestamp" Binding="{Binding Timestamp}" />
                     <DataGridTextColumn Header="Priority" Binding="{Binding Priority}" />
                     <DataGridTextColumn Header="Type" Binding="{Binding Type}" />
@@ -22,6 +21,18 @@
                 <TextBlock Text="Alarm priority (allowed: 1, 2, 3)" />
                 <TextBox MinWidth="150" Margin="20 0 20 0" x:Name="txtPriority" />
                 <Button Content="Records for priority" MaxWidth="150" MaxHeight="30" Click="RecordsForPriority_Click" HorizontalAlignment="Left" />
+            </StackPanel>
+
+            <StackPanel Margin="15 15 0 0" Orientation="Vertical">
+                <TextBlock Text="Date format example: 15.7.2023. 16:44:12" />
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Start date" />
+                    <TextBox MinWidth="150" Margin="20 0 20 0" x:Name="txtStartDate" />
+                    <TextBlock Text="End date" />
+                    <TextBox MinWidth="150" Margin="20 0 20 0" x:Name="txtEndDate" />
+                    <Button Content="Records for period" MaxWidth="150" MaxHeight="30" Click="RecordsForPeriod_Click" HorizontalAlignment="Left" />
+                    <TextBlock Foreground="Red" x:Name="message" Margin="10 0 0 0" />
+                </StackPanel>
             </StackPanel>
         </StackPanel>
     </Grid>

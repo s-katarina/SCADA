@@ -82,24 +82,19 @@ namespace CORE.Impl
             //proxy.ScanDone(CurrentValues.current);
         }
 
+        IEnumerable<RecordAlarm> IAnalogInputService.GetAlarmsByTime(DateTime low, DateTime high)
+        {
+            using (IODatabase db = new IODatabase())
+            {
+                return db.RecordAlarms.Include(x => x.Alarm).Where(record => (record.Alarm.Priority == Priority.FIRST || record.Alarm.Priority == Priority.SECOND || record.Alarm.Priority == Priority.THIRD) && record.Timestamp <= high && record.Timestamp >= low).ToList();
+            }
+        }
+
         IEnumerable<RecordAlarm> IAnalogInputService.GetRecordAlarmsByPriority(Priority priority)
         {
             using (IODatabase db = new IODatabase())
             {
-                List<RecordAlarm> ret = db.RecordAlarms.Where(record => record.Alarm.Priority == priority).ToList();
-
-                foreach (RecordAlarm r in ret)
-                    System.Diagnostics.Debug.WriteLine(r.ToString());
-
-                return ret;
-            }
-        }
-
-        IEnumerable<RecordAlarm> IAnalogInputService.GetRecordAlarmsInPeriod(DateTime low, DateTime high)
-        {
-            using (IODatabase db = new IODatabase())
-            {
-                return db.RecordAlarms.Where(record => record.Timestamp >= low && record.Timestamp <= high).ToList();
+                return db.RecordAlarms.Include(x => x.Alarm).Where(record => record.Alarm.Priority == priority).ToList();
             }
         }
     }

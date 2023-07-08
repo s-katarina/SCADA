@@ -54,9 +54,41 @@ namespace ReportManager
 
             List<RecordAlarm> records = analogClient.GetRecordAlarmsByPriority(priority).ToList();
 
-            System.Diagnostics.Debug.WriteLine(records[0].Alarm == null);
-            //foreach (RecordAlarm r in records)
-            //    RecordsAlarm.Add(new AlarmRecordTable() { TagName = r.Alarm.AnalogInput.TagName, Priority = r.Alarm.Priority, Timestamp = r.Timestamp, Limit = r.Alarm.Limit, Type = r.Alarm.Type });
+            foreach (RecordAlarm r in records)
+                RecordsAlarm.Add(new AlarmRecordTable() { Priority = r.Alarm.Priority, Timestamp = r.Timestamp, Limit = r.Alarm.Limit, Type = r.Alarm.Type });
+        }
+
+        private void RecordsForPeriod_Click(object sender, RoutedEventArgs e)
+        {
+            RecordsAlarm.Clear();
+
+            string start = txtStartDate.Text;
+            string end = txtEndDate.Text;
+            if (start.Length == 0 || end.Length == 0)
+                return;
+
+            DateTime startDate;
+            DateTime endDate;
+            bool parsed;
+
+            parsed = DateTime.TryParse(start, out startDate);
+            if (!parsed)
+            {
+                message.Text = "Wrong format for start date.";
+                return;
+            }
+
+            parsed = DateTime.TryParse(end, out endDate);
+            if (!parsed)
+            {
+                message.Text = "Wrong format for end date.";
+                return;
+            }
+
+            List<RecordAlarm> records = analogClient.GetAlarmsByTime(startDate, endDate).ToList();
+
+            foreach (RecordAlarm r in records)
+                RecordsAlarm.Add(new AlarmRecordTable() { Priority = r.Alarm.Priority, Timestamp = r.Timestamp, Limit = r.Alarm.Limit, Type = r.Alarm.Type });
         }
     }
 }

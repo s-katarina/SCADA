@@ -195,6 +195,10 @@
     <Compile Include="Migrations\202307081216424_lksd.designer.cs">
       <DependentUpon>202307081216424_lksd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202307081353235_ju.cs" />
+    <Compile Include="Migrations\202307081353235_ju.designer.cs">
+      <DependentUpon>202307081353235_ju.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Alarm.cs" />
     <Compile Include="Models\AnalogInput.cs" />
@@ -291,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202307081216424_lksd.resx">
       <DependentUpon>202307081216424_lksd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307081353235_ju.resx">
+      <DependentUpon>202307081353235_ju.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
