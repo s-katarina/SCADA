@@ -31,7 +31,7 @@ namespace Trending
         public static RecordServiceClient recordClient = new RecordServiceClient();
         public static ScanServiceClient scanClient = new ScanServiceClient(new InstanceContext(new AnalogScanArrivedCallback()));
 
-        public static IEnumerable<AnalogInput> analogInputs;
+        public static IEnumerable<AnalogInputServiceRef.AnalogInput> analogInputs;
         public static IEnumerable<DigitalInput> digitalInputs;
         public static Dictionary<string, double> current;
 
@@ -55,15 +55,15 @@ namespace Trending
 
         public static void RefreshTable()
         {
-                current = recordClient.GetCurrent();
-                MakeInputTableRecords(analogInputs, digitalInputs, current);
+            current = recordClient.GetCurrent();
+            MakeInputTableRecords(analogInputs, digitalInputs, current);
         }
 
-        public static void MakeInputTableRecords(IEnumerable<AnalogInput> analogInputs, IEnumerable<DigitalInput> digitalInputs, Dictionary<string, double> current)
+        public static void MakeInputTableRecords(IEnumerable<AnalogInputServiceRef.AnalogInput> analogInputs, IEnumerable<DigitalInput> digitalInputs, Dictionary<string, double> current)
         {
             InputTableRecords.Clear();
 
-            foreach (AnalogInput analogInput in analogInputs)
+            foreach (AnalogInputServiceRef.AnalogInput analogInput in analogInputs)
             {
                 double value = 9999999;
 

@@ -224,9 +224,6 @@ namespace ReportManager.AnalogInputServiceRef {
         private ReportManager.AnalogInputServiceRef.Priority PriorityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime TimestampField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private ReportManager.AnalogInputServiceRef.AlarmType TypeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -287,19 +284,6 @@ namespace ReportManager.AnalogInputServiceRef {
                 if ((this.PriorityField.Equals(value) != true)) {
                     this.PriorityField = value;
                     this.RaisePropertyChanged("Priority");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime Timestamp {
-            get {
-                return this.TimestampField;
-            }
-            set {
-                if ((this.TimestampField.Equals(value) != true)) {
-                    this.TimestampField = value;
-                    this.RaisePropertyChanged("Timestamp");
                 }
             }
         }

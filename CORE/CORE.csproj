@@ -147,6 +147,38 @@
     <Compile Include="Migrations\202307072021325_alarmchang.designer.cs">
       <DependentUpon>202307072021325_alarmchang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202307080829590_alarm.cs" />
+    <Compile Include="Migrations\202307080829590_alarm.designer.cs">
+      <DependentUpon>202307080829590_alarm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307080854204_alarm4.cs" />
+    <Compile Include="Migrations\202307080854204_alarm4.designer.cs">
+      <DependentUpon>202307080854204_alarm4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307080857522_asdds.cs" />
+    <Compile Include="Migrations\202307080857522_asdds.designer.cs">
+      <DependentUpon>202307080857522_asdds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307080859228_fgh.cs" />
+    <Compile Include="Migrations\202307080859228_fgh.designer.cs">
+      <DependentUpon>202307080859228_fgh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307080901574_kk.cs" />
+    <Compile Include="Migrations\202307080901574_kk.designer.cs">
+      <DependentUpon>202307080901574_kk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307080904563_qwe.cs" />
+    <Compile Include="Migrations\202307080904563_qwe.designer.cs">
+      <DependentUpon>202307080904563_qwe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307080910421_hgj.cs" />
+    <Compile Include="Migrations\202307080910421_hgj.designer.cs">
+      <DependentUpon>202307080910421_hgj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307080918165_gr.cs" />
+    <Compile Include="Migrations\202307080918165_gr.designer.cs">
+      <DependentUpon>202307080918165_gr.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Alarm.cs" />
     <Compile Include="Models\AnalogInput.cs" />
@@ -206,6 +238,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202307072021325_alarmchang.resx">
       <DependentUpon>202307072021325_alarmchang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307080829590_alarm.resx">
+      <DependentUpon>202307080829590_alarm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307080854204_alarm4.resx">
+      <DependentUpon>202307080854204_alarm4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307080857522_asdds.resx">
+      <DependentUpon>202307080857522_asdds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307080859228_fgh.resx">
+      <DependentUpon>202307080859228_fgh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307080901574_kk.resx">
+      <DependentUpon>202307080901574_kk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307080904563_qwe.resx">
+      <DependentUpon>202307080904563_qwe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307080910421_hgj.resx">
+      <DependentUpon>202307080910421_hgj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307080918165_gr.resx">
+      <DependentUpon>202307080918165_gr.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

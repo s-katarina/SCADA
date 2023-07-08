@@ -79,4 +79,33 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetAlarmsInPeriod">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="low" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="high" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAlarmsInPeriodResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/CORE.Models" minOccurs="0" name="GetAlarmsInPeriodResult" nillable="true" type="q7:ArrayOfAlarmRecord" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAlarmsByPriority">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/CORE.Models" minOccurs="0" name="priority" type="q8:Priority" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAlarmsByPriorityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/CORE.Models" minOccurs="0" name="GetAlarmsByPriorityResult" nillable="true" type="q9:ArrayOfAlarmRecord" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

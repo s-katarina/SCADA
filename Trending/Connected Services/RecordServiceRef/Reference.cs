@@ -9,7 +9,513 @@
 //------------------------------------------------------------------------------
 
 namespace Trending.RecordServiceRef {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Record", Namespace="http://schemas.datacontract.org/2004/07/CORE.Models")]
+    [System.SerializableAttribute()]
+    public partial class Record : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IOAdressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime TimestampField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double ValueField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string IOAdress {
+            get {
+                return this.IOAdressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IOAdressField, value) != true)) {
+                    this.IOAdressField = value;
+                    this.RaisePropertyChanged("IOAdress");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Timestamp {
+            get {
+                return this.TimestampField;
+            }
+            set {
+                if ((this.TimestampField.Equals(value) != true)) {
+                    this.TimestampField = value;
+                    this.RaisePropertyChanged("Timestamp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Value {
+            get {
+                return this.ValueField;
+            }
+            set {
+                if ((this.ValueField.Equals(value) != true)) {
+                    this.ValueField = value;
+                    this.RaisePropertyChanged("Value");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AlarmRecord", Namespace="http://schemas.datacontract.org/2004/07/CORE.Models")]
+    [System.SerializableAttribute()]
+    public partial class AlarmRecord : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Trending.RecordServiceRef.Alarm AlarmField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime TimestampField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Trending.RecordServiceRef.Alarm Alarm {
+            get {
+                return this.AlarmField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AlarmField, value) != true)) {
+                    this.AlarmField = value;
+                    this.RaisePropertyChanged("Alarm");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Timestamp {
+            get {
+                return this.TimestampField;
+            }
+            set {
+                if ((this.TimestampField.Equals(value) != true)) {
+                    this.TimestampField = value;
+                    this.RaisePropertyChanged("Timestamp");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Alarm", Namespace="http://schemas.datacontract.org/2004/07/CORE.Models")]
+    [System.SerializableAttribute()]
+    public partial class Alarm : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Trending.RecordServiceRef.AnalogInput AnalogInputField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double LimitField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Trending.RecordServiceRef.Priority PriorityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Trending.RecordServiceRef.AlarmType TypeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Trending.RecordServiceRef.AnalogInput AnalogInput {
+            get {
+                return this.AnalogInputField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AnalogInputField, value) != true)) {
+                    this.AnalogInputField = value;
+                    this.RaisePropertyChanged("AnalogInput");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Limit {
+            get {
+                return this.LimitField;
+            }
+            set {
+                if ((this.LimitField.Equals(value) != true)) {
+                    this.LimitField = value;
+                    this.RaisePropertyChanged("Limit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Trending.RecordServiceRef.Priority Priority {
+            get {
+                return this.PriorityField;
+            }
+            set {
+                if ((this.PriorityField.Equals(value) != true)) {
+                    this.PriorityField = value;
+                    this.RaisePropertyChanged("Priority");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Trending.RecordServiceRef.AlarmType Type {
+            get {
+                return this.TypeField;
+            }
+            set {
+                if ((this.TypeField.Equals(value) != true)) {
+                    this.TypeField = value;
+                    this.RaisePropertyChanged("Type");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AnalogInput", Namespace="http://schemas.datacontract.org/2004/07/CORE.Models")]
+    [System.SerializableAttribute()]
+    public partial class AnalogInput : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Trending.RecordServiceRef.Alarm[] AlarmsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Trending.RecordServiceRef.DriverType DriverField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int HighLimitField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IOAddressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsScanningField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int LowLimitField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ScanTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TagNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UnitsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Trending.RecordServiceRef.Alarm[] Alarms {
+            get {
+                return this.AlarmsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AlarmsField, value) != true)) {
+                    this.AlarmsField = value;
+                    this.RaisePropertyChanged("Alarms");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Trending.RecordServiceRef.DriverType Driver {
+            get {
+                return this.DriverField;
+            }
+            set {
+                if ((this.DriverField.Equals(value) != true)) {
+                    this.DriverField = value;
+                    this.RaisePropertyChanged("Driver");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int HighLimit {
+            get {
+                return this.HighLimitField;
+            }
+            set {
+                if ((this.HighLimitField.Equals(value) != true)) {
+                    this.HighLimitField = value;
+                    this.RaisePropertyChanged("HighLimit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string IOAddress {
+            get {
+                return this.IOAddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IOAddressField, value) != true)) {
+                    this.IOAddressField = value;
+                    this.RaisePropertyChanged("IOAddress");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsScanning {
+            get {
+                return this.IsScanningField;
+            }
+            set {
+                if ((this.IsScanningField.Equals(value) != true)) {
+                    this.IsScanningField = value;
+                    this.RaisePropertyChanged("IsScanning");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int LowLimit {
+            get {
+                return this.LowLimitField;
+            }
+            set {
+                if ((this.LowLimitField.Equals(value) != true)) {
+                    this.LowLimitField = value;
+                    this.RaisePropertyChanged("LowLimit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ScanTime {
+            get {
+                return this.ScanTimeField;
+            }
+            set {
+                if ((this.ScanTimeField.Equals(value) != true)) {
+                    this.ScanTimeField = value;
+                    this.RaisePropertyChanged("ScanTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TagName {
+            get {
+                return this.TagNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TagNameField, value) != true)) {
+                    this.TagNameField = value;
+                    this.RaisePropertyChanged("TagName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Units {
+            get {
+                return this.UnitsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UnitsField, value) != true)) {
+                    this.UnitsField = value;
+                    this.RaisePropertyChanged("Units");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Priority", Namespace="http://schemas.datacontract.org/2004/07/CORE.Models")]
+    public enum Priority : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FIRST = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SECOND = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        THIRD = 2,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AlarmType", Namespace="http://schemas.datacontract.org/2004/07/CORE.Models")]
+    public enum AlarmType : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        HIGH = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        LOW = 1,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DriverType", Namespace="http://schemas.datacontract.org/2004/07/CORE.Models")]
+    public enum DriverType : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SIM = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        REAL = 1,
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="RecordServiceRef.IRecordService")]
@@ -20,6 +526,48 @@ namespace Trending.RecordServiceRef {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordService/GetCurrent", ReplyAction="http://tempuri.org/IRecordService/GetCurrentResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<string, double>> GetCurrentAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordService/GetAll", ReplyAction="http://tempuri.org/IRecordService/GetAllResponse")]
+        Trending.RecordServiceRef.Record[] GetAll();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordService/GetAll", ReplyAction="http://tempuri.org/IRecordService/GetAllResponse")]
+        System.Threading.Tasks.Task<Trending.RecordServiceRef.Record[]> GetAllAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordService/GetAllInPeriod", ReplyAction="http://tempuri.org/IRecordService/GetAllInPeriodResponse")]
+        Trending.RecordServiceRef.Record[] GetAllInPeriod(System.DateTime low, System.DateTime high);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordService/GetAllInPeriod", ReplyAction="http://tempuri.org/IRecordService/GetAllInPeriodResponse")]
+        System.Threading.Tasks.Task<Trending.RecordServiceRef.Record[]> GetAllInPeriodAsync(System.DateTime low, System.DateTime high);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordService/MostRecentAI", ReplyAction="http://tempuri.org/IRecordService/MostRecentAIResponse")]
+        Trending.RecordServiceRef.Record[] MostRecentAI();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordService/MostRecentAI", ReplyAction="http://tempuri.org/IRecordService/MostRecentAIResponse")]
+        System.Threading.Tasks.Task<Trending.RecordServiceRef.Record[]> MostRecentAIAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordService/MostRecentDI", ReplyAction="http://tempuri.org/IRecordService/MostRecentDIResponse")]
+        Trending.RecordServiceRef.Record[] MostRecentDI();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordService/MostRecentDI", ReplyAction="http://tempuri.org/IRecordService/MostRecentDIResponse")]
+        System.Threading.Tasks.Task<Trending.RecordServiceRef.Record[]> MostRecentDIAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordService/GetAllForTag", ReplyAction="http://tempuri.org/IRecordService/GetAllForTagResponse")]
+        Trending.RecordServiceRef.Record[] GetAllForTag(string tagName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordService/GetAllForTag", ReplyAction="http://tempuri.org/IRecordService/GetAllForTagResponse")]
+        System.Threading.Tasks.Task<Trending.RecordServiceRef.Record[]> GetAllForTagAsync(string tagName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordService/GetAlarmsInPeriod", ReplyAction="http://tempuri.org/IRecordService/GetAlarmsInPeriodResponse")]
+        Trending.RecordServiceRef.AlarmRecord[] GetAlarmsInPeriod(System.DateTime low, System.DateTime high);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordService/GetAlarmsInPeriod", ReplyAction="http://tempuri.org/IRecordService/GetAlarmsInPeriodResponse")]
+        System.Threading.Tasks.Task<Trending.RecordServiceRef.AlarmRecord[]> GetAlarmsInPeriodAsync(System.DateTime low, System.DateTime high);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordService/GetAlarmsByPriority", ReplyAction="http://tempuri.org/IRecordService/GetAlarmsByPriorityResponse")]
+        Trending.RecordServiceRef.AlarmRecord[] GetAlarmsByPriority(Trending.RecordServiceRef.Priority priority);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordService/GetAlarmsByPriority", ReplyAction="http://tempuri.org/IRecordService/GetAlarmsByPriorityResponse")]
+        System.Threading.Tasks.Task<Trending.RecordServiceRef.AlarmRecord[]> GetAlarmsByPriorityAsync(Trending.RecordServiceRef.Priority priority);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -55,6 +603,62 @@ namespace Trending.RecordServiceRef {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<string, double>> GetCurrentAsync() {
             return base.Channel.GetCurrentAsync();
+        }
+        
+        public Trending.RecordServiceRef.Record[] GetAll() {
+            return base.Channel.GetAll();
+        }
+        
+        public System.Threading.Tasks.Task<Trending.RecordServiceRef.Record[]> GetAllAsync() {
+            return base.Channel.GetAllAsync();
+        }
+        
+        public Trending.RecordServiceRef.Record[] GetAllInPeriod(System.DateTime low, System.DateTime high) {
+            return base.Channel.GetAllInPeriod(low, high);
+        }
+        
+        public System.Threading.Tasks.Task<Trending.RecordServiceRef.Record[]> GetAllInPeriodAsync(System.DateTime low, System.DateTime high) {
+            return base.Channel.GetAllInPeriodAsync(low, high);
+        }
+        
+        public Trending.RecordServiceRef.Record[] MostRecentAI() {
+            return base.Channel.MostRecentAI();
+        }
+        
+        public System.Threading.Tasks.Task<Trending.RecordServiceRef.Record[]> MostRecentAIAsync() {
+            return base.Channel.MostRecentAIAsync();
+        }
+        
+        public Trending.RecordServiceRef.Record[] MostRecentDI() {
+            return base.Channel.MostRecentDI();
+        }
+        
+        public System.Threading.Tasks.Task<Trending.RecordServiceRef.Record[]> MostRecentDIAsync() {
+            return base.Channel.MostRecentDIAsync();
+        }
+        
+        public Trending.RecordServiceRef.Record[] GetAllForTag(string tagName) {
+            return base.Channel.GetAllForTag(tagName);
+        }
+        
+        public System.Threading.Tasks.Task<Trending.RecordServiceRef.Record[]> GetAllForTagAsync(string tagName) {
+            return base.Channel.GetAllForTagAsync(tagName);
+        }
+        
+        public Trending.RecordServiceRef.AlarmRecord[] GetAlarmsInPeriod(System.DateTime low, System.DateTime high) {
+            return base.Channel.GetAlarmsInPeriod(low, high);
+        }
+        
+        public System.Threading.Tasks.Task<Trending.RecordServiceRef.AlarmRecord[]> GetAlarmsInPeriodAsync(System.DateTime low, System.DateTime high) {
+            return base.Channel.GetAlarmsInPeriodAsync(low, high);
+        }
+        
+        public Trending.RecordServiceRef.AlarmRecord[] GetAlarmsByPriority(Trending.RecordServiceRef.Priority priority) {
+            return base.Channel.GetAlarmsByPriority(priority);
+        }
+        
+        public System.Threading.Tasks.Task<Trending.RecordServiceRef.AlarmRecord[]> GetAlarmsByPriorityAsync(Trending.RecordServiceRef.Priority priority) {
+            return base.Channel.GetAlarmsByPriorityAsync(priority);
         }
     }
 }

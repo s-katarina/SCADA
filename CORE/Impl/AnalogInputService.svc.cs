@@ -40,16 +40,19 @@ namespace CORE.Impl
         {
             System.Diagnostics.Debug.WriteLine($"Adress {IOAdress}, Value {value}");
 
+            List<Alarm> alarms = new List<Alarm>();
+
             foreach (AnalogInput analogInput in GetAll())
                 if (analogInput.IOAddress.Equals(IOAdress))
                 {
+                    alarms = analogInput.Alarms;
+
                     if (value > analogInput.HighLimit)
                         value = analogInput.HighLimit;
                     if (value < analogInput.LowLimit)
                         value = analogInput.LowLimit;
                     break;
                 }
-                    
 
             if (CurrentValues.current.ContainsKey(IOAdress))
                 CurrentValues.current[IOAdress] = value;
@@ -59,6 +62,7 @@ namespace CORE.Impl
             using (RecordDatabase db = new RecordDatabase())
             {
                 db.Records.Add(new Record() { IOAdress = IOAdress, Timestamp = DateTime.Now, Value = value });
+
                 db.SaveChanges();
             }
 
