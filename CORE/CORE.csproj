@@ -179,6 +179,22 @@
     <Compile Include="Migrations\202307080918165_gr.designer.cs">
       <DependentUpon>202307080918165_gr.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202307081201175_proba.cs" />
+    <Compile Include="Migrations\202307081201175_proba.designer.cs">
+      <DependentUpon>202307081201175_proba.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307081204346_hfth.cs" />
+    <Compile Include="Migrations\202307081204346_hfth.designer.cs">
+      <DependentUpon>202307081204346_hfth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307081211103_gdfg.cs" />
+    <Compile Include="Migrations\202307081211103_gdfg.designer.cs">
+      <DependentUpon>202307081211103_gdfg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307081216424_lksd.cs" />
+    <Compile Include="Migrations\202307081216424_lksd.designer.cs">
+      <DependentUpon>202307081216424_lksd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Alarm.cs" />
     <Compile Include="Models\AnalogInput.cs" />
@@ -187,6 +203,7 @@
     <Compile Include="Models\DigitalOutput.cs" />
     <Compile Include="Models\DriverType.cs" />
     <Compile Include="Models\Record.cs" />
+    <Compile Include="Models\RecordAlarm.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -262,6 +279,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202307080918165_gr.resx">
       <DependentUpon>202307080918165_gr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307081201175_proba.resx">
+      <DependentUpon>202307081201175_proba.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307081204346_hfth.resx">
+      <DependentUpon>202307081204346_hfth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307081211103_gdfg.resx">
+      <DependentUpon>202307081211103_gdfg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307081216424_lksd.resx">
+      <DependentUpon>202307081216424_lksd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
