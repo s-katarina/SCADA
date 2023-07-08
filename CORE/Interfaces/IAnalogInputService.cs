@@ -16,5 +16,10 @@ namespace CORE.Interfaces
 
         [OperationContract]
         void SendFromRTU(string IOAdress, double value);
+
+        [OperationContract]
+        IEnumerable<RecordAlarm> GetRecordAlarmsInPeriod(DateTime low, DateTime high);
+        [OperationContract]
+        IEnumerable<RecordAlarm> GetRecordAlarmsByPriority(Priority priority);
     }
 }

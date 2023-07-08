@@ -57,6 +57,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AlarmRecordTable.cs" />
+    <Compile Include="AlarmReportWindow.xaml.cs">
+      <DependentUpon>AlarmReportWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\RecordServiceRef\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -66,6 +70,10 @@
     <Compile Include="ReportWindow.xaml.cs">
       <DependentUpon>ReportWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="AlarmReportWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -130,6 +138,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\AnalogInputServiceRef\ReportManager.AnalogInputServiceRef.AnalogInput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AnalogInputServiceRef\ReportManager.AnalogInputServiceRef.RecordAlarm.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\DigitalInputServiceRef\DigitalInputService.wsdl" />

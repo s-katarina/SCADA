@@ -146,6 +146,18 @@
   <wsdl:message name="IAnalogInputService_SendFromRTU_OutputMessage">
     <wsdl:part name="parameters" element="tns:SendFromRTUResponse" />
   </wsdl:message>
+  <wsdl:message name="IAnalogInputService_GetRecordAlarmsInPeriod_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordAlarmsInPeriod" />
+  </wsdl:message>
+  <wsdl:message name="IAnalogInputService_GetRecordAlarmsInPeriod_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordAlarmsInPeriodResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAnalogInputService_GetRecordAlarmsByPriority_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordAlarmsByPriority" />
+  </wsdl:message>
+  <wsdl:message name="IAnalogInputService_GetRecordAlarmsByPriority_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordAlarmsByPriorityResponse" />
+  </wsdl:message>
   <wsdl:message name="IScanService_ScanDone_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:ScanDone" />
   </wsdl:message>
@@ -157,6 +169,14 @@
     <wsdl:operation name="SendFromRTU">
       <wsdl:input wsaw:Action="http://tempuri.org/IAnalogInputService/SendFromRTU" message="tns:IAnalogInputService_SendFromRTU_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAnalogInputService/SendFromRTUResponse" message="tns:IAnalogInputService_SendFromRTU_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordAlarmsInPeriod">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAnalogInputService/GetRecordAlarmsInPeriod" message="tns:IAnalogInputService_GetRecordAlarmsInPeriod_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAnalogInputService/GetRecordAlarmsInPeriodResponse" message="tns:IAnalogInputService_GetRecordAlarmsInPeriod_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordAlarmsByPriority">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAnalogInputService/GetRecordAlarmsByPriority" message="tns:IAnalogInputService_GetRecordAlarmsByPriority_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAnalogInputService/GetRecordAlarmsByPriorityResponse" message="tns:IAnalogInputService_GetRecordAlarmsByPriority_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IScanService">
@@ -177,6 +197,24 @@
     </wsdl:operation>
     <wsdl:operation name="SendFromRTU">
       <soap:operation soapAction="http://tempuri.org/IAnalogInputService/SendFromRTU" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordAlarmsInPeriod">
+      <soap:operation soapAction="http://tempuri.org/IAnalogInputService/GetRecordAlarmsInPeriod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordAlarmsByPriority">
+      <soap:operation soapAction="http://tempuri.org/IAnalogInputService/GetRecordAlarmsByPriority" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

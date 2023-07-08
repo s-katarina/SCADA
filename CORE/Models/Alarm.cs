@@ -13,7 +13,7 @@ namespace CORE.Models
 	{
 		[Key]
 		[DataMember]
-		public int Id{ get; set; }
+		public int Id { get; set; }
 		[DataMember]
 		public Priority Priority { get; set; }
 		[DataMember]
@@ -25,6 +25,8 @@ namespace CORE.Models
 		public string InputTagName { get; set; }
 		[DataMember]
 		public AnalogInput AnalogInput { get; set; }
+		[DataMember]
+		public List<RecordAlarm> RecordAlarms { get; set; }
 
 	}
 

@@ -27,8 +27,10 @@ namespace ReportManager
         public static AnalogInputServiceClient analogClient = new AnalogInputServiceClient();
         public static DigitalInputServiceClient digitalClient = new DigitalInputServiceClient();
 
-        //private ObservableCollection<Record> records = new ObservableCollection<Record>();
         public ObservableCollection<Record> Records { get; set; }
+
+        public static DataGrid recordGrid;
+        public static DataGrid alarmGrid;
 
         public ReportWindow()
         {

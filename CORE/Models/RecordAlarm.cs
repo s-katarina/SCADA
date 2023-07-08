@@ -22,5 +22,10 @@ namespace CORE.Models
         public int AlarmId { get; set; }
         [DataMember]
         public Alarm Alarm { get; set; }
+
+        public override string ToString()
+        {
+            return $"id {Id}, Timestamp {Timestamp}, Alarm {Alarm == null}";
+        }
     }
 }

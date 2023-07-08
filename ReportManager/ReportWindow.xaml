@@ -15,7 +15,7 @@
                     <DataGridTextColumn Header="Value" Binding="{Binding Value}" />
                 </DataGrid.Columns>
             </DataGrid>
-            
+
             <StackPanel Orientation="Horizontal" Margin="15 15 0 0">
                 <Button Content="Most Recent AI" MaxWidth="100" MaxHeight="30" Click="MostRecentAI_Click" HorizontalAlignment="Left" Margin="0 0 20 0" />
                 <Button Content="Most Recent DI" MaxWidth="100" MaxHeight="30" Click="MostRecentDI_Click" HorizontalAlignment="Left" />

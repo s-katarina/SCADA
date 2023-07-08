@@ -347,6 +347,83 @@ namespace ReportManager.AnalogInputServiceRef {
         LOW = 1,
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RecordAlarm", Namespace="http://schemas.datacontract.org/2004/07/CORE.Models")]
+    [System.SerializableAttribute()]
+    public partial class RecordAlarm : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ReportManager.AnalogInputServiceRef.Alarm AlarmField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime TimestampField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ReportManager.AnalogInputServiceRef.Alarm Alarm {
+            get {
+                return this.AlarmField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AlarmField, value) != true)) {
+                    this.AlarmField = value;
+                    this.RaisePropertyChanged("Alarm");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Timestamp {
+            get {
+                return this.TimestampField;
+            }
+            set {
+                if ((this.TimestampField.Equals(value) != true)) {
+                    this.TimestampField = value;
+                    this.RaisePropertyChanged("Timestamp");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AnalogInputServiceRef.IAnalogInputService")]
     public interface IAnalogInputService {
@@ -362,6 +439,18 @@ namespace ReportManager.AnalogInputServiceRef {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/SendFromRTU", ReplyAction="http://tempuri.org/IAnalogInputService/SendFromRTUResponse")]
         System.Threading.Tasks.Task SendFromRTUAsync(string IOAdress, double value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/GetRecordAlarmsInPeriod", ReplyAction="http://tempuri.org/IAnalogInputService/GetRecordAlarmsInPeriodResponse")]
+        ReportManager.AnalogInputServiceRef.RecordAlarm[] GetRecordAlarmsInPeriod(System.DateTime low, System.DateTime high);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/GetRecordAlarmsInPeriod", ReplyAction="http://tempuri.org/IAnalogInputService/GetRecordAlarmsInPeriodResponse")]
+        System.Threading.Tasks.Task<ReportManager.AnalogInputServiceRef.RecordAlarm[]> GetRecordAlarmsInPeriodAsync(System.DateTime low, System.DateTime high);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/GetRecordAlarmsByPriority", ReplyAction="http://tempuri.org/IAnalogInputService/GetRecordAlarmsByPriorityResponse")]
+        ReportManager.AnalogInputServiceRef.RecordAlarm[] GetRecordAlarmsByPriority(ReportManager.AnalogInputServiceRef.Priority priority);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/GetRecordAlarmsByPriority", ReplyAction="http://tempuri.org/IAnalogInputService/GetRecordAlarmsByPriorityResponse")]
+        System.Threading.Tasks.Task<ReportManager.AnalogInputServiceRef.RecordAlarm[]> GetRecordAlarmsByPriorityAsync(ReportManager.AnalogInputServiceRef.Priority priority);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -405,6 +494,22 @@ namespace ReportManager.AnalogInputServiceRef {
         
         public System.Threading.Tasks.Task SendFromRTUAsync(string IOAdress, double value) {
             return base.Channel.SendFromRTUAsync(IOAdress, value);
+        }
+        
+        public ReportManager.AnalogInputServiceRef.RecordAlarm[] GetRecordAlarmsInPeriod(System.DateTime low, System.DateTime high) {
+            return base.Channel.GetRecordAlarmsInPeriod(low, high);
+        }
+        
+        public System.Threading.Tasks.Task<ReportManager.AnalogInputServiceRef.RecordAlarm[]> GetRecordAlarmsInPeriodAsync(System.DateTime low, System.DateTime high) {
+            return base.Channel.GetRecordAlarmsInPeriodAsync(low, high);
+        }
+        
+        public ReportManager.AnalogInputServiceRef.RecordAlarm[] GetRecordAlarmsByPriority(ReportManager.AnalogInputServiceRef.Priority priority) {
+            return base.Channel.GetRecordAlarmsByPriority(priority);
+        }
+        
+        public System.Threading.Tasks.Task<ReportManager.AnalogInputServiceRef.RecordAlarm[]> GetRecordAlarmsByPriorityAsync(ReportManager.AnalogInputServiceRef.Priority priority) {
+            return base.Channel.GetRecordAlarmsByPriorityAsync(priority);
         }
     }
     

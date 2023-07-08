@@ -37,6 +37,9 @@ namespace ReportManager
             {
                 ReportWindow report = new ReportWindow();
                 report.Show();
+
+                AlarmReportWindow alarmReport = new AlarmReportWindow();
+                alarmReport.Show();
             }
             else
             {
