@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ReportManager.UserServiceRef;
 
 namespace ReportManager
 {
@@ -20,9 +21,27 @@ namespace ReportManager
     /// </summary>
     public partial class MainWindow : Window
     {
+        UserServiceClient usClient = new UserServiceClient();
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Login_Click(object sender, RoutedEventArgs e)
+        {
+            string username = txtUsername.Text;
+            string password = txtPassword.Password;
+
+            if (usClient.Login(username, password))
+            {
+                ReportWindow report = new ReportWindow();
+                report.Show();
+            }
+            else
+            {
+                message.Text = "Wrong credentials.";
+            }
         }
     }
 }

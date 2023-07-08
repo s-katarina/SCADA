@@ -37,6 +37,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -53,7 +55,17 @@
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Connected Services\RecordServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="InputTableRecord.cs" />
+    <Compile Include="ReportWindow.xaml.cs">
+      <DependentUpon>ReportWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -62,10 +74,29 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Connected Services\AnalogInputServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\DigitalInputServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\UserServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ReportWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -85,6 +116,58 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Connected Services\AnalogInputServiceRef\AnalogInputService.wsdl" />
+    <None Include="Connected Services\AnalogInputServiceRef\AnalogInputService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AnalogInputServiceRef\AnalogInputService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AnalogInputServiceRef\AnalogInputService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AnalogInputServiceRef\AnalogInputService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AnalogInputServiceRef\ReportManager.AnalogInputServiceRef.AnalogInput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DigitalInputServiceRef\DigitalInputService.wsdl" />
+    <None Include="Connected Services\DigitalInputServiceRef\DigitalInputService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DigitalInputServiceRef\DigitalInputService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DigitalInputServiceRef\DigitalInputService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DigitalInputServiceRef\ReportManager.DigitalInputServiceRef.DigitalInput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RecordServiceRef\RecordService.wsdl" />
+    <None Include="Connected Services\RecordServiceRef\RecordService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\RecordServiceRef\RecordService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\RecordServiceRef\RecordService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\RecordServiceRef\RecordService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\RecordServiceRef\ReportManager.RecordServiceRef.Record.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UserServiceRef\UserService.wsdl" />
+    <None Include="Connected Services\UserServiceRef\UserService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UserServiceRef\UserService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -92,6 +175,75 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\AnalogInputServiceRef\" />
+    <WCFMetadataStorage Include="Connected Services\DigitalInputServiceRef\" />
+    <WCFMetadataStorage Include="Connected Services\RecordServiceRef\" />
+    <WCFMetadataStorage Include="Connected Services\UserServiceRef\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AnalogInputServiceRef\AnalogInputService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AnalogInputServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AnalogInputServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AnalogInputServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DigitalInputServiceRef\DigitalInputService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DigitalInputServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DigitalInputServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DigitalInputServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\UserServiceRef\UserService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\UserServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\UserServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\UserServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RecordServiceRef\RecordService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RecordServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RecordServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RecordServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
