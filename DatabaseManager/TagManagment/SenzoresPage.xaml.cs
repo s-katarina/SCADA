@@ -12,23 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using DatabaseManager.TagManagment;
 
-namespace DatabaseManager
+namespace DatabaseManager.TagManagment
 {
 	/// <summary>
-	/// Interaction logic for MainWindow.xaml
+	/// Interaction logic for SenzoresPage.xaml
 	/// </summary>
-	public partial class MainWindow : Window
+	public partial class SenzoresPage : Page
 	{
-		public MainWindow()
+		public SenzoresPage()
 		{
 			InitializeComponent();
-		}
-
-		private void tagBtn_Click(object sender, RoutedEventArgs e)
-		{
-			MainFrame.Content = new SenzoresPage();
 		}
 	}
 }
