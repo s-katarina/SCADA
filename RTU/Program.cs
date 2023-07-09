@@ -14,6 +14,7 @@ namespace RTU
     {
         static AnalogInputServiceClient aisClient = new AnalogInputServiceClient();
         static DigitalInputServiceClient disClient = new DigitalInputServiceClient();
+        static AlarmServiceRef.PubAlarmClient pubAlarmClient = new AlarmServiceRef.PubAlarmClient();
 
         static Dictionary<string, Thread> inputs = new Dictionary<string, Thread>();
         static Dictionary<string, ManualResetEvent> waits = new Dictionary<string, ManualResetEvent>();
@@ -92,6 +93,7 @@ namespace RTU
 
                 double value = GenerateDouble();
                 aisClient.SendFromRTU(analogInput.IOAddress, value);
+                pubAlarmClient.DoWork(analogInput.IOAddress, value);
                 Console.WriteLine($"Tag {analogInput.TagName}, Adress {analogInput.IOAddress}, Value {value}");
 
                 Thread.Sleep(analogInput.ScanTime);
