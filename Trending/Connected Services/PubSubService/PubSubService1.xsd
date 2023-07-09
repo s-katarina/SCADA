@@ -9,6 +9,14 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="SendDigitalInput">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IOAdress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="value" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="InitSub">
     <xs:complexType>
       <xs:sequence />

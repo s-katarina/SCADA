@@ -13,7 +13,46 @@ namespace CORE.Impl
 {
     public class AnalogInputService : IAnalogInputService, IScanService
     {
-        public IEnumerable<AnalogInput> GetAll()
+		public void Add(AnalogInput analogInput)
+		{
+            using (IODatabase db = new IODatabase())
+            {
+                db.AnalogInputs.Add(analogInput);
+                db.SaveChanges();
+            }
+        }
+
+		public void Delete(string tagName)
+		{
+            AnalogInput analogInput;
+            using (IODatabase db = new IODatabase())
+            {
+                db.Database.Log = Console.WriteLine;
+                analogInput = db.AnalogInputs.Where(d => d.TagName == tagName).First();
+                db.AnalogInputs.Remove(analogInput);
+                db.SaveChanges();
+
+                Console.WriteLine("Analog Input {0} ({1}) is Deleted ", analogInput.TagName, analogInput.IOAddress);
+                Console.ReadKey();
+            }
+        }
+
+        public void Edit(string tagName, bool scanning)
+        {
+            AnalogInput analogInput;
+            using (IODatabase db = new IODatabase())
+            {
+                analogInput = db.AnalogInputs.Where(d => d.TagName == tagName).First();
+                if (analogInput != null)
+                {
+                    analogInput.IsScanning = scanning;
+                    db.SaveChanges();
+                }
+
+            }
+        }
+
+		public IEnumerable<AnalogInput> GetAll()
         {
             using (IODatabase db = new IODatabase())
             {

@@ -113,7 +113,8 @@ namespace RTU
                 waits[digitalInput.TagName].WaitOne();
 
                 bool value = GenerateBool();
-                disClient.SendFromRTU(digitalInput.IOAddress, value);
+                //disClient.SendFromRTU(digitalInput.IOAddress, value);
+                pubClient.SendDigitalInput(digitalInput.IOAddress, value);
                 Console.WriteLine($"Tag {digitalInput.TagName}, Adress {digitalInput.IOAddress}, Value {value}");
 
                 Thread.Sleep(digitalInput.ScanTime);

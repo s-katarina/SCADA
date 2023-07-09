@@ -25,6 +25,8 @@ namespace CORE.Interfaces
 	public interface IPub {
 		[OperationContract(IsOneWay = true)]
 		void DoWork(string IOAdress, double value);
+		[OperationContract(IsOneWay = true)]
+		void SendDigitalInput(string IOAdress, bool value);
 	}
 }
 

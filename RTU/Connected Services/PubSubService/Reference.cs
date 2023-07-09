@@ -20,6 +20,12 @@ namespace RTU.PubSubService {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IPub/DoWork")]
         System.Threading.Tasks.Task DoWorkAsync(string IOAdress, double value);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IPub/SendDigitalInput")]
+        void SendDigitalInput(string IOAdress, bool value);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IPub/SendDigitalInput")]
+        System.Threading.Tasks.Task SendDigitalInputAsync(string IOAdress, bool value);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -55,6 +61,14 @@ namespace RTU.PubSubService {
         
         public System.Threading.Tasks.Task DoWorkAsync(string IOAdress, double value) {
             return base.Channel.DoWorkAsync(IOAdress, value);
+        }
+        
+        public void SendDigitalInput(string IOAdress, bool value) {
+            base.Channel.SendDigitalInput(IOAdress, value);
+        }
+        
+        public System.Threading.Tasks.Task SendDigitalInputAsync(string IOAdress, bool value) {
+            return base.Channel.SendDigitalInputAsync(IOAdress, value);
         }
     }
     

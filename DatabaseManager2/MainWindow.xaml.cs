@@ -12,22 +12,23 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using CORE.Models;
+using DatabaseManager2.TagManagment;
 
-namespace DatabaseManager.TagManagment
+namespace DatabaseManager2
 {
 	/// <summary>
-	/// Interaction logic for SenzoresPage.xaml
+	/// Interaction logic for MainWindow.xaml
 	/// </summary>
-	public partial class SenzoresPage : Page
+	public partial class MainWindow : Window
 	{
-		static DigitalInputServiceRef.DigitalInputServiceClient digitalClient = new();
-		public static IEnumerable<DigitalInput> digitalInputs;
-
-		public SenzoresPage()
+		public MainWindow()
 		{
 			InitializeComponent();
-			digitalInputs = digitalClient.;
+		}
+
+		private void tagBtn_Click(object sender, RoutedEventArgs e)
+		{
+			MainFrame.Content = new InputTagsPage();
 		}
 	}
 }

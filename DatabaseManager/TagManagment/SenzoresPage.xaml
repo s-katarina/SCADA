@@ -8,7 +8,23 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="SenzoresPage">
 
-    <Grid>
-        <TextBlock>ssssssssssssssss</TextBlock>
-    </Grid>
+    <StackPanel>
+        <Grid MinHeight="300">
+            <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" ItemsSource="{Binding InputTableRecords}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Tag Name" Binding="{Binding TagName}" />
+                    <DataGridTextColumn Header="IO Address" Binding="{Binding IOAddress}" />
+                    <DataGridCheckBoxColumn Header="Is Scanning" Binding="{Binding IsScanning}" />
+                    <DataGridTextColumn Header="Value" Binding="{Binding Value}" />
+                    <DataGridTextColumn Header="Type" Binding="{Binding Type}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="AddBtn"  Content="Add"></Button>
+            <Button x:Name="DeleteBtn" Content="Delete"></Button>
+            <Button x:Name="ChangeScanningBtn" Content="Turn on/off"></Button>
+            <Button x:Name="CahngeBtn" Content="Change Value"></Button>
+        </StackPanel>
+    </StackPanel>
 </Page>

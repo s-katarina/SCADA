@@ -22,5 +22,11 @@ namespace CORE.Interfaces
 
         [OperationContract]
         IEnumerable<RecordAlarm> GetRecordAlarmsByPriority(Priority priority);
+        [OperationContract]
+        void Add(AnalogInput analogInput);
+        [OperationContract]
+        void Delete(string tagName);
+        [OperationContract]
+        void Edit(string tagName, bool scanning);
     }
 }

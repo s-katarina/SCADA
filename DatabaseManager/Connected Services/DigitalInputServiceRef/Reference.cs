@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DigitalInputServiceReference
+namespace DigitalInputServiceRef
 {
     using System.Runtime.Serialization;
     
@@ -15,12 +15,12 @@ namespace DigitalInputServiceReference
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     [System.Runtime.Serialization.DataContractAttribute(Name="DigitalInput", Namespace="http://schemas.datacontract.org/2004/07/CORE.Models")]
-    public partial class DigitalInput : object
+    internal partial class DigitalInput : object
     {
         
         private string DescriptionField;
         
-        private DigitalInputServiceReference.DriverType DriverField;
+        private DigitalInputServiceRef.DriverType DriverField;
         
         private string IOAddressField;
         
@@ -31,7 +31,7 @@ namespace DigitalInputServiceReference
         private string TagNameField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Description
+        internal string Description
         {
             get
             {
@@ -44,7 +44,7 @@ namespace DigitalInputServiceReference
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public DigitalInputServiceReference.DriverType Driver
+        internal DigitalInputServiceRef.DriverType Driver
         {
             get
             {
@@ -57,7 +57,7 @@ namespace DigitalInputServiceReference
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string IOAddress
+        internal string IOAddress
         {
             get
             {
@@ -70,7 +70,7 @@ namespace DigitalInputServiceReference
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool IsScanning
+        internal bool IsScanning
         {
             get
             {
@@ -83,7 +83,7 @@ namespace DigitalInputServiceReference
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ScanTime
+        internal int ScanTime
         {
             get
             {
@@ -96,7 +96,7 @@ namespace DigitalInputServiceReference
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TagName
+        internal string TagName
         {
             get
             {
@@ -111,7 +111,7 @@ namespace DigitalInputServiceReference
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     [System.Runtime.Serialization.DataContractAttribute(Name="DriverType", Namespace="http://schemas.datacontract.org/2004/07/CORE.Models")]
-    public enum DriverType : int
+    internal enum DriverType : int
     {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -122,25 +122,25 @@ namespace DigitalInputServiceReference
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="DigitalInputServiceReference.IDigitalInputService")]
-    public interface IDigitalInputService
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="DigitalInputServiceRef.IDigitalInputService")]
+    internal interface IDigitalInputService
     {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDigitalInputService/GetAll", ReplyAction="http://tempuri.org/IDigitalInputService/GetAllResponse")]
-        System.Threading.Tasks.Task<DigitalInputServiceReference.DigitalInput[]> GetAllAsync();
+        System.Threading.Tasks.Task<DigitalInputServiceRef.DigitalInput[]> GetAllAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDigitalInputService/SendFromRTU", ReplyAction="http://tempuri.org/IDigitalInputService/SendFromRTUResponse")]
         System.Threading.Tasks.Task SendFromRTUAsync(string IOAdress, bool value);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    public interface IDigitalInputServiceChannel : DigitalInputServiceReference.IDigitalInputService, System.ServiceModel.IClientChannel
+    internal interface IDigitalInputServiceChannel : DigitalInputServiceRef.IDigitalInputService, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    public partial class DigitalInputServiceClient : System.ServiceModel.ClientBase<DigitalInputServiceReference.IDigitalInputService>, DigitalInputServiceReference.IDigitalInputService
+    internal partial class DigitalInputServiceClient : System.ServiceModel.ClientBase<DigitalInputServiceRef.IDigitalInputService>, DigitalInputServiceRef.IDigitalInputService
     {
         
         /// <summary>
@@ -183,7 +183,7 @@ namespace DigitalInputServiceReference
         {
         }
         
-        public System.Threading.Tasks.Task<DigitalInputServiceReference.DigitalInput[]> GetAllAsync()
+        public System.Threading.Tasks.Task<DigitalInputServiceRef.DigitalInput[]> GetAllAsync()
         {
             return base.Channel.GetAllAsync();
         }
