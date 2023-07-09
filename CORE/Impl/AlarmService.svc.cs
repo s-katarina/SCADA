@@ -19,17 +19,21 @@ namespace CORE.Impl
 
         public void DoWork(string IOAdress, double value)
         {
+            System.Diagnostics.Debug.WriteLine($"Do work for Adress {IOAdress}, Value {value}");
             using (IODatabase iodb = new IODatabase())
             {
                 List<Alarm> alarms = iodb.Alarms.Where(alarm => alarm.AnalogInput.IOAddress.Equals(IOAdress)).ToList();
 
                 foreach (Alarm alarm in alarms)
+                {
+                    System.Diagnostics.Debug.WriteLine($"Found alarm for tag at {IOAdress} with {alarm.Type} limit of {alarm.Limit}");
                     if (alarm.Type == AlarmType.HIGH && value > alarm.Limit || alarm.Type == AlarmType.LOW && value < alarm.Limit)
                     {
                         CurrentValues.alarms.Add(alarm, value);
-                        Console.WriteLine(value);
+                        System.Diagnostics.Debug.WriteLine($"Raised {alarm.Type} limit {alarm.Limit} alarm for tag at {IOAdress} with value {value}");
                         onMessageArrived?.Invoke(CurrentValues.alarms);
                     }
+                }
             }
         }
 
