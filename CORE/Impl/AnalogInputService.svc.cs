@@ -40,16 +40,20 @@ namespace CORE.Impl
         {
             System.Diagnostics.Debug.WriteLine($"Adress {IOAdress}, Value {value}");
 
-            foreach (AnalogInput analogInput in GetAll())
-                if (analogInput.IOAddress.Equals(IOAdress))
+            using (IODatabase db = new IODatabase())
+            {
+                foreach (AnalogInput analogInput in db.AnalogInputs)
                 {
-                    if (value > analogInput.HighLimit)
-                        value = analogInput.HighLimit;
-                    if (value < analogInput.LowLimit)
-                        value = analogInput.LowLimit;
-                    break;
+                    if (analogInput.IOAddress.Equals(IOAdress))
+                    {
+                        if (value > analogInput.HighLimit)
+                            value = analogInput.HighLimit;
+                        if (value < analogInput.LowLimit)
+                            value = analogInput.LowLimit;
+                        break;
+                    }
                 }
-                    
+            }
 
             if (CurrentValues.current.ContainsKey(IOAdress))
                 CurrentValues.current[IOAdress] = value;
@@ -59,11 +63,39 @@ namespace CORE.Impl
             using (RecordDatabase db = new RecordDatabase())
             {
                 db.Records.Add(new Record() { IOAdress = IOAdress, Timestamp = DateTime.Now, Value = value });
+
+                using (IODatabase iodb = new IODatabase())
+                {
+                    List<Alarm> alarms = iodb.Alarms.Where(alarm => alarm.AnalogInput.IOAddress.Equals(IOAdress)).ToList();
+
+                    foreach (Alarm alarm in alarms)
+                        if (alarm.Type == AlarmType.HIGH && value > alarm.Limit || alarm.Type == AlarmType.LOW && value < alarm.Limit)
+                            iodb.RecordAlarms.Add(new RecordAlarm() { Timestamp = DateTime.Now, Alarm = alarm });
+
+                    iodb.SaveChanges();
+                }
+
                 db.SaveChanges();
             }
 
             //IScanCallback proxy = OperationContext.Current.GetCallbackChannel<IScanCallback>();
             //proxy.ScanDone(CurrentValues.current);
+        }
+
+        IEnumerable<RecordAlarm> IAnalogInputService.GetAlarmsByTime(DateTime low, DateTime high)
+        {
+            using (IODatabase db = new IODatabase())
+            {
+                return db.RecordAlarms.Include(x => x.Alarm).Where(record => (record.Alarm.Priority == Priority.FIRST || record.Alarm.Priority == Priority.SECOND || record.Alarm.Priority == Priority.THIRD) && record.Timestamp <= high && record.Timestamp >= low).ToList();
+            }
+        }
+
+        IEnumerable<RecordAlarm> IAnalogInputService.GetRecordAlarmsByPriority(Priority priority)
+        {
+            using (IODatabase db = new IODatabase())
+            {
+                return db.RecordAlarms.Include(x => x.Alarm).Where(record => record.Alarm.Priority == priority).ToList();
+            }
         }
     }
 }

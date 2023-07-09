@@ -12,22 +12,20 @@ namespace CORE.Models
 	public class Alarm
 	{
 		[Key]
-		[DataMember]
-		public int Id{ get; set; }
-		[DataMember]
+        [DataMember]
+		public int Id { get; set; }
+        [DataMember]
 		public Priority Priority { get; set; }
-		[DataMember]
+        [DataMember]
 		public AlarmType Type { get; set; }
-		[DataMember]
+        [DataMember]
 		public double Limit { get; set; }
-		[DataMember]
-		public DateTime Timestamp { get; set; }
 
-		[ForeignKey("AnalogInput")]
+        [ForeignKey("AnalogInput")]
 		public string InputTagName { get; set; }
-		[DataMember]
-		public virtual AnalogInput AnalogInput { get; set; }
 
+        [DataMember]
+		public AnalogInput AnalogInput { get; set; }
 	}
 
 	public enum Priority { 

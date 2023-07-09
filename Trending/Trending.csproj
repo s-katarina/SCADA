@@ -168,6 +168,15 @@
     <None Include="Connected Services\RecordServiceRef\RecordService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\RecordServiceRef\RecordService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\RecordServiceRef\Trending.RecordServiceRef.AlarmRecord.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RecordServiceRef\Trending.RecordServiceRef.Record.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\UserServiceRef\UserService.wsdl" />
     <None Include="Connected Services\UserServiceRef\UserService.xsd">
       <SubType>Designer</SubType>

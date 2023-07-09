@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CORE.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
@@ -12,5 +13,20 @@ namespace CORE.Interfaces
     {
         [OperationContract]
         Dictionary<string, double> GetCurrent();
+
+        [OperationContract]
+        IEnumerable<Record> GetAll();
+
+        [OperationContract]
+        IEnumerable<Record> GetAllInPeriod(DateTime low, DateTime high);
+
+        [OperationContract]
+        IEnumerable<Record> MostRecentAI();
+
+        [OperationContract]
+        IEnumerable<Record> MostRecentDI();
+
+        [OperationContract]
+        IEnumerable<Record> GetAllForTag(string tagName);
     }
 }
