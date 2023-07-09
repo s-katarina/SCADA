@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trending", "..\Trending\Tre
 		{21B23382-D899-401C-85AD-14DAC2774EBD} = {21B23382-D899-401C-85AD-14DAC2774EBD}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseManager", "..\DatabaseManager\DatabaseManager.csproj", "{015EC5BD-ABE6-4886-B064-91D0D11A166E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{66B389FC-5724-428E-A52A-8A7EA5FFE848}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66B389FC-5724-428E-A52A-8A7EA5FFE848}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66B389FC-5724-428E-A52A-8A7EA5FFE848}.Release|Any CPU.Build.0 = Release|Any CPU
+		{015EC5BD-ABE6-4886-B064-91D0D11A166E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{015EC5BD-ABE6-4886-B064-91D0D11A166E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{015EC5BD-ABE6-4886-B064-91D0D11A166E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{015EC5BD-ABE6-4886-B064-91D0D11A166E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -73,6 +73,7 @@
   <ItemGroup>
     <Content Include="Impl\AnalogInputService.svc" />
     <Content Include="Impl\DigitalInputService.svc" />
+    <Content Include="Impl\PubSubService.svc" />
     <Content Include="Impl\RecordService.svc" />
     <Content Include="Impl\UserService.svc" />
     <Content Include="Web.config" />
@@ -87,6 +88,10 @@
     </Compile>
     <Compile Include="Impl\DigitalInputService.svc.cs">
       <DependentUpon>DigitalInputService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\IPubSubService.cs" />
+    <Compile Include="Impl\PubSubService.svc.cs">
+      <DependentUpon>PubSubService.svc</DependentUpon>
     </Compile>
     <Compile Include="Impl\RecordService.svc.cs">
       <DependentUpon>RecordService.svc</DependentUpon>

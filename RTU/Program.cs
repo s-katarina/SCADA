@@ -14,12 +14,19 @@ namespace RTU
     {
         static AnalogInputServiceClient aisClient = new AnalogInputServiceClient();
         static DigitalInputServiceClient disClient = new DigitalInputServiceClient();
+        static PubSubService.PubClient pubClient = new PubSubService.PubClient();
 
         static Dictionary<string, Thread> inputs = new Dictionary<string, Thread>();
         static Dictionary<string, ManualResetEvent> waits = new Dictionary<string, ManualResetEvent>();
 
         static void Main(string[] args)
         {
+            while (true)
+            {
+                pubClient.DoWork("aaaaaaaaaa", 2);
+                Thread.Sleep(2000);
+            }
+
             Console.WriteLine("RTU is sending data...");
 
             IEnumerable<AnalogInput> analogInputs = aisClient.GetAll();

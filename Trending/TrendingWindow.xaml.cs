@@ -18,6 +18,7 @@ using Trending.Models;
 using System.ServiceModel;
 using System.Threading;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 
 namespace Trending
 {
@@ -26,6 +27,15 @@ namespace Trending
     /// </summary>
     public partial class TrendingWindow : Window
     {
+        public class Callback : PubSubService.ISubCallback
+        {
+            public void MessageArrived(string IOAdress, double value)
+            {
+                Console.WriteLine(IOAdress);
+                Debug.WriteLine(IOAdress);
+            }
+        }
+        public static PubSubService.SubClient subclient;
         public static AnalogInputServiceClient analogClient = new AnalogInputServiceClient();
         public static DigitalInputServiceClient digitalClient = new DigitalInputServiceClient();
         public static RecordServiceClient recordClient = new RecordServiceClient();
@@ -45,6 +55,11 @@ namespace Trending
             digitalInputs = digitalClient.GetAll();
             current = recordClient.GetCurrent();
             InputTableRecords = new ObservableCollection<InputTableRecord>();
+
+            InstanceContext ic = new InstanceContext(new Callback());
+            subclient = new PubSubService.SubClient(ic);
+            subclient.InitSub();
+            Console.Read();
 
             MakeInputTableRecords(analogInputs, digitalInputs, current);
 

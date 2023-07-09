@@ -55,8 +55,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\PubSubService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sending\Publish.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -89,6 +95,13 @@
     <None Include="Connected Services\DigitalInputServiceRef\RTU.DigitalInputServiceRef.DigitalInput.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\PubSubService\PubSubService.wsdl" />
+    <None Include="Connected Services\PubSubService\PubSubService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PubSubService\PubSubService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
@@ -96,6 +109,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\AnalogInputServiceRef\" />
     <WCFMetadataStorage Include="Connected Services\DigitalInputServiceRef\" />
+    <WCFMetadataStorage Include="Connected Services\PubSubService\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\AnalogInputServiceRef\AnalogInputService.disco" />
@@ -127,5 +141,21 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PubSubService\PubSubService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PubSubService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PubSubService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PubSubService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

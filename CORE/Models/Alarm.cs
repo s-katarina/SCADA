@@ -26,7 +26,7 @@ namespace CORE.Models
 		[ForeignKey("AnalogInput")]
 		public string InputTagName { get; set; }
 		[DataMember]
-		public AnalogInput AnalogInput { get; set; }
+		public virtual AnalogInput AnalogInput { get; set; }
 
 	}
 

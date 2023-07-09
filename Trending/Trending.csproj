@@ -67,6 +67,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\PubSubService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\RecordServiceRef\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -77,6 +82,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Receiving\Subcriber.cs" />
     <Compile Include="TrendingWindow.xaml.cs">
       <DependentUpon>TrendingWindow.xaml</DependentUpon>
     </Compile>
@@ -145,6 +151,13 @@
     <None Include="Connected Services\DigitalInputServiceRef\Trending.DigitalInputServiceRef.DigitalInput.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\PubSubService\PubSubService.wsdl" />
+    <None Include="Connected Services\PubSubService\PubSubService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PubSubService\PubSubService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\RecordServiceRef\RecordService.wsdl" />
     <None Include="Connected Services\RecordServiceRef\RecordService.xsd">
       <SubType>Designer</SubType>
@@ -176,6 +189,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\AnalogInputServiceRef\" />
     <WCFMetadataStorage Include="Connected Services\DigitalInputServiceRef\" />
+    <WCFMetadataStorage Include="Connected Services\PubSubService\" />
     <WCFMetadataStorage Include="Connected Services\RecordServiceRef\" />
     <WCFMetadataStorage Include="Connected Services\UserServiceRef\" />
   </ItemGroup>
@@ -235,6 +249,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\RecordServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PubSubService\PubSubService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PubSubService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PubSubService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PubSubService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
