@@ -18,7 +18,7 @@ namespace CORE.Interfaces
 
 	public interface ICallBack {
 		[OperationContract (IsOneWay = true)]
-		void MessageArrived(string IOAdress, double value);
+		void MessageArrived(Dictionary<string, double> current);
 	}
 
 	[ServiceContract]

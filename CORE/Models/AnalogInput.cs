@@ -24,7 +24,7 @@ namespace CORE.Models
         [DataMember]
         public bool IsScanning { get; set; }
         [DataMember]
-        public virtual List<Alarm> Alarms { get; set; }
+        public List<Alarm> Alarms { get; set; }
         [DataMember]
         public string Units { get; set; }
         [DataMember]

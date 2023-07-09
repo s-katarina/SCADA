@@ -73,7 +73,7 @@ namespace RTU.PubSubService {
     public interface ISubCallback {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISub/MessageArrived")]
-        void MessageArrived(string IOAdress, double value);
+        void MessageArrived(System.Collections.Generic.Dictionary<string, double> current);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

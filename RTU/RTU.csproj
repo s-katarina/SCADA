@@ -151,6 +151,9 @@
     <None Include="Connected Services\PubSubService\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\PubSubService\PubSubService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\PubSubService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

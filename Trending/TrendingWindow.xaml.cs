@@ -29,10 +29,10 @@ namespace Trending
     {
         public class Callback : PubSubService.ISubCallback
         {
-            public void MessageArrived(string IOAdress, double value)
+            public void MessageArrived(Dictionary<string, double> current)
             {
-                Console.WriteLine(IOAdress);
-                Debug.WriteLine(IOAdress);
+                Debug.WriteLine(current);
+                MakeInputTableRecords(analogInputs, digitalInputs, current);
             }
         }
         public static PubSubService.SubClient subclient;

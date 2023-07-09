@@ -21,11 +21,11 @@ namespace RTU
 
         static void Main(string[] args)
         {
-            while (true)
-            {
-                pubClient.DoWork("aaaaaaaaaa", 2);
-                Thread.Sleep(2000);
-            }
+            //while (true)
+            //{
+            //    pubClient.DoWork("aaaaaaaaaa", 2);
+            //    Thread.Sleep(2000);
+            //}
 
             Console.WriteLine("RTU is sending data...");
 
@@ -98,7 +98,8 @@ namespace RTU
                 waits[analogInput.TagName].WaitOne();
 
                 double value = GenerateDouble();
-                aisClient.SendFromRTU(analogInput.IOAddress, value);
+                //aisClient.SendFromRTU(analogInput.IOAddress, value);
+                pubClient.DoWork(analogInput.IOAddress, value);
                 Console.WriteLine($"Tag {analogInput.TagName}, Adress {analogInput.IOAddress}, Value {value}");
 
                 Thread.Sleep(analogInput.ScanTime);

@@ -158,6 +158,9 @@
     <None Include="Connected Services\PubSubService\PubSubService1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\PubSubService\PubSubService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\RecordServiceRef\RecordService.wsdl" />
     <None Include="Connected Services\RecordServiceRef\RecordService.xsd">
       <SubType>Designer</SubType>
