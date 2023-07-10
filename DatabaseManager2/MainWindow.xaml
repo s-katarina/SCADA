@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DatabaseManager2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="800" Width="800">
     <StackPanel>
         <StackPanel Orientation="Horizontal">
             <Button Margin="15" x:Name="tagBtn" Content="Tag managment" Click="tagBtn_Click"></Button>
@@ -13,7 +13,7 @@
             <Button Margin="15" x:Name="registerBtn" Content="Register"></Button>
         </StackPanel>
 
-        <ScrollViewer MaxHeight="380" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+        <ScrollViewer MaxHeight="800" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
             <Grid>
                 <Frame x:Name="MainFrame" Margin="10, 10">
                 </Frame>

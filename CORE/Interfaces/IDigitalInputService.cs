@@ -16,5 +16,11 @@ namespace CORE.Interfaces
 
         [OperationContract]
         void SendFromRTU(string IOAdress, bool value);
+        [OperationContract]
+        void Add(DigitalInput digitalInput);
+        [OperationContract]
+        void Delete(string tagName);
+        [OperationContract]
+        void Edit(string tagName, bool scanning);
     }
 }

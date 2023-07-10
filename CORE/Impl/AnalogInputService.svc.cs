@@ -32,8 +32,6 @@ namespace CORE.Impl
                 db.AnalogInputs.Remove(analogInput);
                 db.SaveChanges();
 
-                Console.WriteLine("Analog Input {0} ({1}) is Deleted ", analogInput.TagName, analogInput.IOAddress);
-                Console.ReadKey();
             }
         }
 

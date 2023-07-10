@@ -12,7 +12,44 @@ namespace CORE.Impl
 {
     public class DigitalInputService : IDigitalInputService
     {
-        public IEnumerable<DigitalInput> GetAll()
+		public void Add(DigitalInput digitalInput)
+		{
+            using (IODatabase db = new IODatabase())
+            {
+                db.DigitalInputs.Add(digitalInput);
+                db.SaveChanges();
+            }
+        }
+
+		public void Delete(string tagName)
+		{
+            DigitalInput analogInput;
+            using (IODatabase db = new IODatabase())
+            {
+                db.Database.Log = Console.WriteLine;
+                analogInput = db.DigitalInputs.Where(d => d.TagName == tagName).First();
+                db.DigitalInputs.Remove(analogInput);
+                db.SaveChanges();
+
+            }
+        }
+
+		public void Edit(string tagName, bool scanning)
+		{
+            DigitalInput analogInput;
+            using (IODatabase db = new IODatabase())
+            {
+                analogInput = db.DigitalInputs.Where(d => d.TagName == tagName).First();
+                if (analogInput != null)
+                {
+                    analogInput.IsScanning = scanning;
+                    db.SaveChanges();
+                }
+
+            }
+        }
+
+		public IEnumerable<DigitalInput> GetAll()
         {
             using (IODatabase db = new IODatabase())
             {

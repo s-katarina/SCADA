@@ -72,7 +72,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Impl\AnalogInputService.svc" />
+    <Content Include="Impl\AnalogOutputService.svc" />
     <Content Include="Impl\DigitalInputService.svc" />
+    <Content Include="Impl\DigitalOutputService.svc" />
     <Content Include="Impl\PubSubService.svc" />
     <Content Include="Impl\RecordService.svc" />
     <Content Include="Impl\UserService.svc" />
@@ -86,9 +88,17 @@
     <Compile Include="Impl\AnalogInputService.svc.cs">
       <DependentUpon>AnalogInputService.svc</DependentUpon>
     </Compile>
+    <Compile Include="Impl\AnalogOutputService.svc.cs">
+      <DependentUpon>AnalogOutputService.svc</DependentUpon>
+    </Compile>
     <Compile Include="Impl\DigitalInputService.svc.cs">
       <DependentUpon>DigitalInputService.svc</DependentUpon>
     </Compile>
+    <Compile Include="Impl\DigitalOutputService.svc.cs">
+      <DependentUpon>DigitalOutputService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\IAnalogOutputService.cs" />
+    <Compile Include="Interfaces\IDigitalOutputService.cs" />
     <Compile Include="Interfaces\IPubSubService.cs" />
     <Compile Include="Impl\PubSubService.svc.cs">
       <DependentUpon>PubSubService.svc</DependentUpon>

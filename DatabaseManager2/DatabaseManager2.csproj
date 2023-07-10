@@ -57,6 +57,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Connected Services\AnalogOutputServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="TagManagment\InputTagsPage.xaml.cs">
       <DependentUpon>InputTagsPage.xaml</DependentUpon>
     </Compile>
@@ -119,6 +124,19 @@
     <None Include="Connected Services\AnalogInputReference\DatabaseManager2.AnalogInputReference.RecordAlarm.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\AnalogOutputServiceReference\AnalogOutputService.wsdl" />
+    <None Include="Connected Services\AnalogOutputServiceReference\AnalogOutputService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AnalogOutputServiceReference\AnalogOutputService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AnalogOutputServiceReference\AnalogOutputService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AnalogOutputServiceReference\DatabaseManager2.AnalogOutputServiceReference.AnalogOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -132,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\AnalogInputReference\" />
+    <WCFMetadataStorage Include="Connected Services\AnalogOutputServiceReference\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\AnalogInputReference\AnalogInputService.disco" />
@@ -148,6 +167,20 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Connected Services\AnalogOutputServiceReference\AnalogOutputService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AnalogOutputServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AnalogOutputServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AnalogOutputServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

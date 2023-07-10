@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:DatabaseManager2.TagManagment"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="700" d:DesignWidth="800"
       Title="InputTagsPage">
 
     <StackPanel>
@@ -72,6 +72,65 @@
             <Button x:Name="AddBtn" Click="AddBtn_Click"  Content="Add"></Button>
             <Button x:Name="DeleteBtn" Click="DeleteBtn_Click" Content="Delete"></Button>
             <Button x:Name="ChangeScanningBtn" Click="ChangeScanningBtn_Click" Content="Turn on/off"></Button>
+        </StackPanel>
+
+
+        <TextBlock Text="Analog outputs" Margin="0, 20, 0, 10" FontSize="15"></TextBlock>
+        <Grid MinHeight="250">
+            <DataGrid x:Name="analogOutputDataGrid" AutoGenerateColumns="False" ItemsSource="{Binding AnalogOutputs}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn IsReadOnly="True" Header="Tag Name" Binding="{Binding TagName}" />
+                    <DataGridTextColumn IsReadOnly="True" Header="IO Address" Binding="{Binding IOAddress}" />
+                    <DataGridTextColumn IsReadOnly="True" Header="Units" Binding="{Binding Units}" />
+                    <DataGridTextColumn IsReadOnly="True" Header="Low Limit" Binding="{Binding LowLimit}" />
+                    <DataGridTextColumn IsReadOnly="True" Header="High Limit" Binding="{Binding HighLimit}" />
+                    <DataGridTextColumn Header="Initial" Binding="{Binding InitialValue}" />
+                    <DataGridTextColumn IsReadOnly="True" Header="Description" Binding="{Binding Description}" />
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <StackPanel Orientation="Horizontal">
+            <TextBox Width="75" CaretBrush="LightGray" VerticalContentAlignment="Center" Padding="10, 0"  Margin="5" HorizontalAlignment="Stretch">
+                <TextBox.Text>
+                    <Binding Path="OutpuTtagName" UpdateSourceTrigger="PropertyChanged"></Binding>
+                </TextBox.Text>
+            </TextBox>
+            <TextBox Width="75" CaretBrush="LightGray" VerticalContentAlignment="Center" Padding="10, 0"  Margin="5" HorizontalAlignment="Stretch">
+                <TextBox.Text>
+                    <Binding Path="OutputIOAddress" UpdateSourceTrigger="PropertyChanged"></Binding>
+                </TextBox.Text>
+            </TextBox>
+            <TextBox Width="75" CaretBrush="LightGray" VerticalContentAlignment="Center" Padding="10, 0"  Margin="5" HorizontalAlignment="Stretch">
+                <TextBox.Text>
+                    <Binding Path="OutputUnits" UpdateSourceTrigger="PropertyChanged"></Binding>
+                </TextBox.Text>
+            </TextBox>
+            <TextBox Width="75" CaretBrush="LightGray" VerticalContentAlignment="Center" Padding="10, 0"  Margin="5" HorizontalAlignment="Stretch">
+                <TextBox.Text>
+                    <Binding Path="OutputLow" UpdateSourceTrigger="PropertyChanged"></Binding>
+                </TextBox.Text>
+            </TextBox>
+            <TextBox Width="75" CaretBrush="LightGray" VerticalContentAlignment="Center" Padding="10, 0"  Margin="5" HorizontalAlignment="Stretch">
+                <TextBox.Text>
+                    <Binding Path="OutputHigh" UpdateSourceTrigger="PropertyChanged"></Binding>
+                </TextBox.Text>
+            </TextBox>
+            <TextBox Width="75" CaretBrush="LightGray" VerticalContentAlignment="Center" Padding="10, 0"  Margin="5" HorizontalAlignment="Stretch">
+                <TextBox.Text>
+                    <Binding Path="OutputInitial" UpdateSourceTrigger="PropertyChanged"></Binding>
+                </TextBox.Text>
+            </TextBox>
+            <TextBox Width="75" CaretBrush="LightGray" VerticalContentAlignment="Center" Padding="10, 0"  Margin="5" HorizontalAlignment="Stretch">
+                <TextBox.Text>
+                    <Binding Path="OutputDes" UpdateSourceTrigger="PropertyChanged"></Binding>
+                </TextBox.Text>
+            </TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="AddOutputBtn" Click="AddOutputBtn_Click"  Content="Add"></Button>
+            <Button x:Name="DeleteOutputBtn" Click="DeleteOutputBtn_Click" Content="Delete"></Button>
+            <Button x:Name="ChangeOutputValueBtn" Click="ChangeOutputValueBtn_Click" Content="Change Output tag values"></Button>
         </StackPanel>
     </StackPanel>
 </Page>
