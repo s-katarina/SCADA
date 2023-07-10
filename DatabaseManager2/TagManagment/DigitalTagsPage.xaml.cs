@@ -176,6 +176,10 @@ namespace DatabaseManager2.TagManagment
 			if (!UniqueOutputTagName(OutpuTtagName)) return;
 
 			int st = int.Parse(outputInitial);
+			if (st != 0 && st != 1) {
+				MessageBox.Show("Value must be 1 or 0");
+				return;
+			}
 			DigitalOutput analogOutput = new DigitalOutput()
 			{
 				TagName = outpuTtagName,
@@ -205,16 +209,20 @@ namespace DatabaseManager2.TagManagment
 
 		private void ChangeOutputValueBtn_Click(object sender, RoutedEventArgs e)
 		{
+			int value = 0;
 			try
 			{
 				DigitalOutput analogInput = (DigitalOutput)analogOutputDataGrid.SelectedItem;
 				if (analogInput == null) return;
-
-				if (MessageBox.Show("Change scanning tag " + analogInput.TagName + "to " + analogInput.InitialValue + "?", "Delete", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.Cancel)
+				if (analogInput.InitialValue == 0) value = 1;
+				if (MessageBox.Show("Change scanning tag " + analogInput.TagName + " value to " + value + "?", "Delete", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.Cancel)
 				{
 					return;
 				}
-				analogOutputClient.Edit(analogInput.TagName, analogInput.InitialValue);
+				analogOutputClient.Edit(analogInput.TagName, value);
+				AnalogOutputs.Remove(analogInput);
+				analogInput.InitialValue = value;
+				AnalogOutputs.Add(analogInput);
 
 			}
 			catch { }

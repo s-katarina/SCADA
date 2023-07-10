@@ -13,7 +13,7 @@
             <Button Margin="15" x:Name="registerBtn" Content="Register"></Button>
         </StackPanel>
 
-        <ScrollViewer MaxHeight="800" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
             <Grid>
                 <Frame x:Name="MainFrame" Margin="10, 10">
                 </Frame>

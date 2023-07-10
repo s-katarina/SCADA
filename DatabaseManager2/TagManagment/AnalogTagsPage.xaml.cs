@@ -103,8 +103,10 @@ namespace DatabaseManager2.TagManagment
 			if (!CorrectNumberValue("Low Limit", low)) return;
 			if (!CorrectNumberValue("Scan Time", scanTime)) return;
 			if (!UniqueInputTagName(tagName)) return;
+			ComboBoxItem typeItem = (ComboBoxItem)ComboBox1.SelectedItem;
+			string value = typeItem.Content.ToString();
 
-			Enum.TryParse(ComboBox1.SelectedItem.ToString(), out DriverType driverTypee);
+			Enum.TryParse(value, out DriverType driverTypee);
 			int h = int.Parse(high);
 			int l = int.Parse(low);
 			int st = int.Parse(scanTime);
