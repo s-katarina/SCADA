@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31729.503
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33801.468
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CORE", "CORE.csproj", "{21B23382-D899-401C-85AD-14DAC2774EBD}"
 EndProject
@@ -20,7 +20,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportManager", "..\ReportM
 		{21B23382-D899-401C-85AD-14DAC2774EBD} = {21B23382-D899-401C-85AD-14DAC2774EBD}
 	EndProjectSection
 EndProject
+<<<<<<< HEAD
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseManager2", "..\DatabaseManager2\DatabaseManager2.csproj", "{48E093F1-C092-4C7C-8073-53828CA763B3}"
+=======
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlarmDisplay", "..\AlarmDisplay\AlarmDisplay.csproj", "{E24A0C2A-4257-41FE-8D5D-70DC8A5DF1C6}"
+>>>>>>> feature/alarm
 	ProjectSection(ProjectDependencies) = postProject
 		{21B23382-D899-401C-85AD-14DAC2774EBD} = {21B23382-D899-401C-85AD-14DAC2774EBD}
 	EndProjectSection
@@ -47,10 +51,17 @@ Global
 		{AD91615F-E08B-4498-A6DF-CB2ED28DC3F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD91615F-E08B-4498-A6DF-CB2ED28DC3F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD91615F-E08B-4498-A6DF-CB2ED28DC3F9}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< HEAD
 		{48E093F1-C092-4C7C-8073-53828CA763B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{48E093F1-C092-4C7C-8073-53828CA763B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48E093F1-C092-4C7C-8073-53828CA763B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48E093F1-C092-4C7C-8073-53828CA763B3}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
+		{E24A0C2A-4257-41FE-8D5D-70DC8A5DF1C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E24A0C2A-4257-41FE-8D5D-70DC8A5DF1C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E24A0C2A-4257-41FE-8D5D-70DC8A5DF1C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E24A0C2A-4257-41FE-8D5D-70DC8A5DF1C6}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> feature/alarm
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

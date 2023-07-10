@@ -16,12 +16,12 @@ namespace CORE.Impl
         {
             using (UserDatabase db = new UserDatabase())
             {
-                //User u1 = new User() { Name = "Pera", Surname = "Peric", Username = "pera", Password = "222" };
-                //User u2 = new User() { Name = "Mika", Surname = "Mikic", Username = "mika", Password = "222" };
+                User u1 = new User() { Name = "Pera", Surname = "Peric", Username = "pera", Password = "222" };
+                User u2 = new User() { Name = "Mika", Surname = "Mikic", Username = "mika", Password = "222" };
 
-                //db.Users.Add(u1);
-                //db.Users.Add(u2);
-                //db.SaveChanges();
+                db.Users.Add(u1);
+                db.Users.Add(u2);
+                db.SaveChanges();
 
                 foreach (User user in db.Users)
                     if (user.Username.Equals(username) && user.Password.Equals(password))

@@ -54,22 +54,24 @@ namespace CORE.Impl
         {
             using (IODatabase db = new IODatabase())
             {
-				//AnalogInput analogInput = new AnalogInput()
-				//{
-				//	TagName = "tag12",
-				//	Description = "opis",
-				//	Driver = DriverType.REAL,
-				//	HighLimit = 100,
-				//	LowLimit = 0,
-				//	IOAddress = "1",
-				//	IsScanning = true,
-				//	ScanTime = 2000,
-				//	Units = "ms",
-				//	Alarms = new List<Alarm>()
-				//};
-				//db.AnalogInputs.Add(analogInput);
-				//db.SaveChanges();
-				return db.AnalogInputs.ToList();
+                //AnalogInput analogInput = new AnalogInput()
+                //{
+                //    TagName = "tag505",
+                //    Description = "opis",
+                //    Driver = DriverType.REAL,
+                //    HighLimit = 50,
+                //    LowLimit = 0,
+                //    IOAddress = "22",
+                //    IsScanning = true,
+                //    ScanTime = 2000,
+                //    Units = "ms",
+                //    Alarms = new List<Alarm>()
+                //};
+                //Alarm a1 = new Alarm() { Priority=Priority.FIRST, Type=AlarmType.HIGH, Limit=10, InputTagName="tag505", AnalogInput=analogInput};
+                //analogInput.Alarms.Add(a1);
+                //db.AnalogInputs.Add(analogInput);
+                //db.SaveChanges();
+                return db.AnalogInputs.ToList();
             }
         }
 

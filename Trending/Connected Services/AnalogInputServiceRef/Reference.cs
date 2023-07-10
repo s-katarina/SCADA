@@ -347,6 +347,83 @@ namespace Trending.AnalogInputServiceRef {
         LOW = 1,
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RecordAlarm", Namespace="http://schemas.datacontract.org/2004/07/CORE.Models")]
+    [System.SerializableAttribute()]
+    public partial class RecordAlarm : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Trending.AnalogInputServiceRef.Alarm AlarmField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime TimestampField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Trending.AnalogInputServiceRef.Alarm Alarm {
+            get {
+                return this.AlarmField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AlarmField, value) != true)) {
+                    this.AlarmField = value;
+                    this.RaisePropertyChanged("Alarm");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Timestamp {
+            get {
+                return this.TimestampField;
+            }
+            set {
+                if ((this.TimestampField.Equals(value) != true)) {
+                    this.TimestampField = value;
+                    this.RaisePropertyChanged("Timestamp");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AnalogInputServiceRef.IAnalogInputService")]
     public interface IAnalogInputService {
@@ -362,6 +439,36 @@ namespace Trending.AnalogInputServiceRef {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/SendFromRTU", ReplyAction="http://tempuri.org/IAnalogInputService/SendFromRTUResponse")]
         System.Threading.Tasks.Task SendFromRTUAsync(string IOAdress, double value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/GetAlarmsByTime", ReplyAction="http://tempuri.org/IAnalogInputService/GetAlarmsByTimeResponse")]
+        Trending.AnalogInputServiceRef.RecordAlarm[] GetAlarmsByTime(System.DateTime low, System.DateTime high);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/GetAlarmsByTime", ReplyAction="http://tempuri.org/IAnalogInputService/GetAlarmsByTimeResponse")]
+        System.Threading.Tasks.Task<Trending.AnalogInputServiceRef.RecordAlarm[]> GetAlarmsByTimeAsync(System.DateTime low, System.DateTime high);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/GetRecordAlarmsByPriority", ReplyAction="http://tempuri.org/IAnalogInputService/GetRecordAlarmsByPriorityResponse")]
+        Trending.AnalogInputServiceRef.RecordAlarm[] GetRecordAlarmsByPriority(Trending.AnalogInputServiceRef.Priority priority);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/GetRecordAlarmsByPriority", ReplyAction="http://tempuri.org/IAnalogInputService/GetRecordAlarmsByPriorityResponse")]
+        System.Threading.Tasks.Task<Trending.AnalogInputServiceRef.RecordAlarm[]> GetRecordAlarmsByPriorityAsync(Trending.AnalogInputServiceRef.Priority priority);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/Add", ReplyAction="http://tempuri.org/IAnalogInputService/AddResponse")]
+        void Add(Trending.AnalogInputServiceRef.AnalogInput analogInput);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/Add", ReplyAction="http://tempuri.org/IAnalogInputService/AddResponse")]
+        System.Threading.Tasks.Task AddAsync(Trending.AnalogInputServiceRef.AnalogInput analogInput);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/Delete", ReplyAction="http://tempuri.org/IAnalogInputService/DeleteResponse")]
+        void Delete(string tagName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/Delete", ReplyAction="http://tempuri.org/IAnalogInputService/DeleteResponse")]
+        System.Threading.Tasks.Task DeleteAsync(string tagName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/Edit", ReplyAction="http://tempuri.org/IAnalogInputService/EditResponse")]
+        void Edit(string tagName, bool scanning);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/Edit", ReplyAction="http://tempuri.org/IAnalogInputService/EditResponse")]
+        System.Threading.Tasks.Task EditAsync(string tagName, bool scanning);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -405,6 +512,46 @@ namespace Trending.AnalogInputServiceRef {
         
         public System.Threading.Tasks.Task SendFromRTUAsync(string IOAdress, double value) {
             return base.Channel.SendFromRTUAsync(IOAdress, value);
+        }
+        
+        public Trending.AnalogInputServiceRef.RecordAlarm[] GetAlarmsByTime(System.DateTime low, System.DateTime high) {
+            return base.Channel.GetAlarmsByTime(low, high);
+        }
+        
+        public System.Threading.Tasks.Task<Trending.AnalogInputServiceRef.RecordAlarm[]> GetAlarmsByTimeAsync(System.DateTime low, System.DateTime high) {
+            return base.Channel.GetAlarmsByTimeAsync(low, high);
+        }
+        
+        public Trending.AnalogInputServiceRef.RecordAlarm[] GetRecordAlarmsByPriority(Trending.AnalogInputServiceRef.Priority priority) {
+            return base.Channel.GetRecordAlarmsByPriority(priority);
+        }
+        
+        public System.Threading.Tasks.Task<Trending.AnalogInputServiceRef.RecordAlarm[]> GetRecordAlarmsByPriorityAsync(Trending.AnalogInputServiceRef.Priority priority) {
+            return base.Channel.GetRecordAlarmsByPriorityAsync(priority);
+        }
+        
+        public void Add(Trending.AnalogInputServiceRef.AnalogInput analogInput) {
+            base.Channel.Add(analogInput);
+        }
+        
+        public System.Threading.Tasks.Task AddAsync(Trending.AnalogInputServiceRef.AnalogInput analogInput) {
+            return base.Channel.AddAsync(analogInput);
+        }
+        
+        public void Delete(string tagName) {
+            base.Channel.Delete(tagName);
+        }
+        
+        public System.Threading.Tasks.Task DeleteAsync(string tagName) {
+            return base.Channel.DeleteAsync(tagName);
+        }
+        
+        public void Edit(string tagName, bool scanning) {
+            base.Channel.Edit(tagName, scanning);
+        }
+        
+        public System.Threading.Tasks.Task EditAsync(string tagName, bool scanning) {
+            return base.Channel.EditAsync(tagName, scanning);
         }
     }
     

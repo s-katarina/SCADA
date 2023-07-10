@@ -164,6 +164,24 @@ namespace Trending.DigitalInputServiceRef {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDigitalInputService/SendFromRTU", ReplyAction="http://tempuri.org/IDigitalInputService/SendFromRTUResponse")]
         System.Threading.Tasks.Task SendFromRTUAsync(string IOAdress, bool value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDigitalInputService/Add", ReplyAction="http://tempuri.org/IDigitalInputService/AddResponse")]
+        void Add(Trending.DigitalInputServiceRef.DigitalInput digitalInput);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDigitalInputService/Add", ReplyAction="http://tempuri.org/IDigitalInputService/AddResponse")]
+        System.Threading.Tasks.Task AddAsync(Trending.DigitalInputServiceRef.DigitalInput digitalInput);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDigitalInputService/Delete", ReplyAction="http://tempuri.org/IDigitalInputService/DeleteResponse")]
+        void Delete(string tagName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDigitalInputService/Delete", ReplyAction="http://tempuri.org/IDigitalInputService/DeleteResponse")]
+        System.Threading.Tasks.Task DeleteAsync(string tagName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDigitalInputService/Edit", ReplyAction="http://tempuri.org/IDigitalInputService/EditResponse")]
+        void Edit(string tagName, bool scanning);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDigitalInputService/Edit", ReplyAction="http://tempuri.org/IDigitalInputService/EditResponse")]
+        System.Threading.Tasks.Task EditAsync(string tagName, bool scanning);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -207,6 +225,30 @@ namespace Trending.DigitalInputServiceRef {
         
         public System.Threading.Tasks.Task SendFromRTUAsync(string IOAdress, bool value) {
             return base.Channel.SendFromRTUAsync(IOAdress, value);
+        }
+        
+        public void Add(Trending.DigitalInputServiceRef.DigitalInput digitalInput) {
+            base.Channel.Add(digitalInput);
+        }
+        
+        public System.Threading.Tasks.Task AddAsync(Trending.DigitalInputServiceRef.DigitalInput digitalInput) {
+            return base.Channel.AddAsync(digitalInput);
+        }
+        
+        public void Delete(string tagName) {
+            base.Channel.Delete(tagName);
+        }
+        
+        public System.Threading.Tasks.Task DeleteAsync(string tagName) {
+            return base.Channel.DeleteAsync(tagName);
+        }
+        
+        public void Edit(string tagName, bool scanning) {
+            base.Channel.Edit(tagName, scanning);
+        }
+        
+        public System.Threading.Tasks.Task EditAsync(string tagName, bool scanning) {
+            return base.Channel.EditAsync(tagName, scanning);
         }
     }
 }

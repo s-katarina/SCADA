@@ -45,6 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\AlarmServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\AnalogInputServiceRef\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -66,6 +71,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Connected Services\AlarmServiceRef\AlarmService.wsdl" />
+    <None Include="Connected Services\AlarmServiceRef\AlarmService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AlarmServiceRef\AlarmService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AlarmServiceRef\AlarmService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AlarmServiceRef\AlarmService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\AnalogInputServiceRef\AnalogInputService.wsdl" />
     <None Include="Connected Services\AnalogInputServiceRef\AnalogInputService.xsd">
       <SubType>Designer</SubType>
@@ -80,6 +98,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\AnalogInputServiceRef\RTU.AnalogInputServiceRef.AnalogInput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AnalogInputServiceRef\RTU.AnalogInputServiceRef.RecordAlarm1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\DigitalInputServiceRef\DigitalInputService.wsdl" />
@@ -107,6 +128,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\AlarmServiceRef\" />
     <WCFMetadataStorage Include="Connected Services\AnalogInputServiceRef\" />
     <WCFMetadataStorage Include="Connected Services\DigitalInputServiceRef\" />
     <WCFMetadataStorage Include="Connected Services\PubSubService\" />
@@ -160,5 +182,20 @@
     </None>
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <None Include="Connected Services\AlarmServiceRef\AlarmService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AlarmServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AlarmServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AlarmServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

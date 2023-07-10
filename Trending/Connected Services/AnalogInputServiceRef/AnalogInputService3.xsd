@@ -59,4 +59,18 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="DriverType" nillable="true" type="tns:DriverType" />
+  <xs:complexType name="ArrayOfRecordAlarm">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RecordAlarm" nillable="true" type="tns:RecordAlarm" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRecordAlarm" nillable="true" type="tns:ArrayOfRecordAlarm" />
+  <xs:complexType name="RecordAlarm">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Alarm" nillable="true" type="tns:Alarm" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Timestamp" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RecordAlarm" nillable="true" type="tns:RecordAlarm" />
 </xs:schema>
