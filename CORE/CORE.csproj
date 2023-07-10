@@ -71,6 +71,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Impl\AlarmCRUDService.svc" />
     <Content Include="Impl\AlarmService.svc" />
     <Content Include="Impl\AnalogInputService.svc" />
     <Content Include="Impl\AnalogOutputService.svc" />
@@ -86,6 +87,9 @@
     <Compile Include="Database\IODatabase.cs" />
     <Compile Include="Database\RecordDatabase.cs" />
     <Compile Include="Database\UserDatabase.cs" />
+    <Compile Include="Impl\AlarmCRUDService.svc.cs">
+      <DependentUpon>AlarmCRUDService.svc</DependentUpon>
+    </Compile>
     <Compile Include="Impl\AlarmService.svc.cs">
       <DependentUpon>AlarmService.svc</DependentUpon>
     </Compile>
@@ -101,6 +105,7 @@
     <Compile Include="Impl\DigitalOutputService.svc.cs">
       <DependentUpon>DigitalOutputService.svc</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IAlarmCRUDService.cs" />
     <Compile Include="Interfaces\IAnalogOutputService.cs" />
     <Compile Include="Interfaces\IDigitalOutputService.cs" />
     <Compile Include="Interfaces\IPubSubService.cs" />
