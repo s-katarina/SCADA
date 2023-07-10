@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DatabaseManager2.TagManagment;
+using DatabaseManager2.UsersManagment;
 
 namespace DatabaseManager2
 {
@@ -34,6 +35,16 @@ namespace DatabaseManager2
 		private void digitalBtn_Click(object sender, RoutedEventArgs e)
 		{
 			MainFrame.Content = new DigitalTagsPage();
+		}
+
+		private void registerBtn_Click(object sender, RoutedEventArgs e)
+		{
+			MainFrame.Content = new RegistrationPage();
+		}
+
+		private void LogoutBtn_Click(object sender, RoutedEventArgs e)
+		{
+
 		}
 	}
 }

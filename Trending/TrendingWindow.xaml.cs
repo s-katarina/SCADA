@@ -32,6 +32,8 @@ namespace Trending
             public void MessageArrived(Dictionary<string, double> current)
             {
                 Debug.WriteLine(current);
+                analogInputs = analogClient.GetAll();
+                digitalInputs = digitalClient.GetAll();
                 MakeInputTableRecords(analogInputs, digitalInputs, current);
             }
         }

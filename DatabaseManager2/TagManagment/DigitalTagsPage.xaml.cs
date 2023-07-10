@@ -90,8 +90,10 @@ namespace DatabaseManager2.TagManagment
 			if (!CorrectNumberValue("Scan Time", scanTime)) return;
 			if (!UniqueInputTagName(tagName)) return;
 
-			Enum.TryParse(ComboBox1.SelectedItem.ToString(), out DigitalInputReference.DriverType driverTypee);
-			int st = int.Parse(scanTime);
+			ComboBoxItem typeItem = (ComboBoxItem)ComboBox1.SelectedItem;
+			string value = typeItem.Content.ToString();
+
+			Enum.TryParse(value, out DigitalInputReference.DriverType driverTypee); int st = int.Parse(scanTime);
 			DigitalInput analogInput = new DigitalInput()
 			{
 				TagName = tagName,

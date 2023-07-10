@@ -72,6 +72,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\UserReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="TagManagment\DigitalTagsPage.xaml.cs">
       <DependentUpon>DigitalTagsPage.xaml</DependentUpon>
     </Compile>
@@ -84,6 +89,7 @@
     <Compile Include="UsersManagment\RegistrationPage.xaml.cs">
       <DependentUpon>RegistrationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UsersManagment\Validator.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -194,6 +200,16 @@
     <None Include="Connected Services\DigitalOutputReference\DigitalOutputService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\UserReference\UserService.wsdl" />
+    <None Include="Connected Services\UserReference\UserService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UserReference\UserService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UserReference\UserService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -210,6 +226,7 @@
     <WCFMetadataStorage Include="Connected Services\AnalogOutputServiceReference\" />
     <WCFMetadataStorage Include="Connected Services\DigitalInputReference\" />
     <WCFMetadataStorage Include="Connected Services\DigitalOutputReference\" />
+    <WCFMetadataStorage Include="Connected Services\UserReference\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\AnalogInputReference\AnalogInputService.disco" />
@@ -267,6 +284,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\DigitalOutputReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\UserReference\UserService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\UserReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\UserReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\UserReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
