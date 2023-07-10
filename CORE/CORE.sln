@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31729.503
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33801.468
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CORE", "CORE.csproj", "{21B23382-D899-401C-85AD-14DAC2774EBD}"
 EndProject
@@ -16,6 +16,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trending", "..\Trending\Tre
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportManager", "..\ReportManager\ReportManager.csproj", "{AD91615F-E08B-4498-A6DF-CB2ED28DC3F9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{21B23382-D899-401C-85AD-14DAC2774EBD} = {21B23382-D899-401C-85AD-14DAC2774EBD}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlarmDisplay", "..\AlarmDisplay\AlarmDisplay.csproj", "{E24A0C2A-4257-41FE-8D5D-70DC8A5DF1C6}"
 	ProjectSection(ProjectDependencies) = postProject
 		{21B23382-D899-401C-85AD-14DAC2774EBD} = {21B23382-D899-401C-85AD-14DAC2774EBD}
 	EndProjectSection
@@ -42,6 +47,10 @@ Global
 		{AD91615F-E08B-4498-A6DF-CB2ED28DC3F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD91615F-E08B-4498-A6DF-CB2ED28DC3F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD91615F-E08B-4498-A6DF-CB2ED28DC3F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E24A0C2A-4257-41FE-8D5D-70DC8A5DF1C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E24A0C2A-4257-41FE-8D5D-70DC8A5DF1C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E24A0C2A-4257-41FE-8D5D-70DC8A5DF1C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E24A0C2A-4257-41FE-8D5D-70DC8A5DF1C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
