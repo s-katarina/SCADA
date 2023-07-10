@@ -62,8 +62,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="TagManagment\InputTagsPage.xaml.cs">
-      <DependentUpon>InputTagsPage.xaml</DependentUpon>
+    <Compile Include="Connected Services\DigitalInputReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\DigitalOutputReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="TagManagment\DigitalTagsPage.xaml.cs">
+      <DependentUpon>DigitalTagsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TagManagment\AnalogTagsPage.xaml.cs">
+      <DependentUpon>AnalogTagsPage.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -82,7 +95,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="TagManagment\InputTagsPage.xaml">
+    <Page Include="TagManagment\DigitalTagsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TagManagment\AnalogTagsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -137,6 +154,32 @@
     <None Include="Connected Services\AnalogOutputServiceReference\DatabaseManager2.AnalogOutputServiceReference.AnalogOutput.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\DigitalInputReference\DatabaseManager2.DigitalInputReference.DigitalInput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DigitalInputReference\DigitalInputService.wsdl" />
+    <None Include="Connected Services\DigitalInputReference\DigitalInputService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DigitalInputReference\DigitalInputService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DigitalInputReference\DigitalInputService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DigitalOutputReference\DatabaseManager2.DigitalOutputReference.DigitalOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DigitalOutputReference\DigitalOutputService.wsdl" />
+    <None Include="Connected Services\DigitalOutputReference\DigitalOutputService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DigitalOutputReference\DigitalOutputService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DigitalOutputReference\DigitalOutputService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -151,6 +194,8 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\AnalogInputReference\" />
     <WCFMetadataStorage Include="Connected Services\AnalogOutputServiceReference\" />
+    <WCFMetadataStorage Include="Connected Services\DigitalInputReference\" />
+    <WCFMetadataStorage Include="Connected Services\DigitalOutputReference\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\AnalogInputReference\AnalogInputService.disco" />
@@ -178,6 +223,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\AnalogOutputServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DigitalInputReference\DigitalInputService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DigitalInputReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DigitalInputReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DigitalInputReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DigitalOutputReference\DigitalOutputService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DigitalOutputReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DigitalOutputReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DigitalOutputReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

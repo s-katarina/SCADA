@@ -28,7 +28,12 @@ namespace DatabaseManager2
 
 		private void tagBtn_Click(object sender, RoutedEventArgs e)
 		{
-			MainFrame.Content = new InputTagsPage();
+			MainFrame.Content = new AnalogTagsPage();
+		}
+
+		private void digitalBtn_Click(object sender, RoutedEventArgs e)
+		{
+			MainFrame.Content = new DigitalTagsPage();
 		}
 	}
 }

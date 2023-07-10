@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,79 +14,69 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DatabaseManager2.AnalogInputReference;
-using DatabaseManager2.AnalogOutputServiceReference;
+using DatabaseManager2.DigitalInputReference;
+using DatabaseManager2.DigitalOutputReference;
 
 namespace DatabaseManager2.TagManagment
 {
 	/// <summary>
-	/// Interaction logic for InputTagsPage.xaml
+	/// Interaction logic for DigitalTagsPage.xaml
 	/// </summary>
-	public partial class InputTagsPage : Page
+	public partial class DigitalTagsPage : Page
 	{
-		public static AnalogInputServiceClient analogClient = new AnalogInputServiceClient();
-		public static AnalogOutputServiceClient analogOutputClient = new AnalogOutputServiceClient();
+		public static DigitalInputServiceClient analogClient = new DigitalInputServiceClient();
+		public static DigitalOutputServiceClient analogOutputClient = new DigitalOutputServiceClient();
 
-		public static List<AnalogInput> IanalogInputs;
-		public static List<AnalogOutput> IanalogOutputs;
-		private ObservableCollection<AnalogInput> analogInputs = new ObservableCollection<AnalogInput>();
-		private ObservableCollection<AnalogOutput> analogOutputs= new ObservableCollection<AnalogOutput>();
+		public static List<DigitalInput> IanalogInputs;
+		public static List<DigitalOutput> IanalogOutputs;
+		private ObservableCollection<DigitalInput> analogInputs = new ObservableCollection<DigitalInput>();
+		private ObservableCollection<DigitalOutput> analogOutputs = new ObservableCollection<DigitalOutput>();
 		private string tagName = "tagName";
 		private string description = "Description";
 		private string iOAddress = "IOAddress";
-		private string units = "Units";
 		private string scanTime = "Scan time";
-		private string low = "Low";
-		private string high = "High";
 
 		private string outpuTtagName = "tagName2";
 		private string outputIOAddress = "IOAddress2";
-		private string outputUnits = "Units2";
 		private string outputInitial = "Initial val2";
-		private string outputLow = "Low2";
-		private string outputHigh = "High2";
 		private string outputDes = "Description2";
-
-
-		public InputTagsPage()
+		public DigitalTagsPage()
 		{
 			DataContext = this;
 			InitializeComponent();
 			IanalogInputs = analogClient.GetAll().ToList();
-			foreach (AnalogInput analogInput in IanalogInputs) {
+			foreach (DigitalInput analogInput in IanalogInputs)
+			{
 				AnalogInputs.Add(analogInput);
 			}
 
 			IanalogOutputs = analogOutputClient.GetAll().ToList();
-			foreach (AnalogOutput analogInput in IanalogOutputs)
+			foreach (DigitalOutput analogInput in IanalogOutputs)
 			{
 				AnalogOutputs.Add(analogInput);
 			}
 		}
 
-		public ObservableCollection<AnalogInput> AnalogInputs { get => analogInputs; set => analogInputs = value; }
+		public ObservableCollection<DigitalInput> AnalogInputs { get => analogInputs; set => analogInputs = value; }
+		public ObservableCollection<DigitalOutput> AnalogOutputs { get => analogOutputs; set => analogOutputs = value; }
 		public string TagName { get => tagName; set => tagName = value; }
 		public string Description { get => description; set => description = value; }
 		public string IOAddress { get => iOAddress; set => iOAddress = value; }
-		public string Units { get => units; set => units = value; }
-		public string ScanTime { get => scanTime; set => scanTime = value; }
-		public string Low { get => low; set => low = value; }
-		public string High { get => high; set => high = value; }
-		public ObservableCollection<AnalogOutput> AnalogOutputs { get => analogOutputs; set => analogOutputs = value; }
 		public string OutpuTtagName { get => outpuTtagName; set => outpuTtagName = value; }
+		public string ScanTime { get => scanTime; set => scanTime = value; }
 		public string OutputIOAddress { get => outputIOAddress; set => outputIOAddress = value; }
-		public string OutputUnits { get => outputUnits; set => outputUnits = value; }
 		public string OutputInitial { get => outputInitial; set => outputInitial = value; }
-		public string OutputLow { get => outputLow; set => outputLow = value; }
-		public string OutputHigh { get => outputHigh; set => outputHigh = value; }
 		public string OutputDes { get => outputDes; set => outputDes = value; }
 
-		private bool CorrectStringValue(string fieldName, string value) {
+		private bool CorrectStringValue(string fieldName, string value)
+		{
 			if (value.Length >= 1) return true;
 			MessageBox.Show("Field " + fieldName + " must be filled");
 			return false;
 		}
 
-		private bool CorrectNumberValue(string fieldName, string value) {
+		private bool CorrectNumberValue(string fieldName, string value)
+		{
 			if (int.TryParse(value, out int intValue)) return true;
 			MessageBox.Show("Field " + fieldName + " must be a number");
 			return false;
@@ -98,38 +87,31 @@ namespace DatabaseManager2.TagManagment
 			if (!CorrectStringValue("Tag name", tagName)) return;
 			if (!CorrectStringValue("Description", description)) return;
 			if (!CorrectStringValue("IOaddress", IOAddress)) return;
-			if (!CorrectStringValue("Units", units)) return;
-			if (!CorrectNumberValue("High Limit", high)) return;
-			if (!CorrectNumberValue("Low Limit", low)) return;
 			if (!CorrectNumberValue("Scan Time", scanTime)) return;
 			if (!UniqueInputTagName(tagName)) return;
 
-			Enum.TryParse(ComboBox1.SelectedItem.ToString(), out DriverType driverTypee);
-			int h = int.Parse(high);
-			int l = int.Parse(low);
+			Enum.TryParse(ComboBox1.SelectedItem.ToString(), out DigitalInputReference.DriverType driverTypee);
 			int st = int.Parse(scanTime);
-			AnalogInput analogInput = new AnalogInput()
+			DigitalInput analogInput = new DigitalInput()
 			{
 				TagName = tagName,
 				Description = description,
 				Driver = driverTypee,
-				HighLimit = h,
-				LowLimit = l,
 				IOAddress = iOAddress,
 				IsScanning = (bool)McCheckBox.IsChecked,
 				ScanTime = st,
-				Units = units,
-				Alarms = new Alarm[0]
 			};
 			analogClient.Add(analogInput);
 			AnalogInputs.Add(analogInput);
-			
+
 		}
 
 		private bool UniqueInputTagName(string tagName)
 		{
-			foreach (AnalogInput analogInput in AnalogInputs) {
-				if (analogInput.TagName.Equals(tagName)) {
+			foreach (DigitalInput analogInput in AnalogInputs)
+			{
+				if (analogInput.TagName.Equals(tagName))
+				{
 					MessageBox.Show("Tag with his name exists already");
 					return false;
 				}
@@ -139,12 +121,10 @@ namespace DatabaseManager2.TagManagment
 
 		private bool UniqueOutputTagName(string tagName)
 		{
-			foreach (AnalogOutput analogOutput in AnalogOutputs)
+			foreach (DigitalOutput analogOutput in AnalogOutputs)
 			{
-				Debug.WriteLine(analogOutput.TagName);
 				if (analogOutput.TagName.Equals(tagName))
 				{
-					Debug.WriteLine("AAAAAAAAAAAAA");
 					MessageBox.Show("Tag with his name exists already");
 					return false;
 				}
@@ -156,7 +136,7 @@ namespace DatabaseManager2.TagManagment
 		{
 			try
 			{
-				AnalogInput analogInput = (AnalogInput)analogInputDataGrid.SelectedItem;
+				DigitalInput analogInput = (DigitalInput)analogInputDataGrid.SelectedItem;
 				if (analogInput == null) return;
 				if (MessageBox.Show("Delete tag " + analogInput.TagName + "?", "Delete", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.Cancel)
 				{
@@ -173,7 +153,7 @@ namespace DatabaseManager2.TagManagment
 		{
 			try
 			{
-				AnalogInput analogInput = (AnalogInput)analogInputDataGrid.SelectedItem;
+				DigitalInput analogInput = (DigitalInput)analogInputDataGrid.SelectedItem;
 				if (analogInput == null) return;
 				if (MessageBox.Show("Change scanning tag " + analogInput.TagName + "to " + !analogInput.IsScanning + "?", "Delete", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.Cancel)
 				{
@@ -192,24 +172,15 @@ namespace DatabaseManager2.TagManagment
 			if (!CorrectStringValue("Tag name", outpuTtagName)) return;
 			if (!CorrectStringValue("Description", outputDes)) return;
 			if (!CorrectStringValue("IOaddress", outputIOAddress)) return;
-			if (!CorrectStringValue("Units", outputUnits)) return;
-			if (!CorrectNumberValue("High Limit", outputHigh)) return;
-			if (!CorrectNumberValue("Low Limit", outputLow)) return;
 			if (!CorrectNumberValue("Initial Value", outputInitial)) return;
 			if (!UniqueOutputTagName(OutpuTtagName)) return;
 
-			Enum.TryParse(ComboBox1.SelectedItem.ToString(), out DriverType driverTypee);
-			int h = int.Parse(outputHigh);
-			int l = int.Parse(outputLow);
 			int st = int.Parse(outputInitial);
-			AnalogOutput analogOutput = new AnalogOutput()
+			DigitalOutput analogOutput = new DigitalOutput()
 			{
 				TagName = outpuTtagName,
 				Description = outputDes,
-				HighLimit = h,
-				LowLimit = l,
 				IOAddress = outputIOAddress,
-				Units = outputUnits,
 				InitialValue = st
 			};
 			analogOutputClient.Add(analogOutput);
@@ -220,7 +191,7 @@ namespace DatabaseManager2.TagManagment
 		{
 			try
 			{
-				AnalogOutput analogInput = (AnalogOutput)analogOutputDataGrid.SelectedItem;
+				DigitalOutput analogInput = (DigitalOutput)analogOutputDataGrid.SelectedItem;
 				if (analogInput == null) return;
 				if (MessageBox.Show("Delete tag " + analogInput.TagName + "?", "Delete", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.Cancel)
 				{
@@ -236,19 +207,15 @@ namespace DatabaseManager2.TagManagment
 		{
 			try
 			{
-				AnalogOutput analogInput = (AnalogOutput)analogOutputDataGrid.SelectedItem;
+				DigitalOutput analogInput = (DigitalOutput)analogOutputDataGrid.SelectedItem;
 				if (analogInput == null) return;
-				if (!(analogInput.LowLimit <= analogInput.InitialValue && analogInput.InitialValue <= analogInput.HighLimit)) {
-					MessageBox.Show("Initial value is not between the low and high value");
-					return;
-				}
 
 				if (MessageBox.Show("Change scanning tag " + analogInput.TagName + "to " + analogInput.InitialValue + "?", "Delete", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.Cancel)
 				{
 					return;
 				}
 				analogOutputClient.Edit(analogInput.TagName, analogInput.InitialValue);
-				
+
 			}
 			catch { }
 		}
