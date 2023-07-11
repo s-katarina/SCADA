@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="53f4fe6f-8729-40c9-8c55-cf7719006af0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:4062/Impl/AlarmCRUDService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AlarmCRUDService.xsd" MetadataType="Schema" ID="59789bff-c969-4216-b5ce-790f45a45a28" SourceId="1" SourceUrl="http://localhost:4062/Impl/AlarmCRUDService.svc?xsd=xsd0" />
+    <MetadataFile FileName="AlarmCRUDService.wsdl" MetadataType="Wsdl" ID="b3c2c73a-3587-43ad-abba-8429eeb018e3" SourceId="1" SourceUrl="http://localhost:4062/Impl/AlarmCRUDService.svc?wsdl" />
+    <MetadataFile FileName="AlarmCRUDService1.xsd" MetadataType="Schema" ID="43c30649-d1a3-4ce2-bd98-e5edacbbe57a" SourceId="1" SourceUrl="http://localhost:4062/Impl/AlarmCRUDService.svc?xsd=xsd2" />
+    <MetadataFile FileName="AlarmCRUDService2.xsd" MetadataType="Schema" ID="61b711aa-cda7-4e3e-b9c2-fe12afe65b50" SourceId="1" SourceUrl="http://localhost:4062/Impl/AlarmCRUDService.svc?xsd=xsd1" />
+    <MetadataFile FileName="AlarmCRUDService.disco" MetadataType="Disco" ID="eb035ed2-cf4f-496b-a728-719c42f1f4cb" SourceId="1" SourceUrl="http://localhost:4062/Impl/AlarmCRUDService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

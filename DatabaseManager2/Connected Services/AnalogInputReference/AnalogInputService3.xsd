@@ -29,8 +29,8 @@
   <xs:element name="ArrayOfAlarm" nillable="true" type="tns:ArrayOfAlarm" />
   <xs:complexType name="Alarm">
     <xs:sequence>
-      <xs:element minOccurs="0" name="AnalogInput" nillable="true" type="tns:AnalogInput" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="InputTagName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Limit" type="xs:double" />
       <xs:element minOccurs="0" name="Priority" type="tns:Priority" />
       <xs:element minOccurs="0" name="Type" type="tns:AlarmType" />

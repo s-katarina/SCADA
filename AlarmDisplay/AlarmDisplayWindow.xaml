@@ -10,10 +10,10 @@
         <TextBlock x:Name="message" Foreground="Red"/>
         <DataGrid x:Name="dataGrid" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Tag Name" Binding="{Binding TagName}" />
-                <DataGridTextColumn Header="Alarm Type" Binding="{Binding AlarmType}" />
-                <DataGridTextColumn Header="Alarm Priority" Binding="{Binding AlarmPriority}" />
-                <DataGridTextColumn Header="Timestamp" Binding="{Binding TimeStamp}" />
+                <DataGridTextColumn IsReadOnly="True" Header="Tag Name" Binding="{Binding TagName}" />
+                <DataGridTextColumn IsReadOnly="True" Header="Alarm Type" Binding="{Binding AlarmType}" />
+                <DataGridTextColumn IsReadOnly="True" Header="Alarm Priority" Binding="{Binding AlarmPriority}" />
+                <DataGridTextColumn IsReadOnly="True" Header="Timestamp" Binding="{Binding TimeStamp}" />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

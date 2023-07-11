@@ -217,6 +217,7 @@
       <DependentUpon>202307081211103_gdfg.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AlarmDTO.cs" />
     <Compile Include="Models\Alarm.cs" />
     <Compile Include="Models\AnalogInput.cs" />
     <Compile Include="Models\AnalogOutput.cs" />

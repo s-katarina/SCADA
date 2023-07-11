@@ -212,10 +212,10 @@ namespace DatabaseManager2.AnalogInputReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private DatabaseManager2.AnalogInputReference.AnalogInput AnalogInputField;
+        private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
+        private string InputTagNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double LimitField;
@@ -237,19 +237,6 @@ namespace DatabaseManager2.AnalogInputReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public DatabaseManager2.AnalogInputReference.AnalogInput AnalogInput {
-            get {
-                return this.AnalogInputField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AnalogInputField, value) != true)) {
-                    this.AnalogInputField = value;
-                    this.RaisePropertyChanged("AnalogInput");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public int Id {
             get {
                 return this.IdField;
@@ -258,6 +245,19 @@ namespace DatabaseManager2.AnalogInputReference {
                 if ((this.IdField.Equals(value) != true)) {
                     this.IdField = value;
                     this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string InputTagName {
+            get {
+                return this.InputTagNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InputTagNameField, value) != true)) {
+                    this.InputTagNameField = value;
+                    this.RaisePropertyChanged("InputTagName");
                 }
             }
         }
@@ -469,6 +469,12 @@ namespace DatabaseManager2.AnalogInputReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/Edit", ReplyAction="http://tempuri.org/IAnalogInputService/EditResponse")]
         System.Threading.Tasks.Task EditAsync(string tagName, bool scanning);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/GetAllAlarms", ReplyAction="http://tempuri.org/IAnalogInputService/GetAllAlarmsResponse")]
+        DatabaseManager2.AnalogInputReference.Alarm[] GetAllAlarms();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/GetAllAlarms", ReplyAction="http://tempuri.org/IAnalogInputService/GetAllAlarmsResponse")]
+        System.Threading.Tasks.Task<DatabaseManager2.AnalogInputReference.Alarm[]> GetAllAlarmsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -552,6 +558,14 @@ namespace DatabaseManager2.AnalogInputReference {
         
         public System.Threading.Tasks.Task EditAsync(string tagName, bool scanning) {
             return base.Channel.EditAsync(tagName, scanning);
+        }
+        
+        public DatabaseManager2.AnalogInputReference.Alarm[] GetAllAlarms() {
+            return base.Channel.GetAllAlarms();
+        }
+        
+        public System.Threading.Tasks.Task<DatabaseManager2.AnalogInputReference.Alarm[]> GetAllAlarmsAsync() {
+            return base.Channel.GetAllAlarmsAsync();
         }
     }
     

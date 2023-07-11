@@ -13,10 +13,10 @@ namespace CORE.Interfaces
     public interface IAlarmCRUDService
     {
         [OperationContract]
-        void Add(Alarm alarm);
+        void Add(Alarm alarm, string tagName);
         [OperationContract]
         void Delete(int id);
         [OperationContract]
-        IEnumerable<Alarm> GetAll();
+        IEnumerable<AlarmDTO> GetAll();
     }
 }

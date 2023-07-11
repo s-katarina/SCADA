@@ -14,10 +14,13 @@ namespace CORE.Impl
     // NOTE: In order to launch WCF Test Client for testing this service, please select AlarmCRUDService.svc or AlarmCRUDService.svc.cs at the Solution Explorer and start debugging.
     public class AlarmCRUDService : IAlarmCRUDService
     {
-        public void Add(Alarm alarm)
+        public void Add(Alarm alarm, string tagName)
         {
+            AnalogInput analogInput;
             using (IODatabase db = new IODatabase())
             {
+                analogInput = db.AnalogInputs.Where(d => d.TagName == tagName).First();
+                alarm.AnalogInput = analogInput; 
                 db.Alarms.Add(alarm);
                 db.SaveChanges();
             }
@@ -35,11 +38,18 @@ namespace CORE.Impl
             }
         }
 
-        public IEnumerable<Alarm> GetAll()
+        public IEnumerable<AlarmDTO> GetAll()
         {
             using (IODatabase db = new IODatabase())
             {
-                return db.Alarms.ToList();
+                int count = db.Alarms.ToList().Count;
+                var l = db.Alarms.ToList();
+                List<AlarmDTO> res = new List<AlarmDTO>();
+                foreach (Alarm alarm in l)
+                {
+                    res.Add(new AlarmDTO() { Id = alarm.Id, InputTagName = alarm.InputTagName, Limit = alarm.Limit, Priority = alarm.Priority.ToString(), Type = alarm.Type.ToString() });  
+                }
+                return res;
             }
         }
 

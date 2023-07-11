@@ -9,34 +9,19 @@ using System.Web;
 namespace CORE.Models
 {
 	[DataContract]
-	public class Alarm
+	public class AlarmDTO
 	{
-		[Key]
         [DataMember]
 		public int Id { get; set; }
         [DataMember]
-		public Priority Priority { get; set; }
+		public string Priority { get; set; }
         [DataMember]
-		public AlarmType Type { get; set; }
+		public string Type { get; set; }
         [DataMember]
 		public double Limit { get; set; }
 
-        [ForeignKey("AnalogInput")]
         [DataMember]
         public string InputTagName { get; set; }
 
-        //[DataMember]
-        public AnalogInput AnalogInput { get; set; }
-	}
-
-	public enum Priority { 
-		FIRST,
-		SECOND,
-		THIRD
-	}
-
-	public enum AlarmType { 
-		HIGH,
-		LOW
 	}
 }

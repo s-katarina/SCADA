@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DatabaseManager2.AlarmManagment;
 using DatabaseManager2.TagManagment;
 
 namespace DatabaseManager2
@@ -35,5 +36,10 @@ namespace DatabaseManager2
 		{
 			MainFrame.Content = new DigitalTagsPage();
 		}
-	}
+
+        private void alarmBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new AlarmCRUDPage();
+        }
+    }
 }

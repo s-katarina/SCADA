@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CORE.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CORE.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Alarm">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="InputTagName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit" type="xs:double" />
+      <xs:element minOccurs="0" name="Priority" type="tns:Priority" />
+      <xs:element minOccurs="0" name="Type" type="tns:AlarmType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Alarm" nillable="true" type="tns:Alarm" />
+  <xs:simpleType name="Priority">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FIRST" />
+      <xs:enumeration value="SECOND" />
+      <xs:enumeration value="THIRD" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Priority" nillable="true" type="tns:Priority" />
+  <xs:simpleType name="AlarmType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="HIGH" />
+      <xs:enumeration value="LOW" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AlarmType" nillable="true" type="tns:AlarmType" />
+  <xs:complexType name="ArrayOfAlarmDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AlarmDTO" nillable="true" type="tns:AlarmDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAlarmDTO" nillable="true" type="tns:ArrayOfAlarmDTO" />
+  <xs:complexType name="AlarmDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="InputTagName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit" type="xs:double" />
+      <xs:element minOccurs="0" name="Priority" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AlarmDTO" nillable="true" type="tns:AlarmDTO" />
+</xs:schema>

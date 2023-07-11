@@ -57,6 +57,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AlarmManagment\AlarmCRUDPage.xaml.cs">
+      <DependentUpon>AlarmCRUDPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\AlarmCrudReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\AnalogOutputServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -84,6 +92,10 @@
     <Compile Include="UsersManagment\RegistrationPage.xaml.cs">
       <DependentUpon>RegistrationPage.xaml</DependentUpon>
     </Compile>
+    <Page Include="AlarmManagment\AlarmCRUDPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -136,6 +148,19 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Connected Services\AlarmCrudReference\AlarmCRUDService.wsdl" />
+    <None Include="Connected Services\AlarmCrudReference\AlarmCRUDService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AlarmCrudReference\AlarmCRUDService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AlarmCrudReference\AlarmCRUDService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AlarmCrudReference\DatabaseManager2.AlarmCrudReference.AlarmDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\AnalogInputReference\AnalogInputService.wsdl" />
     <None Include="Connected Services\AnalogInputReference\AnalogInputService.xsd">
       <SubType>Designer</SubType>
@@ -148,6 +173,9 @@
     </None>
     <None Include="Connected Services\AnalogInputReference\AnalogInputService3.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AnalogInputReference\DatabaseManager2.AnalogInputReference.Alarm.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\AnalogInputReference\DatabaseManager2.AnalogInputReference.AnalogInput.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -206,6 +234,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\AlarmCrudReference\" />
     <WCFMetadataStorage Include="Connected Services\AnalogInputReference\" />
     <WCFMetadataStorage Include="Connected Services\AnalogOutputServiceReference\" />
     <WCFMetadataStorage Include="Connected Services\DigitalInputReference\" />
@@ -267,6 +296,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\DigitalOutputReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AlarmCrudReference\AlarmCRUDService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AlarmCrudReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AlarmCrudReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AlarmCrudReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
