@@ -44,18 +44,6 @@
   <wsdl:message name="IRecordService_GetAllForTag_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllForTagResponse" />
   </wsdl:message>
-  <wsdl:message name="IRecordService_GetAlarmsInPeriod_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAlarmsInPeriod" />
-  </wsdl:message>
-  <wsdl:message name="IRecordService_GetAlarmsInPeriod_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAlarmsInPeriodResponse" />
-  </wsdl:message>
-  <wsdl:message name="IRecordService_GetAlarmsByPriority_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAlarmsByPriority" />
-  </wsdl:message>
-  <wsdl:message name="IRecordService_GetAlarmsByPriority_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAlarmsByPriorityResponse" />
-  </wsdl:message>
   <wsdl:portType name="IRecordService">
     <wsdl:operation name="GetCurrent">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordService/GetCurrent" message="tns:IRecordService_GetCurrent_InputMessage" />
@@ -80,14 +68,6 @@
     <wsdl:operation name="GetAllForTag">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordService/GetAllForTag" message="tns:IRecordService_GetAllForTag_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordService/GetAllForTagResponse" message="tns:IRecordService_GetAllForTag_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetAlarmsInPeriod">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRecordService/GetAlarmsInPeriod" message="tns:IRecordService_GetAlarmsInPeriod_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRecordService/GetAlarmsInPeriodResponse" message="tns:IRecordService_GetAlarmsInPeriod_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetAlarmsByPriority">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRecordService/GetAlarmsByPriority" message="tns:IRecordService_GetAlarmsByPriority_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRecordService/GetAlarmsByPriorityResponse" message="tns:IRecordService_GetAlarmsByPriority_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IRecordService" type="tns:IRecordService">
@@ -139,24 +119,6 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllForTag">
       <soap:operation soapAction="http://tempuri.org/IRecordService/GetAllForTag" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetAlarmsInPeriod">
-      <soap:operation soapAction="http://tempuri.org/IRecordService/GetAlarmsInPeriod" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetAlarmsByPriority">
-      <soap:operation soapAction="http://tempuri.org/IRecordService/GetAlarmsByPriority" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

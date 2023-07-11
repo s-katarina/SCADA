@@ -83,9 +83,6 @@
     <Compile Include="TagManagment\AnalogTagsPage.xaml.cs">
       <DependentUpon>AnalogTagsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UsersManagment\LoginPage.xaml.cs">
-      <DependentUpon>LoginPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UsersManagment\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
@@ -115,10 +112,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TagManagment\AnalogTagsPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UsersManagment\LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
