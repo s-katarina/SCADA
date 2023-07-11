@@ -8,6 +8,8 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using CORE.Database;
+using System.Runtime.Remoting.Contexts;
+using System.Diagnostics;
 
 namespace CORE.Impl
 {
@@ -27,6 +29,14 @@ namespace CORE.Impl
             AnalogInput analogInput;
             using (IODatabase db = new IODatabase())
             {
+                try
+                {
+                    var itemsToRemove = db.Alarms.Where(item => item.InputTagName == tagName);
+                    db.Alarms.RemoveRange(itemsToRemove);
+                    db.SaveChanges();
+                } catch (Exception ex) {
+                    Debug.WriteLine("Error in deleting alarms from deleting tag: ", ex);
+                }
                 db.Database.Log = Console.WriteLine;
                 analogInput = db.AnalogInputs.Where(d => d.TagName == tagName).First();
                 db.AnalogInputs.Remove(analogInput);

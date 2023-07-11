@@ -174,9 +174,6 @@
     <None Include="Connected Services\AnalogInputReference\AnalogInputService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\AnalogInputReference\DatabaseManager2.AnalogInputReference.Alarm.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\AnalogInputReference\DatabaseManager2.AnalogInputReference.AnalogInput.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

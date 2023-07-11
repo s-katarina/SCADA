@@ -469,12 +469,6 @@ namespace DatabaseManager2.AnalogInputReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/Edit", ReplyAction="http://tempuri.org/IAnalogInputService/EditResponse")]
         System.Threading.Tasks.Task EditAsync(string tagName, bool scanning);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/GetAllAlarms", ReplyAction="http://tempuri.org/IAnalogInputService/GetAllAlarmsResponse")]
-        DatabaseManager2.AnalogInputReference.Alarm[] GetAllAlarms();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/GetAllAlarms", ReplyAction="http://tempuri.org/IAnalogInputService/GetAllAlarmsResponse")]
-        System.Threading.Tasks.Task<DatabaseManager2.AnalogInputReference.Alarm[]> GetAllAlarmsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -558,14 +552,6 @@ namespace DatabaseManager2.AnalogInputReference {
         
         public System.Threading.Tasks.Task EditAsync(string tagName, bool scanning) {
             return base.Channel.EditAsync(tagName, scanning);
-        }
-        
-        public DatabaseManager2.AnalogInputReference.Alarm[] GetAllAlarms() {
-            return base.Channel.GetAllAlarms();
-        }
-        
-        public System.Threading.Tasks.Task<DatabaseManager2.AnalogInputReference.Alarm[]> GetAllAlarmsAsync() {
-            return base.Channel.GetAllAlarmsAsync();
         }
     }
     
