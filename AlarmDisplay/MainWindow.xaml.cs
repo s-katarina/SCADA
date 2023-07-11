@@ -31,12 +31,12 @@ namespace AlarmDisplay
         private void Login_Click(object sender, RoutedEventArgs e)
         {
             AlarmDisplayWindow adw = new AlarmDisplayWindow();
-            adw.Show();
             string username = txtUsername.Text;
             string password = txtPassword.Password;
 
             if (usClient.Login(username, password))
             {
+                adw.Show();
             }
             else
             {
