@@ -100,7 +100,7 @@ namespace DatabaseManager2.AlarmManagment
             ComboBoxItem typeItem = (ComboBoxItem)cbType.SelectedItem;
             string type = typeItem.Content.ToString();
             Enum.TryParse(type, out AlarmCrudReference.AlarmType alarmType);
-            Enum.TryParse(type, out AlarmCrudReference.Priority alarmPriority);
+            Enum.TryParse(priority, out AlarmCrudReference.Priority alarmPriority);
             double l = double.Parse(limit);
 
             AlarmCrudReference.Alarm alarm = new AlarmCrudReference.Alarm()
@@ -111,6 +111,22 @@ namespace DatabaseManager2.AlarmManagment
             };
             alarmClient.Add(alarm, tagName);
             RefreshAlarmsDataGrid();
+        }
+
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                AlarmDTO alarm = (AlarmDTO)dataGrid.SelectedItem;
+                if (alarm == null) return;
+                if (MessageBox.Show("Delete alarm " + alarm.InputTagName + "?", "Delete", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.Cancel)
+                {
+                    return;
+                }
+                alarmClient.Delete(alarm.Id);
+                RefreshAlarmsDataGrid();
+            }
+            catch { }
         }
     }
 }

@@ -45,7 +45,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Button x:Name="AddBtn" Click="AddBtn_Click"  Content="Add"></Button>
-                <!--<Button x:Name="DeleteBtn" Click="DeleteBtn_Click" Content="Delete"></Button>-->
+                <Button x:Name="DeleteBtn" Click="DeleteBtn_Click" Content="Delete"></Button>
             </StackPanel>
         </StackPanel>
     </ScrollViewer>
