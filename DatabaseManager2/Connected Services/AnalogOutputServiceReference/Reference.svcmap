@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ca6b5054-388b-408b-b176-6674f8904f89" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="ca6b5054-388b-408b-b176-6674f8904f89" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="http://localhost:4062/Impl/AnalogOutputService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="AnalogOutputService.xsd" MetadataType="Schema" ID="ddc51128-958c-4102-bbf3-8f194521e880" SourceId="1" SourceUrl="http://localhost:4062/Impl/AnalogOutputService.svc?xsd=xsd2" />
-    <MetadataFile FileName="AnalogOutputService.wsdl" MetadataType="Wsdl" ID="361796aa-d00e-4f7b-b018-ba4a8aed10ce" SourceId="1" SourceUrl="http://localhost:4062/Impl/AnalogOutputService.svc?wsdl" />
-    <MetadataFile FileName="AnalogOutputService1.xsd" MetadataType="Schema" ID="d07f51e6-9ec4-4cbb-940b-ead3be7463fd" SourceId="1" SourceUrl="http://localhost:4062/Impl/AnalogOutputService.svc?xsd=xsd0" />
     <MetadataFile FileName="AnalogOutputService.disco" MetadataType="Disco" ID="cd21ef61-b7ec-44a8-abba-e5b1f5e1d125" SourceId="1" SourceUrl="http://localhost:4062/Impl/AnalogOutputService.svc?disco" />
     <MetadataFile FileName="AnalogOutputService2.xsd" MetadataType="Schema" ID="9f533f78-7cee-49a6-b3d0-62741412bd22" SourceId="1" SourceUrl="http://localhost:4062/Impl/AnalogOutputService.svc?xsd=xsd1" />
+    <MetadataFile FileName="AnalogOutputService1.xsd" MetadataType="Schema" ID="d07f51e6-9ec4-4cbb-940b-ead3be7463fd" SourceId="1" SourceUrl="http://localhost:4062/Impl/AnalogOutputService.svc?xsd=xsd0" />
+    <MetadataFile FileName="AnalogOutputService.xsd" MetadataType="Schema" ID="ddc51128-958c-4102-bbf3-8f194521e880" SourceId="1" SourceUrl="http://localhost:4062/Impl/AnalogOutputService.svc?xsd=xsd2" />
+    <MetadataFile FileName="AnalogOutputService.wsdl" MetadataType="Wsdl" ID="361796aa-d00e-4f7b-b018-ba4a8aed10ce" SourceId="1" SourceUrl="http://localhost:4062/Impl/AnalogOutputService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

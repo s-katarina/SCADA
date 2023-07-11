@@ -218,6 +218,9 @@ namespace ReportManager.AnalogInputServiceRef {
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InputTagNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double LimitField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -258,6 +261,19 @@ namespace ReportManager.AnalogInputServiceRef {
                 if ((this.IdField.Equals(value) != true)) {
                     this.IdField = value;
                     this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string InputTagName {
+            get {
+                return this.InputTagNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InputTagNameField, value) != true)) {
+                    this.InputTagNameField = value;
+                    this.RaisePropertyChanged("InputTagName");
                 }
             }
         }
@@ -451,6 +467,24 @@ namespace ReportManager.AnalogInputServiceRef {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/GetRecordAlarmsByPriority", ReplyAction="http://tempuri.org/IAnalogInputService/GetRecordAlarmsByPriorityResponse")]
         System.Threading.Tasks.Task<ReportManager.AnalogInputServiceRef.RecordAlarm[]> GetRecordAlarmsByPriorityAsync(ReportManager.AnalogInputServiceRef.Priority priority);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/Add", ReplyAction="http://tempuri.org/IAnalogInputService/AddResponse")]
+        void Add(ReportManager.AnalogInputServiceRef.AnalogInput analogInput);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/Add", ReplyAction="http://tempuri.org/IAnalogInputService/AddResponse")]
+        System.Threading.Tasks.Task AddAsync(ReportManager.AnalogInputServiceRef.AnalogInput analogInput);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/Delete", ReplyAction="http://tempuri.org/IAnalogInputService/DeleteResponse")]
+        void Delete(string tagName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/Delete", ReplyAction="http://tempuri.org/IAnalogInputService/DeleteResponse")]
+        System.Threading.Tasks.Task DeleteAsync(string tagName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/Edit", ReplyAction="http://tempuri.org/IAnalogInputService/EditResponse")]
+        void Edit(string tagName, bool scanning);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnalogInputService/Edit", ReplyAction="http://tempuri.org/IAnalogInputService/EditResponse")]
+        System.Threading.Tasks.Task EditAsync(string tagName, bool scanning);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -510,6 +544,30 @@ namespace ReportManager.AnalogInputServiceRef {
         
         public System.Threading.Tasks.Task<ReportManager.AnalogInputServiceRef.RecordAlarm[]> GetRecordAlarmsByPriorityAsync(ReportManager.AnalogInputServiceRef.Priority priority) {
             return base.Channel.GetRecordAlarmsByPriorityAsync(priority);
+        }
+        
+        public void Add(ReportManager.AnalogInputServiceRef.AnalogInput analogInput) {
+            base.Channel.Add(analogInput);
+        }
+        
+        public System.Threading.Tasks.Task AddAsync(ReportManager.AnalogInputServiceRef.AnalogInput analogInput) {
+            return base.Channel.AddAsync(analogInput);
+        }
+        
+        public void Delete(string tagName) {
+            base.Channel.Delete(tagName);
+        }
+        
+        public System.Threading.Tasks.Task DeleteAsync(string tagName) {
+            return base.Channel.DeleteAsync(tagName);
+        }
+        
+        public void Edit(string tagName, bool scanning) {
+            base.Channel.Edit(tagName, scanning);
+        }
+        
+        public System.Threading.Tasks.Task EditAsync(string tagName, bool scanning) {
+            return base.Channel.EditAsync(tagName, scanning);
         }
     }
     

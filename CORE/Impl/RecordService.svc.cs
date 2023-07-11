@@ -76,6 +76,7 @@ namespace CORE.Impl
         IEnumerable<Record> IRecordService.GetAllForTag(string tagName)
         {
             AnalogInput analogInput = null;
+            DigitalInput digitalInput = null;
             
             using (IODatabase db = new IODatabase())
             {
@@ -85,14 +86,27 @@ namespace CORE.Impl
                         analogInput = a;
                         break;
                     }
+
+                foreach (DigitalInput d in db.DigitalInputs)
+                    if (d.TagName.Equals(tagName))
+                    {
+                        digitalInput = d;
+                        break;
+                    }
             }
 
-            if (analogInput == null)
+            if (analogInput == null && digitalInput == null)
                 return new List<Record>();
 
             using (RecordDatabase db = new RecordDatabase())
             {
-                return db.Records.Where(record => record.IOAdress.Equals(analogInput.IOAddress)).ToList();
+                if (analogInput != null)
+                    return db.Records.Where(record => record.IOAdress.Equals(analogInput.IOAddress)).ToList();
+                else if (digitalInput != null)
+                    return db.Records.Where(record => record.IOAdress.Equals(digitalInput.IOAddress)).ToList();
+                else
+                    return new List<Record>();
+
             }
         }
     }

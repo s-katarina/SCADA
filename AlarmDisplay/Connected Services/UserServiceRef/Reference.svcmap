@@ -26,6 +26,7 @@
     <MetadataFile FileName="UserService.xsd" MetadataType="Schema" ID="f28b4aaf-4b7a-4dbb-8ed9-5177e3b3233e" SourceId="1" SourceUrl="http://localhost:4062/Impl/UserService.svc?xsd=xsd0" />
     <MetadataFile FileName="UserService1.xsd" MetadataType="Schema" ID="9b359871-e166-49b3-b47f-9f8cffdc57e5" SourceId="1" SourceUrl="http://localhost:4062/Impl/UserService.svc?xsd=xsd1" />
     <MetadataFile FileName="UserService.disco" MetadataType="Disco" ID="890acac7-4108-4f3d-9ec8-b121948455f6" SourceId="1" SourceUrl="http://localhost:4062/Impl/UserService.svc?disco" />
+    <MetadataFile FileName="UserService2.xsd" MetadataType="Schema" ID="b49bdf1e-2544-4f0f-988e-dbd2b9cb144b" SourceId="1" SourceUrl="http://localhost:4062/Impl/UserService.svc?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

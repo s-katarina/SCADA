@@ -187,6 +187,9 @@
     <None Include="Connected Services\UserServiceRef\UserService1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\UserServiceRef\UserService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

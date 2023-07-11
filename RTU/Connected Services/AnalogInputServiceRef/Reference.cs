@@ -218,6 +218,9 @@ namespace RTU.AnalogInputServiceRef {
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InputTagNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double LimitField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -258,6 +261,19 @@ namespace RTU.AnalogInputServiceRef {
                 if ((this.IdField.Equals(value) != true)) {
                     this.IdField = value;
                     this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string InputTagName {
+            get {
+                return this.InputTagNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InputTagNameField, value) != true)) {
+                    this.InputTagNameField = value;
+                    this.RaisePropertyChanged("InputTagName");
                 }
             }
         }

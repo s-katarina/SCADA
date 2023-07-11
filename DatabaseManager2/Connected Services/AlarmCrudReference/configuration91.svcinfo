@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="9.1" CheckSum="JoCzMQJWhf7ebg7KiSDTz1+70spTk8x6caCjtrrTIjk=">
+<SavedWcfConfigurationInformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="9.1" CheckSum="+WOIGqXtPvdSfQFIBb20jVSBWGEVgDNdgfMZW7ePKss=">
   <bindingConfigurations>
-    <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IAlarmCRUDService">
+    <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IAlarmCRUDService1">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicHttpBinding_IAlarmCRUDService</serializedValue>
+          <serializedValue>BasicHttpBinding_IAlarmCRUDService1</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -112,7 +112,7 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IAlarmCRUDService" contract="AlarmCrudReference.IAlarmCRUDService" bindingType="basicHttpBinding" address="http://localhost:4062/Impl/AlarmCRUDService.svc/AlarmCRUD" bindingConfiguration="BasicHttpBinding_IAlarmCRUDService">
+    <endpoint name="BasicHttpBinding_IAlarmCRUDService1" contract="AlarmCRUDReference.IAlarmCRUDService" bindingType="basicHttpBinding" address="http://localhost:4062/Impl/AlarmCRUDService.svc/AlarmCRUD" bindingConfiguration="BasicHttpBinding_IAlarmCRUDService1">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://localhost:4062/Impl/AlarmCRUDService.svc/AlarmCRUD</serializedValue>
@@ -124,10 +124,10 @@
           <serializedValue>basicHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicHttpBinding_IAlarmCRUDService</serializedValue>
+          <serializedValue>BasicHttpBinding_IAlarmCRUDService1</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>AlarmCrudReference.IAlarmCRUDService</serializedValue>
+          <serializedValue>AlarmCRUDReference.IAlarmCRUDService</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
@@ -187,7 +187,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicHttpBinding_IAlarmCRUDService</serializedValue>
+          <serializedValue>BasicHttpBinding_IAlarmCRUDService1</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

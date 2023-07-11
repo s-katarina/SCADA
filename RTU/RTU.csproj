@@ -72,9 +72,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Connected Services\AlarmServiceRef\AlarmService.wsdl" />
-    <None Include="Connected Services\AlarmServiceRef\AlarmService.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Connected Services\AlarmServiceRef\AlarmService1.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -100,7 +97,7 @@
     <None Include="Connected Services\AnalogInputServiceRef\RTU.AnalogInputServiceRef.AnalogInput.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\AnalogInputServiceRef\RTU.AnalogInputServiceRef.RecordAlarm1.datasource">
+    <None Include="Connected Services\AnalogInputServiceRef\RTU.AnalogInputServiceRef.RecordAlarm.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\DigitalInputServiceRef\DigitalInputService.wsdl" />
@@ -132,21 +129,6 @@
     <WCFMetadataStorage Include="Connected Services\AnalogInputServiceRef\" />
     <WCFMetadataStorage Include="Connected Services\DigitalInputServiceRef\" />
     <WCFMetadataStorage Include="Connected Services\PubSubService\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\AnalogInputServiceRef\AnalogInputService.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\AnalogInputServiceRef\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\AnalogInputServiceRef\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\AnalogInputServiceRef\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\DigitalInputServiceRef\DigitalInputService.disco" />
@@ -181,7 +163,9 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Connected Services\AnalogInputServiceRef\AnalogInputService.disco" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\AlarmServiceRef\AlarmService.disco" />
   </ItemGroup>
@@ -193,6 +177,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\AlarmServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AnalogInputServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AnalogInputServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AnalogInputServiceRef\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

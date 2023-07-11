@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DatabaseManager2.AlarmManagment;
 using DatabaseManager2.TagManagment;
+using DatabaseManager2.UsersManagment;
 
 namespace DatabaseManager2
 {
@@ -41,5 +42,14 @@ namespace DatabaseManager2
         {
             MainFrame.Content = new AlarmCRUDPage();
         }
-    }
+		private void registerBtn_Click(object sender, RoutedEventArgs e)
+		{
+			MainFrame.Content = new RegistrationPage();
+		}
+
+		private void LogoutBtn_Click(object sender, RoutedEventArgs e)
+		{
+
+		}
+	}
 }

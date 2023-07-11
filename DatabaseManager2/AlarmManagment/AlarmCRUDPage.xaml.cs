@@ -1,4 +1,4 @@
-﻿using DatabaseManager2.AlarmCrudReference;
+﻿using DatabaseManager2.AlarmCRUDReference;
 using DatabaseManager2.AnalogInputReference;
 using System;
 using System.Collections.Generic;
@@ -60,7 +60,7 @@ namespace DatabaseManager2.AlarmManagment
         {
             Alarms.Clear();
             List<AlarmDTO> receivedAlarms = alarmClient.GetAll().ToList();
-            foreach (AlarmCrudReference.AlarmDTO alarm in receivedAlarms)
+            foreach (AlarmCRUDReference.AlarmDTO alarm in receivedAlarms)
             {
                 Alarms.Add(alarm);
                 //Alarms.Add(new AlarmCrudReference.Alarm() { Id = alarm.Id, InputTagName = alarm.InputTagName, Limit = alarm.Limit, Priority = alarm.Priority, Type = alarm.Type});
@@ -99,11 +99,11 @@ namespace DatabaseManager2.AlarmManagment
             string priority = priorityItem.Content.ToString();
             ComboBoxItem typeItem = (ComboBoxItem)cbType.SelectedItem;
             string type = typeItem.Content.ToString();
-            Enum.TryParse(type, out AlarmCrudReference.AlarmType alarmType);
-            Enum.TryParse(priority, out AlarmCrudReference.Priority alarmPriority);
+            Enum.TryParse(type, out AlarmCRUDReference.AlarmType alarmType);
+            Enum.TryParse(priority, out AlarmCRUDReference.Priority alarmPriority);
             double l = double.Parse(limit);
 
-            AlarmCrudReference.Alarm alarm = new AlarmCrudReference.Alarm()
+            AlarmCRUDReference.Alarm alarm = new AlarmCRUDReference.Alarm()
             {
                 Priority = alarmPriority,
                 Type = alarmType,

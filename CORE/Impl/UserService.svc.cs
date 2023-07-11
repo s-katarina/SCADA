@@ -12,7 +12,16 @@ namespace CORE.Impl
 {
     public class UserService : IUserService
     {
-        public bool Login(string username, string password)
+		public void Add(User user)
+		{
+            using (UserDatabase db = new UserDatabase())
+            {
+                db.Users.Add(user);
+                db.SaveChanges();
+            }
+        }
+
+		public bool Login(string username, string password)
         {
             using (UserDatabase db = new UserDatabase())
             {

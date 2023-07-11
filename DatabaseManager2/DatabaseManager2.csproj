@@ -60,7 +60,7 @@
     <Compile Include="AlarmManagment\AlarmCRUDPage.xaml.cs">
       <DependentUpon>AlarmCRUDPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Connected Services\AlarmCrudReference\Reference.cs">
+    <Compile Include="Connected Services\AlarmCRUDReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -80,21 +80,27 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\UserReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="TagManagment\DigitalTagsPage.xaml.cs">
       <DependentUpon>DigitalTagsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="TagManagment\AnalogTagsPage.xaml.cs">
       <DependentUpon>AnalogTagsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UsersManagment\LoginPage.xaml.cs">
-      <DependentUpon>LoginPage.xaml</DependentUpon>
+    <Compile Include="UsersManagment\LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UsersManagment\RegistrationPage.xaml.cs">
       <DependentUpon>RegistrationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UsersManagment\Validator.cs" />
     <Page Include="AlarmManagment\AlarmCRUDPage.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -121,7 +127,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UsersManagment\LoginPage.xaml">
+    <Page Include="UsersManagment\LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -148,17 +154,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\AlarmCrudReference\AlarmCRUDService.wsdl" />
-    <None Include="Connected Services\AlarmCrudReference\AlarmCRUDService.xsd">
+    <None Include="Connected Services\AlarmCRUDReference\AlarmCRUDService.wsdl" />
+    <None Include="Connected Services\AlarmCRUDReference\AlarmCRUDService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\AlarmCrudReference\AlarmCRUDService1.xsd">
+    <None Include="Connected Services\AlarmCRUDReference\AlarmCRUDService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\AlarmCrudReference\AlarmCRUDService2.xsd">
+    <None Include="Connected Services\AlarmCRUDReference\AlarmCRUDService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\AlarmCrudReference\DatabaseManager2.AlarmCrudReference.AlarmDTO.datasource">
+    <None Include="Connected Services\AlarmCRUDReference\DatabaseManager2.AlarmCRUDReference.AlarmDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\AnalogInputReference\AnalogInputService.wsdl" />
@@ -219,6 +225,16 @@
     <None Include="Connected Services\DigitalOutputReference\DigitalOutputService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\UserReference\UserService.wsdl" />
+    <None Include="Connected Services\UserReference\UserService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UserReference\UserService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UserReference\UserService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -231,11 +247,12 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\AlarmCrudReference\" />
+    <WCFMetadataStorage Include="Connected Services\AlarmCRUDReference\" />
     <WCFMetadataStorage Include="Connected Services\AnalogInputReference\" />
     <WCFMetadataStorage Include="Connected Services\AnalogOutputServiceReference\" />
     <WCFMetadataStorage Include="Connected Services\DigitalInputReference\" />
     <WCFMetadataStorage Include="Connected Services\DigitalOutputReference\" />
+    <WCFMetadataStorage Include="Connected Services\UserReference\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\AnalogInputReference\AnalogInputService.disco" />
@@ -298,16 +315,31 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\AlarmCrudReference\AlarmCRUDService.disco" />
+    <None Include="Connected Services\UserReference\UserService.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\AlarmCrudReference\configuration91.svcinfo" />
+    <None Include="Connected Services\UserReference\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\AlarmCrudReference\configuration.svcinfo" />
+    <None Include="Connected Services\UserReference\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\AlarmCrudReference\Reference.svcmap">
+    <None Include="Connected Services\UserReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AlarmCRUDReference\AlarmCRUDService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AlarmCRUDReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AlarmCRUDReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\AlarmCRUDReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

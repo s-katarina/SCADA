@@ -212,6 +212,9 @@ namespace DatabaseManager2.AnalogInputReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private DatabaseManager2.AnalogInputReference.AnalogInput AnalogInputField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -233,6 +236,19 @@ namespace DatabaseManager2.AnalogInputReference {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public DatabaseManager2.AnalogInputReference.AnalogInput AnalogInput {
+            get {
+                return this.AnalogInputField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AnalogInputField, value) != true)) {
+                    this.AnalogInputField = value;
+                    this.RaisePropertyChanged("AnalogInput");
+                }
             }
         }
         
