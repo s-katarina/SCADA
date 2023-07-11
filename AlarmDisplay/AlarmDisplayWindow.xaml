@@ -11,9 +11,11 @@
         <DataGrid x:Name="dataGrid" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn IsReadOnly="True" Header="Tag Name" Binding="{Binding TagName}" />
-                <DataGridTextColumn IsReadOnly="True" Header="Alarm Type" Binding="{Binding AlarmType}" />
                 <DataGridTextColumn IsReadOnly="True" Header="Alarm Priority" Binding="{Binding AlarmPriority}" />
-                <DataGridTextColumn IsReadOnly="True" Header="Timestamp" Binding="{Binding TimeStamp}" />
+                <DataGridTextColumn IsReadOnly="True" Header="Alarm Type" Binding="{Binding AlarmType}" />
+                <DataGridTextColumn IsReadOnly="True" Header="Limit" Binding="{Binding Limit}" />
+                <DataGridTextColumn IsReadOnly="True" Header="Value" Binding="{Binding Value}" />
+                <DataGridTextColumn IsReadOnly="True" Header="Timestamp" Binding="{Binding Timestamp}" />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

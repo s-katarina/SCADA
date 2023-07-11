@@ -19,7 +19,7 @@ namespace CORE.Interfaces
 	public interface ICallBackAlarm
 	{
 		[OperationContract(IsOneWay = true)]
-		void MessageArrived(Dictionary<string, Alarm> current);
+		void MessageArrived(IEnumerable<TriggeredAlarm> current);
 	}
 
 	[ServiceContract]

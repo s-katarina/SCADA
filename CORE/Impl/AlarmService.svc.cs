@@ -16,7 +16,7 @@ namespace CORE.Impl
     [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple)]
     public class AlarmService : IPubAlarm, ISubAlarm
     {
-        delegate void MessageArrivedDelegate(Dictionary<string, Alarm> alarms);
+        delegate void MessageArrivedDelegate(IEnumerable<TriggeredAlarm> alarms);
         static event MessageArrivedDelegate onMessageArrived;
 
         public void DoWork(string IOAdress, double value)
@@ -31,9 +31,22 @@ namespace CORE.Impl
                     Debug.WriteLine($"Found alarm for tag at {IOAdress} with {alarm.Type} limit of {alarm.Limit}");
                     if (alarm.Type == AlarmType.HIGH && value > alarm.Limit || alarm.Type == AlarmType.LOW && value < alarm.Limit)
                     {
-                        //CurrentValues.alarms.Add(alarm, value);
-                        CurrentValues.alarms[IOAdress] = alarm;
+                        string ts = DateTime.Now.ToString();
+                        Debug.WriteLine(ts);
+                        CurrentValues.triggeredAlarms.Add(new TriggeredAlarm()
+                        {
+                            InputTagName = alarm.InputTagName,
+                            Limit = alarm.Limit,
+                            Priority = alarm.Priority.ToString(),
+                            Type = alarm.Type.ToString(),
+                            Timestamp = ts,
+                            Value = value
+                        });
+                        //CurrentValues.alarms[IOAdress] = alarm;
                         Debug.WriteLine($"Raised {alarm.Type} limit {alarm.Limit} alarm for tag at {IOAdress} with value {value}");
+                        List<TriggeredAlarm> descOrder = CurrentValues.triggeredAlarms.ToList();
+                        descOrder.Reverse();
+                        onMessageArrived?.Invoke(descOrder.AsEnumerable<TriggeredAlarm>());
                     }
                 }
             }
@@ -45,10 +58,11 @@ namespace CORE.Impl
                 //{
                 //    deepCopyDict.Add(k, CurrentValues.alarms[k]);
                 //}
-                if (CurrentValues.alarms.Count > 0)
-                {
-                    onMessageArrived?.Invoke(CurrentValues.alarms);
-                }
+                //if (CurrentValues.alarms.Count > 0)
+                //{
+                //    onMessageArrived?.Invoke(CurrentValues.alarms);
+                //}
+                //onMessageArrived?.Invoke(CurrentValues.triggeredAlarms.AsEnumerable<TriggeredAlarm>());
             }
             catch (TimeoutException _) {
                 Debug.WriteLine("Timeout exception for publishing alarm.");

@@ -221,6 +221,7 @@
     <Compile Include="Models\Alarm.cs" />
     <Compile Include="Models\AnalogInput.cs" />
     <Compile Include="Models\AnalogOutput.cs" />
+    <Compile Include="Models\TriggeredAlarm.cs" />
     <Compile Include="Models\DigitalInput.cs" />
     <Compile Include="Models\DigitalOutput.cs" />
     <Compile Include="Models\DriverType.cs" />

@@ -65,16 +65,29 @@ namespace AlarmDisplay.Models
             }
         }
 
+        private double _limit;
+        public double Limit
+        {
+            get { return _limit; }
+            set
+            {
+                if (_limit != value)
+                {
+                    _limit = value;
+                    RaisePropertyChanged(nameof(Limit));
+                }
+            }
+        }
         private string _timeStamp;
-        public string TimeStamp
+        public string Timestamp
         {
             get { return _timeStamp; }
             set
             {
-                if (_timeStamp == value)
+                if (_timeStamp != value)
                 {
                     _timeStamp = value;
-                    RaisePropertyChanged(nameof(TimeStamp));
+                    RaisePropertyChanged(nameof(Timestamp));
                 }
             }
         }

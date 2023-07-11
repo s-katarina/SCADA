@@ -113,9 +113,6 @@
     <None Include="Connected Services\AlarmServiceRef\AlarmService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\AlarmServiceRef\AlarmService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Connected Services\AlarmServiceRef\AlarmService3.xsd">
       <SubType>Designer</SubType>
     </None>
