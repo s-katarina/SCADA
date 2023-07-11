@@ -22,6 +22,7 @@ namespace CORE.Impl
         public void DoWork(string IOAdress, double value)
         {
             Debug.WriteLine($"Do work for Adress {IOAdress}, Value {value}");
+            List<TriggeredAlarm> descOrder = new List<TriggeredAlarm>();
             using (IODatabase iodb = new IODatabase())
             {
                 List<Alarm> alarms = iodb.Alarms.Where(alarm => alarm.AnalogInput.IOAddress.Equals(IOAdress)).ToList();
@@ -33,7 +34,7 @@ namespace CORE.Impl
                     {
                         string ts = DateTime.Now.ToString();
                         Debug.WriteLine(ts);
-                        CurrentValues.triggeredAlarms.Add(new TriggeredAlarm()
+                        TriggeredAlarm triggeredAlarm = new TriggeredAlarm()
                         {
                             InputTagName = alarm.InputTagName,
                             Limit = alarm.Limit,
@@ -41,28 +42,19 @@ namespace CORE.Impl
                             Type = alarm.Type.ToString(),
                             Timestamp = ts,
                             Value = value
-                        });
-                        //CurrentValues.alarms[IOAdress] = alarm;
+                        };
+                        CurrentValues.triggeredAlarms.Add(triggeredAlarm);
+                        descOrder.Add(triggeredAlarm);
                         Debug.WriteLine($"Raised {alarm.Type} limit {alarm.Limit} alarm for tag at {IOAdress} with value {value}");
-                        List<TriggeredAlarm> descOrder = CurrentValues.triggeredAlarms.ToList();
-                        descOrder.Reverse();
-                        onMessageArrived?.Invoke(descOrder.AsEnumerable<TriggeredAlarm>());
                     }
                 }
             }
             try
             {
-                //Dictionary<Alarm, double> deepCopyDict = new Dictionary<Alarm, double>();
-
-                //foreach (Alarm k in CurrentValues.alarms.Keys)
-                //{
-                //    deepCopyDict.Add(k, CurrentValues.alarms[k]);
-                //}
-                //if (CurrentValues.alarms.Count > 0)
-                //{
-                //    onMessageArrived?.Invoke(CurrentValues.alarms);
-                //}
-                //onMessageArrived?.Invoke(CurrentValues.triggeredAlarms.AsEnumerable<TriggeredAlarm>());
+                if (descOrder.Count > 0 )
+                {
+                    onMessageArrived?.Invoke(descOrder.AsEnumerable<TriggeredAlarm>());
+                }
             }
             catch (TimeoutException _) {
                 Debug.WriteLine("Timeout exception for publishing alarm.");

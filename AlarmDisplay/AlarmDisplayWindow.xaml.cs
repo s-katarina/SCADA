@@ -29,24 +29,6 @@ namespace AlarmDisplay
         public class Callback : ISubAlarmCallback
         {
             public DataGrid dg;
-            //public void MessageArrived(List<TriggeredAlarm> current)
-            //{
-            //    Debug.WriteLine("Message has arrived");
-            //    Application.Current.Dispatcher.Invoke((() =>
-            //    {
-            //        FillTable(current);
-            //        ApplyBlinkingEffect(dg, new SolidColorBrush(Colors.Red), TimeSpan.FromMilliseconds(700));
-            //    }));
-            //    //Thread.Sleep(3000);
-            //    //lock (dataGridLock)
-            //    //{
-            //    //    //Task.Delay(100).ContinueWith(_ =>
-            //    //    //{
-            //    //    //});
-
-            //    //}
-
-            //}
 
             public void MessageArrived(TriggeredAlarm[] current)
             {
@@ -54,7 +36,7 @@ namespace AlarmDisplay
                 Application.Current.Dispatcher.Invoke((() =>
                 {
                     FillTable(current.ToList());
-                    ApplyBlinkingEffect(dg, new SolidColorBrush(Colors.Red), TimeSpan.FromMilliseconds(700));
+                    ApplyBlinkingEffect(current.ToList().Count, dg, new SolidColorBrush(Colors.Red), TimeSpan.FromMilliseconds(700));
                 }));
             }
         }
@@ -76,31 +58,12 @@ namespace AlarmDisplay
             subClient.InitSub();
         }
 
-        //public static void FillTable(Dictionary<string, Alarm> current)
-        //{
-        //    AlarmTableItems.Clear();
-        //    Debug.WriteLine(current.Count);
-        //    foreach (var kvp in current)
-        //    {
-        //        AlarmTableItems.Add(new AlarmTableItem()
-        //        {
-        //            TagName = kvp.Key,
-        //            AlarmPriority = kvp.Value.Priority.ToString(),
-        //            AlarmType = kvp.Value.Type.ToString(),
-        //            TimeStamp = DateTime.Now.ToLongDateString(),
-        //        });
-        //    }
-        //    //AlarmTableItems.Add(new AlarmTableItem() { TagName = "a", AlarmPriority = "b", AlarmType = "c", Value = 12.4 });
-
-        //}
-
         public static void FillTable(List<TriggeredAlarm> current)
         {
-            AlarmTableItems.Clear();
             Debug.WriteLine(current.Count);
             foreach (var a in current)
             {
-                AlarmTableItems.Add(new AlarmTableItem()
+                AlarmTableItems.Insert(0, new AlarmTableItem()
                 {
                     TagName = a.InputTagName,
                     AlarmPriority = a.Priority,
@@ -110,8 +73,6 @@ namespace AlarmDisplay
                     Limit = a.Limit
                 });
             }
-            //AlarmTableItems.Add(new AlarmTableItem() { TagName = "a", AlarmPriority = "b", AlarmType = "c", Value = 12.4 });
-
         }
 
 
@@ -126,10 +87,12 @@ namespace AlarmDisplay
             }
         }
 
-        public static void ApplyBlinkingEffect(DataGrid dataGrid, Brush blinkColor, TimeSpan blinkInterval)
+        public static void ApplyBlinkingEffect(int count, DataGrid dataGrid, Brush blinkColor, TimeSpan blinkInterval)
         {
-            foreach (var item in dataGrid.Items)
+            for (int i = 0; i < count;  i++)
+            //for (int i = AlarmTableItems.Count-1; i > AlarmTableItems.Count-1-count;  i--)
             {
+                var item = dataGrid.Items[i];
                 if (item is AlarmTableItem rowItem)
                 {
                     dataGrid.UpdateLayout(); // Ensure the DataGrid is fully rendered
@@ -143,13 +106,13 @@ namespace AlarmDisplay
                         {
                             BlinkRow(row, blinkColor, 3, blinkInterval);
                         }
-                        else if (cellContent is TextBlock tb && tb.Text == "SECOND")
+                        else if (cellContent is TextBlock tb && (tb.Text == "SECOND" || tb.Text == "2"))
                         {
                             BlinkRow(row, blinkColor, 2, blinkInterval);
                         }
-                        else if (cellContent is TextBlock tbb && tbb.Text == "THIRD")
+                        else if (cellContent is TextBlock tbb && (tbb.Text == "THIRD" || tbb.Text == "3"))
                         {
-                            BlinkRow(row, blinkColor, 3, blinkInterval);
+                            BlinkRow(row, blinkColor, 1, blinkInterval);
                         }
                     }
                 }
