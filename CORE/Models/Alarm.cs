@@ -25,8 +25,8 @@ namespace CORE.Models
         [DataMember]
         public string InputTagName { get; set; }
 
-        //[DataMember]
-        public AnalogInput AnalogInput { get; set; }
+		[DataMember]
+		public AnalogInput AnalogInput { get; set; }
 	}
 
 	public enum Priority { 

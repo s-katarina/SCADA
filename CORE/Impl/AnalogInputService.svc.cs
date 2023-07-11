@@ -32,7 +32,10 @@ namespace CORE.Impl
                 try
                 {
                     var itemsToRemove = db.Alarms.Where(item => item.InputTagName == tagName);
-                    db.Alarms.RemoveRange(itemsToRemove);
+                    foreach (Alarm a in itemsToRemove)
+                    {
+                        a.AnalogInput = null;
+                    }
                     db.SaveChanges();
                 } catch (Exception ex) {
                     Debug.WriteLine("Error in deleting alarms from deleting tag: ", ex);

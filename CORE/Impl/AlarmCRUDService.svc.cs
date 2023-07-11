@@ -47,7 +47,7 @@ namespace CORE.Impl
                 List<AlarmDTO> res = new List<AlarmDTO>();
                 foreach (Alarm alarm in l)
                 {
-                    res.Add(new AlarmDTO() { Id = alarm.Id, InputTagName = alarm.InputTagName, Limit = alarm.Limit, Priority = alarm.Priority.ToString(), Type = alarm.Type.ToString() });  
+                    if (alarm.InputTagName != null) res.Add(new AlarmDTO() { Id = alarm.Id, InputTagName = alarm.InputTagName, Limit = alarm.Limit, Priority = alarm.Priority.ToString(), Type = alarm.Type.ToString() });  
                 }
                 return res;
             }

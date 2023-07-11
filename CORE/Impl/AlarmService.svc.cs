@@ -43,7 +43,6 @@ namespace CORE.Impl
                             Timestamp = ts,
                             Value = value
                         };
-                        CurrentValues.triggeredAlarms.Add(triggeredAlarm);
                         descOrder.Add(triggeredAlarm);
                         Debug.WriteLine($"Raised {alarm.Type} limit {alarm.Limit} alarm for tag at {IOAdress} with value {value}");
                     }
