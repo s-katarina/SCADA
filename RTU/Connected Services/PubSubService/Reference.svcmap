@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="0f530e22-d7e1-45f1-ad5b-bc48b2579f87" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:4062/Impl/PubSubService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PubSubService1.xsd" MetadataType="Schema" ID="130e5aee-1d3a-426c-8ca9-17129839fbda" SourceId="1" SourceUrl="http://localhost:4062/Impl/PubSubService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PubSubService.xsd" MetadataType="Schema" ID="a6376973-75e1-4786-a97a-19c07c333621" SourceId="1" SourceUrl="http://localhost:4062/Impl/PubSubService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PubSubService.wsdl" MetadataType="Wsdl" ID="68f995de-8958-4eff-b553-0cd3af38fb3d" SourceId="1" SourceUrl="http://localhost:4062/Impl/PubSubService.svc?wsdl" />
+    <MetadataFile FileName="PubSubService.disco" MetadataType="Disco" ID="369ebc4a-a9af-4c4a-9dd1-691148c72f29" SourceId="1" SourceUrl="http://localhost:4062/Impl/PubSubService.svc?disco" />
+    <MetadataFile FileName="PubSubService2.xsd" MetadataType="Schema" ID="4bd349c5-9a27-4e62-a43d-e9fca28b055b" SourceId="1" SourceUrl="http://localhost:4062/Impl/PubSubService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

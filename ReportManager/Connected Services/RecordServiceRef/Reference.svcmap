@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="f2192a5a-ec7c-41b2-ba6d-6828736c5213" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:4062/Impl/RecordService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="RecordService.disco" MetadataType="Disco" ID="bcc77f01-ad42-4369-b5ec-831b95aea6f5" SourceId="1" SourceUrl="http://localhost:4062/Impl/RecordService.svc?disco" />
+    <MetadataFile FileName="RecordService1.xsd" MetadataType="Schema" ID="b08f5f45-572a-4151-b134-5be3f718e07e" SourceId="1" SourceUrl="http://localhost:4062/Impl/RecordService.svc?xsd=xsd0" />
+    <MetadataFile FileName="RecordService.xsd" MetadataType="Schema" ID="7d8ca3d3-bc10-4419-a86e-00c1a9f346ea" SourceId="1" SourceUrl="http://localhost:4062/Impl/RecordService.svc?xsd=xsd1" />
+    <MetadataFile FileName="RecordService2.xsd" MetadataType="Schema" ID="cfa310f6-bd65-41d4-9a74-4ba1bfc7877d" SourceId="1" SourceUrl="http://localhost:4062/Impl/RecordService.svc?xsd=xsd2" />
+    <MetadataFile FileName="RecordService3.xsd" MetadataType="Schema" ID="0595c83c-dc17-4fcc-952f-fc31156eab79" SourceId="1" SourceUrl="http://localhost:4062/Impl/RecordService.svc?xsd=xsd3" />
+    <MetadataFile FileName="RecordService.wsdl" MetadataType="Wsdl" ID="cb8d0351-07b9-49e9-8015-83044c00610d" SourceId="1" SourceUrl="http://localhost:4062/Impl/RecordService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

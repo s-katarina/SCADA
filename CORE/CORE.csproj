@@ -1,0 +1,356 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{21B23382-D899-401C-85AD-14DAC2774EBD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CORE</RootNamespace>
+    <AssemblyName>CORE</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Impl\AlarmCRUDService.svc" />
+    <Content Include="Impl\AlarmService.svc" />
+    <Content Include="Impl\AnalogInputService.svc" />
+    <Content Include="Impl\AnalogOutputService.svc" />
+    <Content Include="Impl\DigitalInputService.svc" />
+    <Content Include="Impl\DigitalOutputService.svc" />
+    <Content Include="Impl\PubSubService.svc" />
+    <Content Include="Impl\RecordService.svc" />
+    <Content Include="Impl\UserService.svc" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Database\CurrentValues.cs" />
+    <Compile Include="Database\IODatabase.cs" />
+    <Compile Include="Database\RecordDatabase.cs" />
+    <Compile Include="Database\UserDatabase.cs" />
+    <Compile Include="Impl\AlarmCRUDService.svc.cs">
+      <DependentUpon>AlarmCRUDService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Impl\AlarmService.svc.cs">
+      <DependentUpon>AlarmService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Impl\AnalogInputService.svc.cs">
+      <DependentUpon>AnalogInputService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Impl\AnalogOutputService.svc.cs">
+      <DependentUpon>AnalogOutputService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Impl\DigitalInputService.svc.cs">
+      <DependentUpon>DigitalInputService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Impl\DigitalOutputService.svc.cs">
+      <DependentUpon>DigitalOutputService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\IAlarmCRUDService.cs" />
+    <Compile Include="Interfaces\IAnalogOutputService.cs" />
+    <Compile Include="Interfaces\IDigitalOutputService.cs" />
+    <Compile Include="Interfaces\IPubSubService.cs" />
+    <Compile Include="Impl\PubSubService.svc.cs">
+      <DependentUpon>PubSubService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Impl\RecordService.svc.cs">
+      <DependentUpon>RecordService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Impl\UserService.svc.cs">
+      <DependentUpon>UserService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\IAlarmService.cs" />
+    <Compile Include="Interfaces\IAnalogInputService.cs" />
+    <Compile Include="Interfaces\IDigitalInputService.cs" />
+    <Compile Include="Interfaces\IRecordService.cs" />
+    <Compile Include="Interfaces\IScanService.cs" />
+    <Compile Include="Interfaces\IUserService.cs" />
+    <Compile Include="Migrations\202307070650516_InitialCreate.cs" />
+    <Compile Include="Migrations\202307070650516_InitialCreate.designer.cs">
+      <DependentUpon>202307070650516_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307070800129_mig1.cs" />
+    <Compile Include="Migrations\202307070800129_mig1.designer.cs">
+      <DependentUpon>202307070800129_mig1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307070804485_mg2.cs" />
+    <Compile Include="Migrations\202307070804485_mg2.designer.cs">
+      <DependentUpon>202307070804485_mg2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307070808041_mg3.cs" />
+    <Compile Include="Migrations\202307070808041_mg3.designer.cs">
+      <DependentUpon>202307070808041_mg3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307070815523_mg5.cs" />
+    <Compile Include="Migrations\202307070815523_mg5.designer.cs">
+      <DependentUpon>202307070815523_mg5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307071415480_mg6.cs" />
+    <Compile Include="Migrations\202307071415480_mg6.designer.cs">
+      <DependentUpon>202307071415480_mg6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307071709060_mg10.cs" />
+    <Compile Include="Migrations\202307071709060_mg10.designer.cs">
+      <DependentUpon>202307071709060_mg10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307071713478_mg11.cs" />
+    <Compile Include="Migrations\202307071713478_mg11.designer.cs">
+      <DependentUpon>202307071713478_mg11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307071717481_mg1.cs" />
+    <Compile Include="Migrations\202307071717481_mg1.designer.cs">
+      <DependentUpon>202307071717481_mg1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307071722507_mg13.cs" />
+    <Compile Include="Migrations\202307071722507_mg13.designer.cs">
+      <DependentUpon>202307071722507_mg13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307071724445_mg14.cs" />
+    <Compile Include="Migrations\202307071724445_mg14.designer.cs">
+      <DependentUpon>202307071724445_mg14.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307072021325_alarmchang.cs" />
+    <Compile Include="Migrations\202307072021325_alarmchang.designer.cs">
+      <DependentUpon>202307072021325_alarmchang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307080829590_alarm.cs" />
+    <Compile Include="Migrations\202307080829590_alarm.designer.cs">
+      <DependentUpon>202307080829590_alarm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307080854204_alarm4.cs" />
+    <Compile Include="Migrations\202307080854204_alarm4.designer.cs">
+      <DependentUpon>202307080854204_alarm4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307080857522_asdds.cs" />
+    <Compile Include="Migrations\202307080857522_asdds.designer.cs">
+      <DependentUpon>202307080857522_asdds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307080859228_fgh.cs" />
+    <Compile Include="Migrations\202307080859228_fgh.designer.cs">
+      <DependentUpon>202307080859228_fgh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307080901574_kk.cs" />
+    <Compile Include="Migrations\202307080901574_kk.designer.cs">
+      <DependentUpon>202307080901574_kk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307080904563_qwe.cs" />
+    <Compile Include="Migrations\202307080904563_qwe.designer.cs">
+      <DependentUpon>202307080904563_qwe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307080910421_hgj.cs" />
+    <Compile Include="Migrations\202307080910421_hgj.designer.cs">
+      <DependentUpon>202307080910421_hgj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307080918165_gr.cs" />
+    <Compile Include="Migrations\202307080918165_gr.designer.cs">
+      <DependentUpon>202307080918165_gr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307081201175_proba.cs" />
+    <Compile Include="Migrations\202307081201175_proba.designer.cs">
+      <DependentUpon>202307081201175_proba.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307081204346_hfth.cs" />
+    <Compile Include="Migrations\202307081204346_hfth.designer.cs">
+      <DependentUpon>202307081204346_hfth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307081211103_gdfg.cs" />
+    <Compile Include="Migrations\202307081211103_gdfg.designer.cs">
+      <DependentUpon>202307081211103_gdfg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AlarmDTO.cs" />
+    <Compile Include="Models\Alarm.cs" />
+    <Compile Include="Models\AnalogInput.cs" />
+    <Compile Include="Models\AnalogOutput.cs" />
+    <Compile Include="Models\TriggeredAlarm.cs" />
+    <Compile Include="Models\DigitalInput.cs" />
+    <Compile Include="Models\DigitalOutput.cs" />
+    <Compile Include="Models\DriverType.cs" />
+    <Compile Include="Models\Record.cs" />
+    <Compile Include="Models\RecordAlarm.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202307070650516_InitialCreate.resx">
+      <DependentUpon>202307070650516_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307070800129_mig1.resx">
+      <DependentUpon>202307070800129_mig1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307070804485_mg2.resx">
+      <DependentUpon>202307070804485_mg2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307070808041_mg3.resx">
+      <DependentUpon>202307070808041_mg3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307070815523_mg5.resx">
+      <DependentUpon>202307070815523_mg5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307071415480_mg6.resx">
+      <DependentUpon>202307071415480_mg6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307071709060_mg10.resx">
+      <DependentUpon>202307071709060_mg10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307071713478_mg11.resx">
+      <DependentUpon>202307071713478_mg11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307071717481_mg1.resx">
+      <DependentUpon>202307071717481_mg1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307071722507_mg13.resx">
+      <DependentUpon>202307071722507_mg13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307071724445_mg14.resx">
+      <DependentUpon>202307071724445_mg14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307072021325_alarmchang.resx">
+      <DependentUpon>202307072021325_alarmchang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307080829590_alarm.resx">
+      <DependentUpon>202307080829590_alarm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307080854204_alarm4.resx">
+      <DependentUpon>202307080854204_alarm4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307080857522_asdds.resx">
+      <DependentUpon>202307080857522_asdds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307080859228_fgh.resx">
+      <DependentUpon>202307080859228_fgh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307080901574_kk.resx">
+      <DependentUpon>202307080901574_kk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307080904563_qwe.resx">
+      <DependentUpon>202307080904563_qwe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307080910421_hgj.resx">
+      <DependentUpon>202307080910421_hgj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307080918165_gr.resx">
+      <DependentUpon>202307080918165_gr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307081201175_proba.resx">
+      <DependentUpon>202307081201175_proba.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307081204346_hfth.resx">
+      <DependentUpon>202307081204346_hfth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307081211103_gdfg.resx">
+      <DependentUpon>202307081211103_gdfg.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>4062</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:4062/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

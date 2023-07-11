@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="44c6c573-4f63-467c-b994-7c7044a7e86f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:4062/Impl/AlarmService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AlarmService.disco" MetadataType="Disco" ID="7f9504de-f2c2-47f2-9213-766f8f531d95" SourceId="1" SourceUrl="http://localhost:4062/Impl/AlarmService.svc?disco" />
+    <MetadataFile FileName="AlarmService.xsd" MetadataType="Schema" ID="ba87b636-8cc5-483e-8c3e-0973ceed11cd" SourceId="1" SourceUrl="http://localhost:4062/Impl/AlarmService.svc?xsd=xsd2" />
+    <MetadataFile FileName="AlarmService1.xsd" MetadataType="Schema" ID="98c0ea1a-07af-48cd-b5d7-8b4c366498d5" SourceId="1" SourceUrl="http://localhost:4062/Impl/AlarmService.svc?xsd=xsd1" />
+    <MetadataFile FileName="AlarmService.wsdl" MetadataType="Wsdl" ID="9fa2416e-a00c-41d1-8e17-6decb97385da" SourceId="1" SourceUrl="http://localhost:4062/Impl/AlarmService.svc?wsdl" />
+    <MetadataFile FileName="AlarmService3.xsd" MetadataType="Schema" ID="bb395e55-6041-4ec2-8cdd-40f6e9d4f085" SourceId="1" SourceUrl="http://localhost:4062/Impl/AlarmService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

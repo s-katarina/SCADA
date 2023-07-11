@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="6cffe3c2-ac26-4692-9aa8-8446511a3bba" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:4062/Impl/AnalogInputService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AnalogInputService.wsdl" MetadataType="Wsdl" ID="9bce2ee1-a063-4929-969c-6bccbbb29037" SourceId="1" SourceUrl="http://localhost:4062/Impl/AnalogInputService.svc?wsdl" />
+    <MetadataFile FileName="AnalogInputService.xsd" MetadataType="Schema" ID="9cad4def-3e3b-457f-889e-36788f7e5846" SourceId="1" SourceUrl="http://localhost:4062/Impl/AnalogInputService.svc?xsd=xsd1" />
+    <MetadataFile FileName="AnalogInputService3.xsd" MetadataType="Schema" ID="4dee9b92-5543-4286-9fb8-aa62648fcd03" SourceId="1" SourceUrl="http://localhost:4062/Impl/AnalogInputService.svc?xsd=xsd2" />
+    <MetadataFile FileName="AnalogInputService.disco" MetadataType="Disco" ID="88924706-8cde-413e-acac-15484f6350b4" SourceId="1" SourceUrl="http://localhost:4062/Impl/AnalogInputService.svc?disco" />
+    <MetadataFile FileName="AnalogInputService2.xsd" MetadataType="Schema" ID="a25fdec7-bade-4a38-beec-41f9e3e55fa0" SourceId="1" SourceUrl="http://localhost:4062/Impl/AnalogInputService.svc?xsd=xsd3" />
+    <MetadataFile FileName="AnalogInputService1.xsd" MetadataType="Schema" ID="b10a7636-c70f-4345-9794-d4022476fd4c" SourceId="1" SourceUrl="http://localhost:4062/Impl/AnalogInputService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
